@@ -1,2 +1,2 @@
 # GymPartner
-![App Screenshot](docs/screenshot.png)
+![App Screenshot](docs/Gym Partner System Architecture.png)
