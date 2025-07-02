@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gym Partner | Workout Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- MSAL.js for Azure AD -->
+  <script src="https://alcdn.msauth.net/browser/2.39.0/js/msal-browser.min.js"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #fff;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0.25rem 0.5rem;
+    }
+    section {
+      padding: 1rem;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .history-item, .workout-entry {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+    .gallery img, .gallery video {
+      max-width: 100px;
+      margin: 5px;
+    }
+    .chart-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .pr-box {
+      background: #e0ffe0;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .log-workout-inputs {
+        max-width: 125px;
+    }
+    .log-workout-inputs-exercise {
+        max-width: 175px;
+    }
+    .log-workout-sets{
+        text-indent: 40px;
+    }
+    .title-heading {
+        font-size: 60px;
+        margin: 0;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 14px;
+    }
+    .title-subtext-heading {
+        font-size: 25px;
+        margin: 0;
+    }
+    .exercise-heading {
+        margin: 0;
+        padding-top: 25px;
+        padding-bottom: 8px;
+    }
+    .set-heading {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .nav-buttons:hover {
+        background-color: lightgray;
+    }
+    .delete-button {
+        font-size: x-small;
+        padding: 6px;
+        background-color: darkred;
+        opacity: .85;
+    }
+    .exercise {
+        border: 1px solid #ccc;   
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="title-heading">Gym Partner</h1>
+    <p class="title-subtext-heading">Let the Gainzz Begin &#128170</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('login')" class="nav-buttons">Login</button>
+    <button onclick="showSection('logworkout')" class="nav-buttons">Log Workout</button>
+    <button onclick="showSection('history')" class="nav-buttons">Workout History</button>
+    <button onclick="showSection('media')" class="nav-buttons">Media Upload</button>
+    <button onclick="showSection('weight')" class="nav-buttons">Bodyweight</button>
+    <button onclick="showSection('charts')" class="nav-buttons">Progress Charts</button>
+    <button onclick="showSection('ai')" class="nav-buttons">AI Coach</button>
+    <button onclick="showSection('prs')" class="nav-buttons">PR Board</button>
+    <button onclick="showSection('settings')" class="nav-buttons">Settings</button>
+  </nav>
+
+  <!-- Azure AD Login Section -->
+  <section id="login" class="active">
+    <h2>Login with Microsoft</h2>
+    <button onclick="signIn()">Sign In</button>
+    <button onclick="signOut()">Sign Out</button>
+    <p id="loginStatus">Not signed in</p>
+  </section>
+
+  <!-- Log Workout -->
+  <section id="logworkout">
+    <h2>Log New Workout</h2>
+    <div style="display: table;">
+        <div class="form-group" style="display: table-row;">
+            <label style="display: table-cell; padding-right: 55px;">Date:</label>
+            <input type="date" class="log-workout-inputs" style="display: table-cell;">                                     
+        </div>
+        <div class="form-group" style="display: table-row;">
+            <label style="display: table-cell;">Start Time:</label>
+            <input type="time" class="log-workout-inputs" style="display: table-cell;">                                     
+        </div>
+        <div class="form-group" style="display: table-row;">
+            <label style="display: table-cell;">End Time:</label>
+            <input type="time" class="log-workout-inputs" style="display: table-cell;"> 
+        </div>
+    </div>
+
+    <div id="logworkoutexercises">
+        <div id="exercise1">
+            <h4 class="exercise-heading">Exercise 1 <button onclick="deleteExercise()" class="delete-button"> X </button> </h4>                                                   
+            <div class="form-group"> 
+                <label>Exercise:</label>
+                <input type="text" class="log-workout-inputs-exercise">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                <div class="log-workout-sets" style="display: table;">
+                    <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                    <div class="form-group" style="display: table-row;">
+                        <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                        <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
+                    </div>
+                    <div class="form-group" style="display: table-row;">
+                        <label style="display: table-cell; text-align: right;">Weight:</label>
+                        <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
+                    </div>    
+                </div>
+                <button onclick="addSet()">Add Set </button>                                     
+            </div>
+        </div>
+    </div>
+    <button onclick="addExercise()">Add Exercise </button>                                        
+    <button onclick="saveWorkout()">Save Workout</button>                                         <!-- TODO: Hook up-->
+  </section>
+
+  <!-- Workout History -->
+  <section id="history">                                                           <!-- TODO: Populate Workout History from backend on load -->
+    <h2>Workout History</h2>
+    <div class="history-item">Squat - 5x5 @ 315 lbs 
+        <button onclick="alert('Squat Details')">Details</button>
+    </div>
+    <div class="history-item">Bench Press - 4x6 @ 225 lbs 
+        <button onclick="alert('Bench Details')">Details</button>
+    </div>
+  </section>
+
+  <!-- Media Upload -->
+  <section id="media">
+    <h2>Upload Media</h2>
+    <input type="file" accept="image/*,video/*" multiple>
+    <div class="gallery">
+      <p>Uploaded files preview here...</p>
+    </div>
+  </section>
+
+  <!-- Bodyweight Tracking -->
+  <section id="weight">
+    <h2>Track Bodyweight</h2>
+    <div class="form-group">
+      <label>Today's Weight (lbs):</label>
+      <input type="number">
+    </div>
+    <button>Log Weight</button>
+  </section>
+
+  <!-- Charts -->
+  <section id="charts">
+    <h2>Performance Charts</h2>
+    <div class="chart-container">
+      <canvas id="performanceChart"></canvas>
+    </div>
+  </section>
+
+  <!-- AI Recommendations -->
+  <section id="ai">
+    <h2>AI Coach</h2>
+    <button onclick="showAIAdvice()">Get Advice</button>
+    <div id="aiResponse"></div>
+  </section>
+
+  <!-- PRs -->
+  <section id="prs">
+    <h2>All-Time PRs</h2>
+    <div class="pr-box">
+      <p>Squat: 405 lbs</p>
+      <p>Bench: 275 lbs</p>
+      <p>Deadlift: 495 lbs</p>
+    </div>
+  </section>
+
+  <!-- Settings -->
+  <section id="settings">
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+
+    let numberOfExercises = 1;
+
+    // MSAL Config
+    const msalConfig = {
+      auth: {
+        clientId: "YOUR_CLIENT_ID", // ← Replace with your Azure AD Application (client) ID
+        authority: "https://login.microsoftonline.com/YOUR_TENANT_ID", // ← Replace with your Azure AD tenant ID
+        redirectUri: window.location.origin
+      }
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    // Sign In
+    async function signIn() {
+      try {
+        const loginResponse = await msalInstance.loginPopup({ scopes: ["User.Read"] });
+        document.getElementById("loginStatus").textContent = "Signed in as: " + loginResponse.account.username;
+      } catch (error) {
+        console.error("Login error:", error);
+      }
+    }
+
+    // Sign Out
+    async function signOut() {
+      const accounts = msalInstance.getAllAccounts();
+      if (accounts.length > 0) {
+        await msalInstance.logoutPopup({ account: accounts[0] });
+        document.getElementById("loginStatus").textContent = "Signed out";
+      }
+    }
+
+    // Auto-check for logged-in user
+    window.addEventListener("DOMContentLoaded", () => {
+      const accounts = msalInstance.getAllAccounts();
+      if (accounts.length > 0) {
+        document.getElementById("loginStatus").textContent = "Signed in as: " + accounts[0].username;
+      }
+    });
+
+    // Section switching
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // AI Advice placeholder
+    function showAIAdvice() {
+      document.getElementById('aiResponse').innerHTML = `
+        <p>Based on your recent lifts, you should increase your training volume slightly. Deload week is coming soon.</p>
+        <p>Predicted 1RM:</p>
+        <ul>
+          <li>Squat: 425 lbs</li>
+          <li>Bench: 285 lbs</li>
+          <li>Deadlift: 505 lbs</li>
+        </ul>
+      `;
+    }
+
+    function addSet() {
+
+        const clickedButton = event.target;
+
+        const newDiv = document.createElement('div');
+
+        newDiv.innerHTML = `
+            <div class="log-workout-sets" style="display: table;">
+                <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                <div class="form-group" style="display: table-row;">
+                    <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                    <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+                </div>
+                <div class="form-group" style="display: table-row;">
+                    <label style="display: table-cell; text-align: right;">Weight:</label>
+                    <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+                </div>    
+            </div>`;
+
+        const parentDiv = clickedButton.parentElement;
+
+        numberOfParentDivChildElements = parentDiv.children.length;
+
+        const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 2]; 
+
+        parentDiv.insertBefore(newDiv, lastSetElement);
+    }
+
+    function deleteExercise() {
+
+        const clickedButton = event.target;
+
+        const parentElement = clickedButton.parentElement;
+
+        const grandParentElement = parentElement.parentElement;
+
+        const greatGrandParentElement = grandParentElement.parentElement;
+
+        greatGrandParentElement.removeChild(grandParentElement);
+    }
+
+    function deleteSet() {
+
+        const clickedButton = event.target;
+
+        const parentElement = clickedButton.parentElement;
+
+        const grandParentElement = parentElement.parentElement;
+
+        const greatGrandParentElement = grandParentElement.parentElement;
+
+        greatGrandParentElement.removeChild(grandParentElement);
+    }
+
+    function addExercise() {
+
+        const logworkoutexercisesDiv = document.getElementById("logworkoutexercises");
+
+        const newDiv = document.createElement('div');
+
+        numberOfExercises++;
+
+        newDiv.innerHTML = `
+            <h4 class="exercise-heading">Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h4>
+            <div class="form-group"> 
+                <label>Exercise:</label>
+                <input type="text" class="log-workout-inputs-exercise">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                <div class="log-workout-sets" style="display: table;">
+                    <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                    <div class="form-group" style="display: table-row;">
+                        <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                        <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+                    </div>
+                    <div class="form-group" style="display: table-row;">
+                        <label style="display: table-cell; text-align: right;">Weight:</label>
+                        <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+                    </div>    
+                </div>
+                <button onclick="addSet()">Add Set </button>`;
+
+            logworkoutexercisesDiv.appendChild(newDiv);
+    }
+
+    function saveWorkout() {
+
+    }
+
+    // Chart.js example
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Squat Progress',
+          data: [315, 325, 335, 345],
+          borderColor: 'green',
+          fill: false
+        }]
+      }
+    });
+  </script>
+
+</body>
+</html>
