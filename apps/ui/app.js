@@ -72,7 +72,7 @@
 
         newDiv.innerHTML = `
             <div class="log-workout-sets" style="display: table;">
-                <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                <h3 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                 <div class="form-group" style="display: table-row;">
                     <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                     <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
@@ -127,7 +127,7 @@
         numberOfExercises++;
 
         newDiv.innerHTML = `
-            <h4 class="exercise-heading">Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h4>
+            <h2 class="exercise-heading">Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
@@ -140,7 +140,7 @@
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
-                  <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                  <h3 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h3>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                       <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
