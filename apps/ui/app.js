@@ -343,5 +343,5 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
     setTimeout(() => {
       toast.classList.remove("show");
-    }, 3000);
+    }, 2000);
   }
