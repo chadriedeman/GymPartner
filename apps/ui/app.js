@@ -78,7 +78,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         const numberOfSets = parentDiv.querySelectorAll(".log-workout-sets");
 
         newDiv.innerHTML = `
-            <div class="log-workout-sets" style="display: table;">
+            <div id="set-${numberOfSets.length + 1}" class="log-workout-sets" style="display: table;">
                 <h3 class="set-heading">Set ${numberOfSets.length + 1} <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                 <div class="form-group" style="display: table-row;">
                     <label style="display: table-cell; text-align: right;">Reps:</label>                                   
@@ -107,13 +107,13 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         greatGrandParentElement.removeChild(grandParentElement);
 
-        // TODO: Loop through all and update exercise count
         const exerciseHeadings = 
           [...document.querySelectorAll('[id*="exercise-heading-"]')];
 
           let numberOfExercises = 1;
 
           exerciseHeadings.forEach(heading => {
+            
             heading.innerHTML = `Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button>`;
 
             numberOfExercises++;
@@ -133,7 +133,22 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         greatGrandParentElement.removeChild(grandParentElement);
 
-        // TODO: Loop through all and update set count
+        const setHeadings = [...greatGrandParentElement.parentElement.querySelectorAll('.set-heading')];
+
+        let numberOfSets = 1;
+
+          setHeadings.forEach(heading => {
+
+            if (numberOfSets === 1) {
+              heading.innerHTML = `Set ${numberOfSets}`
+            }
+            else {
+              heading.innerHTML = `Set ${numberOfSets} <button onclick="deleteSet()" class="delete-button"> X </button>`
+
+            }
+
+            numberOfSets++;
+          });
     }
 
     function addExercise() {
@@ -159,7 +174,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                   <select disabled id="exerciseselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
-              <div class="log-workout-sets" style="display: table;">
+              <div id="set-1" class="log-workout-sets" style="display: table;">
                   <h3 class="set-heading">Set 1 </h3>  
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Reps:</label>                                   
@@ -171,8 +186,6 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                   </div>    
               </div>
               <button onclick="addSet()">Add Set </button> `;
-
-        // TODO: Need to populate target muscle groups select
 
         const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
 
