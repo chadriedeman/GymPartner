@@ -211,14 +211,20 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         return;
       }
 
-      // TODO: Get available exercises from server
+      const exercises = getExercises(clickedSelect.value);
 
       // TODO: Populate the exercise select with values
+       ['', ...exercises].forEach(exercise => {
+          const option = document.createElement("option");
+          option.value = exercise;
+          option.textContent = exercise;
+          exerciseSelect.appendChild(option); 
+       });
 
       exerciseSelect.disabled = false;
     }
 
-    function getExercises() {
+    function getExercises(targetMuscleGroup) {
 
       // TODO: Get target muscle group input
 
