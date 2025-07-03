@@ -1,5 +1,7 @@
  let numberOfExercises = 1;
 
+window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
+
     // MSAL Config
     const msalConfig = {
       auth: {
@@ -174,11 +176,11 @@
             .sort(); // TODO: Mocked for now
     }
 
-    function populateTargetMuscleGroups() {
+    function initializeTargetMuscleGroupsSelect() {
 
-       const clickedSelect = event.target;
+       const targetMuscleGroupsSelect = document.getElementById("targetmusclegroupselect1");
 
-       clickedSelect.innerHTML = '';
+       targetMuscleGroupsSelect.innerHTML = '';
 
        const targetMuscleGroups = getTargetMuscleGroups();
 
@@ -186,7 +188,7 @@
           const option = document.createElement("option");
           option.value = targetMuscleGroup;
           option.textContent = targetMuscleGroup;
-          clickedSelect.appendChild(option); 
+          targetMuscleGroupsSelect.appendChild(option); 
        });
     }
 
