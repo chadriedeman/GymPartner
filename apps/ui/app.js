@@ -88,7 +88,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         numberOfParentDivChildElements = parentDiv.children.length;
 
-        const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 2]; 
+        const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 1]; 
 
         parentDiv.insertBefore(newDiv, lastSetElement);
     }
@@ -132,16 +132,16 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
-                  <label for="targetmusclegroupselect" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect" class="log-workout-select" style="display: table-cell;" onclick="populateTargetMuscleGroups()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="targetmusclegroupselect1" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                  <select id="targetmusclegroupselect1" class="log-workout-select" style="display: table-cell;"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
-                  <label for="exerciseselect" style="display: table-cell;">Exercise:</label>
-                  <select id="exerciseselect" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="exerciseselect1" style="display: table-cell;">Exercise:</label>
+                  <select disabled id="exerciseselect1" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
-                  <h3 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h3>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                  <h3 class="set-heading">Set 1 </h3>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                       <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
@@ -151,7 +151,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                       <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
                   </div>    
               </div>
-              <button onclick="addSet()">Add Set </button>  `;
+              <button onclick="addSet()">Add Set </button> `;
 
             logworkoutexercisesDiv.appendChild(newDiv);
     }
