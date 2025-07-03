@@ -126,3 +126,6 @@
     .exercise {
         border: 1px solid #ccc;   
     }
+    .log-new-workout-date-group {
+      display: table;
+    }
