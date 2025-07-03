@@ -153,7 +153,22 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
               </div>
               <button onclick="addSet()">Add Set </button> `;
 
-            logworkoutexercisesDiv.appendChild(newDiv);
+        // TODO: Need to populate target muscle groups select
+
+        const targetMuscleGroupsSelect = newDiv.querySelector('[id="targetmusclegroupselect1"]')
+
+        targetMuscleGroupsSelect.innerHTML = '';
+
+        const targetMuscleGroups = getTargetMuscleGroups();
+
+        ['', ...targetMuscleGroups].forEach(targetMuscleGroup => {
+            const option = document.createElement("option");
+            option.value = targetMuscleGroup;
+            option.textContent = targetMuscleGroup;
+            targetMuscleGroupsSelect.appendChild(option); 
+        });
+          
+        logworkoutexercisesDiv.appendChild(newDiv);
     }
 
     function saveWorkout() {
