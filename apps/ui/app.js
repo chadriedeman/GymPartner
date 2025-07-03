@@ -133,7 +133,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
               <div style="display: table;">
                 <div style="display: table-row;">
                   <label for="targetmusclegroupselect1" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect1" class="log-workout-select" style="display: table-cell;"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <select id="targetmusclegroupselect1" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
                   <label for="exerciseselect1" style="display: table-cell;">Exercise:</label>
