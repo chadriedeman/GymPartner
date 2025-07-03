@@ -196,28 +196,26 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       const clickedSelect = event.target;
 
-      // // TODO: If a valid selection is made
+      const parentElement = clickedSelect.parentElement;
 
-      // const parentElement = clickedSelect.parentElement;
+      const grandParentElement = parentElement.parentElement;
 
-      // const grandParentElement = parentElement.parentElement;
+      const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect1"]'); // TODO: This needs to be dynamic
 
-      // const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect"]');
+      const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
-      // const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
+      if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
 
-      // if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
+        exerciseSelect.disabled = true;
 
-      //   exerciseSelect.disabled = true;
+        return;
+      }
 
-      //   return;
-      // }
+      // TODO: Get available exercises from server
 
-      // // TODO: Get available exercises from server
+      // TODO: Populate the exercise select with values
 
-      // // TODO: Populate the exercise select with values
-
-      // exerciseSelect.disabled = false;
+      exerciseSelect.disabled = false;
     }
 
     function getExercises() {
