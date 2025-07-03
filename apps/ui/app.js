@@ -104,6 +104,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         const greatGrandParentElement = grandParentElement.parentElement;
 
         greatGrandParentElement.removeChild(grandParentElement);
+
+        numberOfExercises--;
     }
 
     function deleteSet() {
@@ -132,12 +134,12 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
-                  <label for="targetmusclegroupselect1" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect1" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="targetmusclegroupselect${numberOfExercises}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                  <select id="targetmusclegroupselect${numberOfExercises}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
-                  <label for="exerciseselect1" style="display: table-cell;">Exercise:</label>
-                  <select disabled id="exerciseselect1" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="exerciseselect${numberOfExercises}" style="display: table-cell;">Exercise:</label>
+                  <select disabled id="exerciseselect${numberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
@@ -155,7 +157,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         // TODO: Need to populate target muscle groups select
 
-        const targetMuscleGroupsSelect = newDiv.querySelector('[id="targetmusclegroupselect1"]')
+        const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${numberOfExercises}"]`)
 
         populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
@@ -211,7 +213,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       const grandParentElement = parentElement.parentElement;
 
-      const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect1"]'); // TODO: This needs to be dynamic
+      const exerciseSelect = grandParentElement.querySelector('[id*="exerciseselect"]'); // TODO: This needs to be dynamic
 
       const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
