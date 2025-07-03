@@ -130,12 +130,12 @@
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
-                  <label style="display: table-cell;">Target Muscle Group:</label>
-                  <input type="text" class="log-workout-inputs-exercise" style="display: table-cell;">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="targetmusclegroupselect" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                  <select id="targetmusclegroupselect" class="log-workout-select" style="display: table-cell;" onclick="populateTargetMuscleGroups()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
-                  <label style="display: table-cell;">Exercise:</label>
-                  <input type="text" class="log-workout-inputs-exercise" style="display: table-cell;">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="exerciseselect" style="display: table-cell;">Exercise:</label>
+                  <select id="exerciseselect" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
@@ -149,7 +149,7 @@
                       <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
                   </div>    
               </div>
-              <button onclick="addSet()">Add Set </button>`;
+              <button onclick="addSet()">Add Set </button>  `;
 
             logworkoutexercisesDiv.appendChild(newDiv);
     }
