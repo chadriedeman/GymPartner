@@ -204,6 +204,10 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
+
+
+
+
       if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
 
         exerciseSelect.disabled = true;
@@ -232,12 +236,39 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       // TODO: Return results
 
-      return [
-        'Barbell Bench Press',
-        'Dumbbell Bench Press', 
-        'Machine Chest Press'
-      ]
-      .sort(); // TODO: Mocked for now
+      if (targetMuscleGroup === 'Chest'){
+        return [
+            'Barbell Bench Press',
+            'Dumbbell Bench Press', 
+            'Machine Chest Press'
+        ]
+        .sort(); // TODO: Mocked for now
+      }
+
+      if (targetMuscleGroup === 'Back'){
+        return [
+            'Lat Pulldown',
+            'Cable Rows'
+        ]
+        .sort(); // TODO: Mocked for now
+      }
+
+      if (targetMuscleGroup === 'Quads'){
+        return [
+            'Leg Extensions',
+        ]
+        .sort(); // TODO: Mocked for now
+      }
+
+      if (targetMuscleGroup === 'Hamstrings'){
+        return [
+            'Leg Curls',
+            'RDLs'
+        ]
+        .sort(); // TODO: Mocked for now
+      }
+
+      return [];
     }
 
     function getUserBodyWeightLogs() {
