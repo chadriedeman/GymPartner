@@ -60,8 +60,7 @@
           <li>Squat: 425 lbs</li>
           <li>Bench: 285 lbs</li>
           <li>Deadlift: 505 lbs</li>
-        </ul>
-      `;
+        </ul>`;
     }
 
     function addSet() {
@@ -166,7 +165,13 @@
     }
 
     function getTargetMuscleGroups() {
-
+      return [
+              'Chest',
+              'Back', 
+              'Quads',
+              'Hamstrings'
+            ]
+            .sort(); // TODO: Mocked for now
     }
 
     function getExercises() {
