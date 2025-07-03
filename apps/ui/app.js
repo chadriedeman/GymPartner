@@ -204,9 +204,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
-
-
-
+      exerciseSelect.innerHTML = '';
 
       if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
 
