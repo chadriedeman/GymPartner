@@ -108,6 +108,17 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         greatGrandParentElement.removeChild(grandParentElement);
 
         // TODO: Loop through all and update exercise count
+        const exerciseHeadings = 
+          [...document.querySelectorAll('[id*="exercise-heading-"]')];
+
+          let numberOfExercises = 1;
+
+          exerciseHeadings.forEach(heading => {
+            heading.innerHTML = `Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button>`;
+
+            numberOfExercises++;
+          });
+
     }
 
     function deleteSet() {
@@ -136,7 +147,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         const newDiv = document.createElement('div');
 
         newDiv.innerHTML = `
-            <h2 class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
+            <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
