@@ -108,6 +108,9 @@
         background-color: darkred;
         opacity: .85;
     }
+    .delete-button:hover {
+        background-color: lightcoral;
+    }
     .exercise {
         border: 1px solid #ccc;   
     }
