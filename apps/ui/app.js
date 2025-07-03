@@ -71,9 +71,17 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         const newDiv = document.createElement('div');
 
+        const parentDiv = clickedButton.parentElement;
+
+        numberOfParentDivChildElements = parentDiv
+          .children
+          .length;
+
+        const numberOfSets = parentDiv.querySelectorAll(".log-workout-sets");
+
         newDiv.innerHTML = `
             <div class="log-workout-sets" style="display: table;">
-                <h3 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                <h3 class="set-heading">Set ${numberOfSets.length + 1} <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                 <div class="form-group" style="display: table-row;">
                     <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                     <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
@@ -83,10 +91,6 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                     <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
                 </div>    
             </div>`;
-
-        const parentDiv = clickedButton.parentElement;
-
-        numberOfParentDivChildElements = parentDiv.children.length;
 
         const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 1]; 
 
