@@ -157,17 +157,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         const targetMuscleGroupsSelect = newDiv.querySelector('[id="targetmusclegroupselect1"]')
 
-        targetMuscleGroupsSelect.innerHTML = '';
+        populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
-        const targetMuscleGroups = getTargetMuscleGroups();
-
-        ['', ...targetMuscleGroups].forEach(targetMuscleGroup => {
-            const option = document.createElement("option");
-            option.value = targetMuscleGroup;
-            option.textContent = targetMuscleGroup;
-            targetMuscleGroupsSelect.appendChild(option); 
-        });
-          
         logworkoutexercisesDiv.appendChild(newDiv);
     }
 
@@ -195,7 +186,12 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
        const targetMuscleGroupsSelect = document.getElementById("targetmusclegroupselect1");
 
-       targetMuscleGroupsSelect.innerHTML = '';
+       populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
+    }
+
+    function populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect) {
+
+      targetMuscleGroupsSelect.innerHTML = '';
 
        const targetMuscleGroups = getTargetMuscleGroups();
 
