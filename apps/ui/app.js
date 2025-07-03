@@ -194,20 +194,28 @@
 
       const clickedSelect = event.target;
 
-      // TODO: If a valid selection is made
+      // // TODO: If a valid selection is made
 
-      // TODO: Get available exercises from server
+      // const parentElement = clickedSelect.parentElement;
 
-      // TODO: Populate the exercise select with values
+      // const grandParentElement = parentElement.parentElement;
 
-      // TODO: Enable exercise select
-      const parentElement = clickedSelect.parentElement;
+      // const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect"]');
 
-      const grandParentElement = parentElement.parentElement;
+      // const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
-      const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect"]');
+      // if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
 
-      exerciseSelect.disabled = false;
+      //   exerciseSelect.disabled = true;
+
+      //   return;
+      // }
+
+      // // TODO: Get available exercises from server
+
+      // // TODO: Populate the exercise select with values
+
+      // exerciseSelect.disabled = false;
     }
 
     function getExercises() {
