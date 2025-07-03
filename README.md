@@ -16,3 +16,6 @@
 Additionally, this application should be secure, resilient, highly-available, performant, and as low cost as possible.
 
 ![App Screenshot](docs/GymPartnerSystemArchitecture.png)
+
+![App Screenshot](docs/GymPartnerDatabaseSchema.png)
+
