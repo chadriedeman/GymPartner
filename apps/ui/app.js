@@ -196,7 +196,18 @@
 
       // TODO: If a valid selection is made
 
+      // TODO: Get available exercises from server
+
+      // TODO: Populate the exercise select with values
+
       // TODO: Enable exercise select
+      const parentElement = clickedSelect.parentElement;
+
+      const grandParentElement = parentElement.parentElement;
+
+      const exerciseSelect = grandParentElement.querySelector('[id="exerciseselect"]');
+
+      exerciseSelect.disabled = false;
     }
 
     function getExercises() {

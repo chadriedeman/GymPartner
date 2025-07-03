@@ -65,7 +65,7 @@
               <div style="display: table;">
                 <div style="display: table-row;">
                   <label for="targetmusclegroupselect" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect" class="log-workout-select" style="display: table-cell;" onclick="populateTargetMuscleGroups()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <select id="targetmusclegroupselect" class="log-workout-select" style="display: table-cell;" onclick="populateTargetMuscleGroups()" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
                   <label for="exerciseselect" style="display: table-cell;">Exercise:</label>
