@@ -129,20 +129,28 @@
         newDiv.innerHTML = `
             <h4 class="exercise-heading">Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h4>
             <div class="form-group"> 
-                <label>Exercise:</label>
-                <input type="text" class="log-workout-inputs-exercise">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
-                <div class="log-workout-sets" style="display: table;">
-                    <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
-                    <div class="form-group" style="display: table-row;">
-                        <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-                        <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                    </div>
-                    <div class="form-group" style="display: table-row;">
-                        <label style="display: table-cell; text-align: right;">Weight:</label>
-                        <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                    </div>    
+              <div style="display: table;">
+                <div style="display: table-row;">
+                  <label style="display: table-cell;">Target Muscle Group:</label>
+                  <input type="text" class="log-workout-inputs-exercise" style="display: table-cell;">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
-                <button onclick="addSet()">Add Set </button>`;
+                <div style="display: table-row;">
+                  <label style="display: table-cell;">Exercise:</label>
+                  <input type="text" class="log-workout-inputs-exercise" style="display: table-cell;">           <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                </div>
+              </div>
+              <div class="log-workout-sets" style="display: table;">
+                  <h4 class="set-heading">Set 1 <button onclick="deleteSet()" class="delete-button"> X </button></h4>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                  <div class="form-group" style="display: table-row;">
+                      <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                      <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
+                  </div>
+                  <div class="form-group" style="display: table-row;">
+                      <label style="display: table-cell; text-align: right;">Weight:</label>
+                      <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
+                  </div>    
+              </div>
+              <button onclick="addSet()">Add Set </button>`;
 
             logworkoutexercisesDiv.appendChild(newDiv);
     }
@@ -158,7 +166,7 @@
     }
 
     function getTargetMuscleGroups() {
-      
+
     }
 
     function getExercises() {
