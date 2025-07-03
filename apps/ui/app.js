@@ -157,12 +157,32 @@
         // TODO: Else, display error message
     }
 
+    function getTargetMuscleGroups() {
+      
+    }
+
     function getExercises() {
-      return ['Barbell Bench Press', 'Dumbbell Bench Press', 'Barbell Curls'] // TODO: Mocked for now
+
+      // TODO: Get target muscle group input
+
+      // TODO: Send to server
+
+      // TODO: Return results
+
+      return [
+        'Barbell Bench Press',
+        'Dumbbell Bench Press', 
+        'Machine Chest Press'
+      ]
+      .sort(); // TODO: Mocked for now
     }
 
     function getUserBodyWeightLogs() {
-
+      return [
+        {date: new Date('2025-07-02'), weight: 187.6}, 
+        {date: new Date('2025-07-01'), weight: 186.8}
+      ]
+      .sort((a, b) => b.date - a.date); // TODO: Mocked for now
     }
 
     // Chart.js example
