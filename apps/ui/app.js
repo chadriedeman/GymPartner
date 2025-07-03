@@ -1,5 +1,3 @@
- let numberOfExercises = 1;
-
 window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
     // MSAL Config
@@ -109,7 +107,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         greatGrandParentElement.removeChild(grandParentElement);
 
-        numberOfExercises--;
+        // TODO: Loop through all and update exercise count
     }
 
     function deleteSet() {
@@ -123,27 +121,31 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         const greatGrandParentElement = grandParentElement.parentElement;
 
         greatGrandParentElement.removeChild(grandParentElement);
+
+        // TODO: Loop through all and update set count
     }
 
     function addExercise() {
+
+        const numberOfExercises = document.querySelectorAll('[id*="exerciseselect"]').length;
+
+        const newNumberOfExercises = numberOfExercises + 1;
 
         const logworkoutexercisesDiv = document.getElementById("logworkoutexercises");
 
         const newDiv = document.createElement('div');
 
-        numberOfExercises++;
-
         newDiv.innerHTML = `
-            <h2 class="exercise-heading">Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
+            <h2 class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
             <div class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
-                  <label for="targetmusclegroupselect${numberOfExercises}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect${numberOfExercises}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="targetmusclegroupselect${newNumberOfExercises}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                  <select id="targetmusclegroupselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
                 <div style="display: table-row;">
-                  <label for="exerciseselect${numberOfExercises}" style="display: table-cell;">Exercise:</label>
-                  <select disabled id="exerciseselect${numberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
+                  <label for="exerciseselect${newNumberOfExercises}" style="display: table-cell;">Exercise:</label>
+                  <select disabled id="exerciseselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
@@ -161,7 +163,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         // TODO: Need to populate target muscle groups select
 
-        const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${numberOfExercises}"]`)
+        const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
 
         populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
