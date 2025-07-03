@@ -190,6 +190,15 @@
        });
     }
 
+    function handleTargetMuscleGroupSelectionChange() {
+
+      const clickedSelect = event.target;
+
+      // TODO: If a valid selection is made
+
+      // TODO: Enable exercise select
+    }
+
     function getExercises() {
 
       // TODO: Get target muscle group input
