@@ -174,6 +174,22 @@
             .sort(); // TODO: Mocked for now
     }
 
+    function populateTargetMuscleGroups() {
+
+       const clickedSelect = event.target;
+
+       clickedSelect.innerHTML = '';
+
+       const targetMuscleGroups = getTargetMuscleGroups();
+
+       ['', ...targetMuscleGroups].forEach(targetMuscleGroup => {
+          const option = document.createElement("option");
+          option.value = targetMuscleGroup;
+          option.textContent = targetMuscleGroup;
+          clickedSelect.appendChild(option); 
+       });
+    }
+
     function getExercises() {
 
       // TODO: Get target muscle group input
