@@ -147,7 +147,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                 </div>
               </div>
               <div class="log-workout-sets" style="display: table;">
-                  <h3 class="set-heading">Set 1 </h3>  <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                  <h3 class="set-heading">Set 1 </h3>  
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                       <input type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
