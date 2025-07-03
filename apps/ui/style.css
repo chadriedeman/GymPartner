@@ -112,7 +112,15 @@
         background-color: darkred;
         opacity: .85;
     }
+    .workout-history-delete-button {
+      font-size: small;
+        background-color: darkred;
+        opacity: .85;
+    }
     .delete-button:hover {
+        background-color: lightcoral;
+    }
+    .workout-history-delete-button:hover {
         background-color: lightcoral;
     }
     .exercise {
