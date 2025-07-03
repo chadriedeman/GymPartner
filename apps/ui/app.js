@@ -40,8 +40,15 @@
 
     // Section switching
     function showSection(id) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+
+      document
+        .querySelectorAll('section')
+        .forEach(s => s.classList.remove('active'));
+
+      document
+        .getElementById(id)
+        .classList
+        .add('active');
     }
 
     // AI Advice placeholder
@@ -141,6 +148,20 @@
     }
 
     function saveWorkout() {
+        // TODO: Get section values
+        
+        // TODO: Send to server
+
+        // TODO: If successful response, display message and reset page 
+
+        // TODO: Else, display error message
+    }
+
+    function getExercises() {
+      return ['Barbell Bench Press', 'Dumbbell Bench Press', 'Barbell Curls'] // TODO: Mocked for now
+    }
+
+    function getUserBodyWeightLogs() {
 
     }
 
