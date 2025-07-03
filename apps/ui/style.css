@@ -75,6 +75,10 @@
     .log-workout-inputs-exercise {
         max-width: 175px;
     }
+    .log-workout-select {
+        max-width: 200px;
+        min-width: 155px;
+    }
     .log-workout-sets{
         text-indent: 40px;
     }
