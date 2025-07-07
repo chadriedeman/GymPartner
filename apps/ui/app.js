@@ -200,7 +200,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         // TODO: Send to server
 
         // TODO: If successful response, display message and reset page 
-        showToast("Workout saved!");
+        // showToast("Workout saved!");
+        showErrorToast("Save unsuccessful");
 
         // TODO: Else, display error message
     }
@@ -338,6 +339,16 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
   function showToast(message = "Save successful") {
     const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2000);
+  }
+
+    function showErrorToast(message = "Save unsuccessful") {
+    const toast = document.getElementById("error-toast");
     toast.textContent = message;
     toast.classList.add("show");
 
