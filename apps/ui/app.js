@@ -195,19 +195,26 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     }
 
     function saveWorkout() {
-        // TODO: Get section values
+        // TODO: Get section values. Pull out into separate function?
         const userInputs = {
           date: document.getElementById('logworkoutdateinput').value,
           startTime: document.getElementById('logworkoutstarttimeinput').value,
           endTime: document.getElementById('logworkoutendtimeinput').value,
           exercises: [
             {
-              targetMuscleGroup: document.getElementById('targetmusclegroupselect1').value
+              targetMuscleGroup: document.getElementById('targetmusclegroupselect1').value,
+              exercise: document.getElementById('exerciseselect1').value,
+              sets: [
+                {
+                  reps: document.getElementById('repsinput1').value,
+                  weight: document.getElementById('weightinput1').value
+                }
+              ]
             }
           ]
         }
 
-        // TODO: Loop through form and add other exercises
+        // TODO: Loop through form and add other exercises and sets
 
         // TODO: Validate user input
         validateLogWorkoutUserInput(userInputs);
