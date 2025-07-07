@@ -200,10 +200,10 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         // TODO: Send to server
 
         // TODO: If successful response, display message and reset page 
-        // showToast("Workout saved!");
-        showErrorToast("Save unsuccessful");
-
+        showToast("Workout saved!");
+        
         // TODO: Else, display error message
+        showErrorToast("Save unsuccessful");
     }
 
     function getTargetMuscleGroups() {
