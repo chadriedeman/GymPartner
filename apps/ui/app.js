@@ -197,10 +197,13 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     function saveWorkout() {
         // TODO: Get section values
         const userInputs = {
-          date: document.getElementById('logworkoutdateinput').value
+          date: document.getElementById('logworkoutdateinput').value,
+          startTime: document.getElementById('logworkoutstarttimeinput').value,
+          endTime: document.getElementById('logworkoutendtimeinput').value,
+          // TODO
         }
 
-
+        // TODO: Validate user input
         
         // TODO: Send to server
 
