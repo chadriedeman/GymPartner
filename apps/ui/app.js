@@ -206,6 +206,10 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         showErrorToast("Save unsuccessful");
     }
 
+    function resetLogWorkout() {
+      // TODO
+    }
+
     function getTargetMuscleGroups() {
       return [
               'Chest',
