@@ -185,7 +185,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                       <input type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
                   </div>    
               </div>
-              <button onclick="addSet()">Add Set </button> `;
+              <button class="log-workout-buttons" onclick="addSet()">Add Set </button> `;
 
         const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
 
