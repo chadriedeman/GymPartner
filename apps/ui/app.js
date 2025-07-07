@@ -200,8 +200,14 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
           date: document.getElementById('logworkoutdateinput').value,
           startTime: document.getElementById('logworkoutstarttimeinput').value,
           endTime: document.getElementById('logworkoutendtimeinput').value,
-          // TODO
+          exercises: [
+            {
+              targetMuscleGroup: document.getElementById('targetmusclegroupselect1').value
+            }
+          ]
         }
+
+        // TODO: Loop through form and add other exercises
 
         // TODO: Validate user input
         validateLogWorkoutUserInput(userInputs);
@@ -216,7 +222,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     }
 
     function validateLogWorkoutUserInput(userInputs) {
-      
+
       // TODO: Null checks
 
       // TODO: Start time should not exceed end time
