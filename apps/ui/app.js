@@ -196,6 +196,11 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
     function saveWorkout() {
         // TODO: Get section values
+        const userInputs = {
+          date: document.getElementById('logworkoutdateinput').value
+        }
+
+
         
         // TODO: Send to server
 
