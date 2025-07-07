@@ -195,8 +195,23 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     }
 
     function saveWorkout() {
-        // TODO: Get section values. Pull out into separate function?
-        const userInputs = {
+
+        const userInputs = getLogWorkoutUserInput();
+
+        validateLogWorkoutUserInput(userInputs);
+        
+        // TODO: Send to server
+
+        // TODO: If successful response, display message and reset page 
+        showToast("Workout saved!");
+        
+        // TODO: Else, display error message
+        showErrorToast("Save unsuccessful");
+    }
+
+    function getLogWorkoutUserInput() {
+
+      const userInputs = {
           name: document.getElementById('logworkoutnameinput').value,
           date: document.getElementById('logworkoutdateinput').value,
           startTime: document.getElementById('logworkoutstarttimeinput').value,
@@ -236,19 +251,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
           userInputs.exercises.push(exerciseToAdd);
        });
 
-
-        // TODO: Loop through form and add other exercises and sets
-
-        // TODO: Validate user input
-        validateLogWorkoutUserInput(userInputs);
-        
-        // TODO: Send to server
-
-        // TODO: If successful response, display message and reset page 
-        showToast("Workout saved!");
-        
-        // TODO: Else, display error message
-        showErrorToast("Save unsuccessful");
+       return userInputs;
     }
 
     function validateLogWorkoutUserInput(userInputs) {
