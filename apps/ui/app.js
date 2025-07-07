@@ -204,6 +204,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         }
 
         // TODO: Validate user input
+        validateLogWorkoutUserInput(userInputs);
         
         // TODO: Send to server
 
@@ -212,6 +213,13 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         
         // TODO: Else, display error message
         showErrorToast("Save unsuccessful");
+    }
+
+    function validateLogWorkoutUserInput(userInputs) {
+      
+      // TODO: Null checks
+
+      // TODO: Start time should not exceed end time
     }
 
     function resetLogWorkout() {
