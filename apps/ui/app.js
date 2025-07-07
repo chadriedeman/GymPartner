@@ -163,7 +163,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         newDiv.innerHTML = `
             <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
-            <div class="form-group"> 
+            <div id="logworkoutexercise${newNumberOfExercises}" class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
                   <label for="targetmusclegroupselect${newNumberOfExercises}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
@@ -197,22 +197,45 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     function saveWorkout() {
         // TODO: Get section values. Pull out into separate function?
         const userInputs = {
+          name: document.getElementById('logworkoutnameinput').value,
           date: document.getElementById('logworkoutdateinput').value,
           startTime: document.getElementById('logworkoutstarttimeinput').value,
           endTime: document.getElementById('logworkoutendtimeinput').value,
-          exercises: [
-            {
-              targetMuscleGroup: document.getElementById('targetmusclegroupselect1').value,
-              exercise: document.getElementById('exerciseselect1').value,
-              sets: [
-                {
-                  reps: document.getElementById('repsinput1').value,
-                  weight: document.getElementById('weightinput1').value
-                }
-              ]
-            }
-          ]
+          exercises: []
         }
+
+        const exercises = document.querySelectorAll('[id*="logworkoutexercise"]'); 
+
+         [...exercises].forEach((exercise, index) => {
+
+          if (index === 0) {
+            return;
+          }
+
+          const exerciseToAdd = {
+              targetMuscleGroup: exercise.querySelector('[id*="targetmusclegroupselect"]').value,
+              exercise: exercise.querySelector('[id*="exerciseselect"]').value,
+              sets: []
+            };
+
+
+          const sets = exercise.querySelectorAll('[id*="set-"]'); 
+
+          [...sets].forEach(set => {
+
+            // const reps = set.querySelector('[id*="repsinput"]').value;
+
+            // const weight = set.querySelector('[id*="weightinput"]').value;
+
+            // exerciseToAdd.sets.push({
+            //   reps,
+            //   weight
+            // });
+          });
+
+          userInputs.exercises.push(exerciseToAdd);
+       });
+
 
         // TODO: Loop through form and add other exercises and sets
 
@@ -231,6 +254,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     function validateLogWorkoutUserInput(userInputs) {
 
       // TODO: Null checks
+
+      // TODO: If name is null, assign it a default
 
       // TODO: Start time should not exceed end time
     }
