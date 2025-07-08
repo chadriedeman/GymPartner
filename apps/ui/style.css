@@ -198,3 +198,8 @@ button {
 .log-workout-notes-textarea {
   height: 85%;
 }
+.log-workout-exercises {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6%;
+}
