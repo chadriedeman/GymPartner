@@ -193,7 +193,7 @@ button {
 }
 .log-workout-header-group {
   display: flex;
-  gap: 10px;
+  gap: 5%;
 }
 .log-workout-notes-textarea {
   height: 85%;
