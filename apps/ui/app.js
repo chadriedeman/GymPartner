@@ -218,6 +218,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
           date: document.getElementById('logworkoutdateinput').value,
           startTime: document.getElementById('logworkoutstarttimeinput').value,
           endTime: document.getElementById('logworkoutendtimeinput').value,
+          notes: document.getElementById('logworkoutnotesinput').value,
           exercises: []
         }
 
