@@ -80,14 +80,14 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         newDiv.innerHTML = `
             <div id="set-${numberOfSets.length + 1}" class="log-workout-sets" style="display: table;">
                 <h3 class="set-heading">Set ${numberOfSets.length + 1} <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                 <div class="form-group" style="display: table-row;">
+                    <label style="display: table-cell; text-align: right;">Weight:</label>
+                    <input id="weightinput${numberOfSets.length + 1}" type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+                </div> 
                 <div class="form-group" style="display: table-row;">
                     <label style="display: table-cell; text-align: right;">Reps:</label>                                   
                     <input id="repsinput${numberOfSets.length + 1}" type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                </div>
-                <div class="form-group" style="display: table-row;">
-                    <label style="display: table-cell; text-align: right;">Weight:</label>
-                    <input id="weightinput${numberOfSets.length + 1}" type="number" step="any" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                </div>    
+                </div>   
             </div>`;
 
         const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 1]; 
@@ -177,13 +177,13 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
               <div id="set-1" class="log-workout-sets" style="display: table;">
                   <h3 class="set-heading">Set 1 </h3>  
                   <div class="form-group" style="display: table-row;">
-                      <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-                      <input id="repsinput1" type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
-                  </div>
-                  <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Weight:</label>
                       <input id="weightinput1" type="number" step="any" class="log-workout-inputs" style="display: table-cell;">
-                  </div>    
+                  </div> 
+                  <div class="form-group" style="display: table-row;">
+                      <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                      <input id="repsinput1" type="number" step="1" class="log-workout-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
+                  </div>   
               </div>
               <button class="log-workout-buttons" onclick="addSet()">Add Set </button> `;
 
