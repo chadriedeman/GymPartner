@@ -204,6 +204,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         // TODO: If successful response, display message and reset page 
         showToast("Workout saved!");
+
+        resetLogWorkout();
         
         // TODO: Else, display error message
         showErrorToast("Save unsuccessful");
