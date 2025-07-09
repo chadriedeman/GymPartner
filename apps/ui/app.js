@@ -435,7 +435,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
   }
 
   function resetLogWorkout() {
-    
+
     document.getElementById('logworkoutnameinput').value = '';
 
     document.getElementById('logworkoutdateinput').value = '';
@@ -445,6 +445,20 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     document.getElementById('logworkoutendtimeinput').value = '';
 
     document.getElementById('logworkoutnotesinput').value = '';
+
+    var logworkoutexercises = document.getElementById('logworkoutexercises');
+
+    logworkoutexercises.innerHTML = '';
+
+    // const newDiv = document.createElement('div');
+
+    // newDiv.classList.add('log-workout-exercise');
+
+    // newDiv.id = 'exercise1';
+
+    // newDiv.innerHTML = getExerciseHtml(1); 
+
+    // logworkoutexercises.innerHTML = newDiv.getHTML();
     // TODO
   }
 
