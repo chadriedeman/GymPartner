@@ -282,10 +282,6 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
       // TODO: Start time should not exceed end time
     }
 
-    function resetLogWorkout() {
-      // TODO
-    }
-
     function getTargetMuscleGroups() {
       return [
               'Chest',
@@ -435,4 +431,26 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
     setTimeout(() => {
       toast.classList.remove("show");
     }, 2000);
+  }
+
+  function resetLogWorkout() {
+    // TODO
+  }
+
+  function handleResetButtonClick() {
+    showConfirmDialog();
+  }
+
+  function showConfirmDialog(callback) {
+    document.getElementById("confirmDialog").style.display = "flex";
+  }
+
+  function handleResetNoButtonClick() {
+    document.getElementById("confirmDialog").style.removeProperty("display");
+  }
+
+  function handleResetYesButtonClick() {
+    resetLogWorkout();
+
+    document.getElementById("confirmDialog").style.removeProperty("display");
   }

@@ -100,7 +100,7 @@
     </div>
     <button class="log-workout-buttons" onclick="addExercise()">Add Exercise </button>                                        
     <button class="log-workout-buttons" onclick="saveWorkout()">Save Workout</button>
-    <button class="log-workout-buttons" onclick="resetLogWorkout()">Reset</button>
+    <button class="log-workout-buttons" onclick="handleResetButtonClick()">Reset</button>
     <div id="toast" class="toast">Your workout has successfully be logged!!!</div>
     <div id="error-toast" class="error-toast">An error occurred when logging your workout.</div>
   </section>
@@ -171,5 +171,17 @@
   <!-- JavaScript -->
   <script src="app.js"></script>
 
+
+  <div id="confirmDialog" class="dialog-overlay">
+    <div class="dialog-box">
+      <p id="confirmMessage">
+        Are you sure you want to reset the page?
+      </p>
+      <div class="dialog-buttons">
+        <button onclick="handleResetYesButtonClick()">Yes</button>
+        <button onclick="handleResetNoButtonClick()">No</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
