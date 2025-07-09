@@ -162,6 +162,10 @@ button {
 .log-workout-buttons:hover {
   background-color: lightgray;
 }
+.nav-button-selection {
+  background-color: lightgray;
+  /* replace with border or something */
+}
 .error-toast {
   visibility: hidden;
   min-width: 350px;

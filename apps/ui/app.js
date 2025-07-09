@@ -43,12 +43,26 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
       document
         .querySelectorAll('section')
-        .forEach(s => s.classList.remove('active'));
+        .forEach(s => {
+          s.classList.remove('active');
+        });
+
+      const navButtons = document
+        .getElementById('nav-buttons')
+        .children;
+
+      [...navButtons].forEach(navButton => {
+        navButton
+          .classList
+          .remove('nav-button-selection');
+      });
 
       document
         .getElementById(id)
         .classList
         .add('active');
+
+      event.target.classList.add('nav-button-selection');
     }
 
     // AI Advice placeholder
