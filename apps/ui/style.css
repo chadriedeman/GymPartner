@@ -96,7 +96,7 @@ button {
 }
 .exercise-heading {
     margin: 0;
-    padding-top: 25px;
+    padding-top: 3%;
     padding-bottom: 8px;
 }
 .set-heading {
@@ -209,10 +209,14 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 6%;
+  padding-top: 2%;
 }
 .log-workout-exercise {
   max-width: fit-content;
-  padding-top: 1%;
+  padding-bottom: 0.5%;
+  padding-right: 2%;
+  padding-left: 2%;
+  background-color: lightgray;
 }
 .log-workout-notes-div {
   width: 55%;
