@@ -111,7 +111,7 @@ button {
     background-color: #ddd;
     color: #000;
     font-weight: bold;
-    border-bottom: 5px solid #0078d4;
+    border: 2px solid darkgoldenrod;
 }
 .delete-button {
     font-size: x-small;
@@ -208,15 +208,15 @@ button {
 .log-workout-exercises {
   display: flex;
   flex-wrap: wrap;
-  gap: 6%;
+  gap: 2%;
   padding-top: 2%;
 }
 .log-workout-exercise {
   max-width: fit-content;
-  padding-bottom: 0.5%;
-  padding-right: 2%;
-  padding-left: 2%;
+  padding-right: 1%;
+  padding-left: 1%;
   background-color: lightgray;
+  margin-top: 2%;
 }
 .log-workout-notes-div {
   width: 55%;
