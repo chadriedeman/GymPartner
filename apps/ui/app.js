@@ -194,17 +194,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                   <select disabled id="exerciseselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
                 </div>
               </div>
-              <div id="set-1" class="log-workout-sets" style="display: table;">
-                  <h3 class="set-heading">Set 1<button class="log-workout-set-note-button">&#128221</button></h3>  
-                  <div class="form-group" style="display: table-row;">
-                      <label style="display: table-cell; text-align: right;">Weight:</label>
-                      <input id="weightinput1" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">
-                  </div> 
-                  <div class="form-group" style="display: table-row;">
-                      <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-                      <input id="repsinput1" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
-                  </div>   
-              </div>
+              ${getSetHtml(1)}
               <button class="log-workout-buttons" onclick="addSet()">Add Set </button> `;
 
         const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
