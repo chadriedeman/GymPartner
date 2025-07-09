@@ -178,7 +178,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         newDiv.classList.add("log-workout-exercise");
 
         newDiv.innerHTML = `
-            <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
+            <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
             <div id="logworkoutexercise${newNumberOfExercises}" class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">

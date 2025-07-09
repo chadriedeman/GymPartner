@@ -118,6 +118,7 @@ button {
     padding: 6px;
     background-color: darkred;
     opacity: .85;
+    vertical-align: bottom;
 }
 .workout-history-delete-button {
   font-size: small;
@@ -259,4 +260,13 @@ button {
 }
 .dialog-buttons button:hover {
   background-color: #444;
+}
+.log-workout-set-note-button {
+  border: none;
+  padding: 0;
+  color: white;
+  background: lightgray;
+  border-radius: 6px;
+  font-size: 18px;
+  vertical-align: baseline;
 }
