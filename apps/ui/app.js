@@ -91,22 +91,26 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         const numberOfSets = parentDiv.querySelectorAll(".log-workout-sets");
 
-        newDiv.innerHTML = `
-            <div id="set-${numberOfSets.length + 1}" class="log-workout-sets" style="display: table;">
-                <h3 class="set-heading">Set ${numberOfSets.length + 1} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
-                 <div class="form-group" style="display: table-row;">
-                    <label style="display: table-cell; text-align: right;">Weight:</label>
-                    <input id="weightinput${numberOfSets.length + 1}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                </div> 
-                <div class="form-group" style="display: table-row;">
-                    <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-                    <input id="repsinput${numberOfSets.length + 1}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
-                </div>   
-            </div>`;
+        newDiv.innerHTML = getSetHtml(numberOfSets.length + 1);
 
         const lastSetElement = parentDiv.children[numberOfParentDivChildElements - 1]; 
 
         parentDiv.insertBefore(newDiv, lastSetElement);
+    }
+
+    function getSetHtml(setNumber) {
+      return `
+        <div id="set-${setNumber}" class="log-workout-sets" style="display: table;">
+            <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+              <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell; text-align: right;">Weight:</label>
+                <input id="weightinput${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+            </div> 
+            <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+                <input id="repsinput${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+            </div>   
+        </div>`;
     }
 
     function deleteExercise() {
