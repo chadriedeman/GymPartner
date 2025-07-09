@@ -54,7 +54,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
       [...navButtons].forEach(navButton => {
         navButton
           .classList
-          .remove('nav-button-selection');
+          .remove('nav-button-active');
       });
 
       document
@@ -62,7 +62,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         .classList
         .add('active');
 
-      event.target.classList.add('nav-button-selection');
+      event.target.classList.add('nav-button-active');
     }
 
     // AI Advice placeholder
