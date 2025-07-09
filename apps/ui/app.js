@@ -113,6 +113,23 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
         </div>`;
     }
 
+    function getExerciseHtml(exerciseNumber) {
+      return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`} </h2>
+              <div id="logworkoutexercise${exerciseNumber}" class="form-group"> 
+                <div style="display: table;">
+                  <div style="display: table-row;">
+                    <label for="targetmusclegroupselect${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                    <select id="targetmusclegroupselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>  
+                  </div>
+                  <div style="display: table-row;">
+                    <label for="exerciseselect${exerciseNumber}" style="display: table-cell;">Exercise:</label>
+                    <select disabled id="exerciseselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;"></select>      
+                  </div>
+                </div>
+                ${getSetHtml(1)}
+                <button class="log-workout-buttons" onclick="addSet()">Add Set </button>`
+    }
+
     function deleteExercise() {
 
         const clickedButton = event.target;
@@ -181,21 +198,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         newDiv.classList.add("log-workout-exercise");
 
-        newDiv.innerHTML = `
-            <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
-            <div id="logworkoutexercise${newNumberOfExercises}" class="form-group"> 
-              <div style="display: table;">
-                <div style="display: table-row;">
-                  <label for="targetmusclegroupselect${newNumberOfExercises}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>         <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
-                </div>
-                <div style="display: table-row;">
-                  <label for="exerciseselect${newNumberOfExercises}" style="display: table-cell;">Exercise:</label>
-                  <select disabled id="exerciseselect${newNumberOfExercises}" class="log-workout-select" style="display: table-cell;"></select>          <!-- TODO: Needs to be a dropdown that auto populates by fetching the values from the backend -->
-                </div>
-              </div>
-              ${getSetHtml(1)}
-              <button class="log-workout-buttons" onclick="addSet()">Add Set </button> `;
+        newDiv.innerHTML = getExerciseHtml(newNumberOfExercises);
 
         const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
 
