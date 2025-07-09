@@ -203,3 +203,7 @@ button {
   flex-wrap: wrap;
   gap: 6%;
 }
+.log-workout-exercise {
+  max-width: fit-content;
+  padding-top: 1%;
+}

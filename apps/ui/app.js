@@ -161,6 +161,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         const newDiv = document.createElement('div');
 
+        newDiv.classList.add("log-workout-exercise");
+
         newDiv.innerHTML = `
             <h2 id="exercise-heading-${newNumberOfExercises}" class="exercise-heading">Exercise ${newNumberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button></h2>
             <div id="logworkoutexercise${newNumberOfExercises}" class="form-group"> 
