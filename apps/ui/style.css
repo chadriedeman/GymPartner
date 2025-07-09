@@ -73,6 +73,10 @@ button {
 .log-workout-inputs {
     max-width: 125px;
 }
+.log-workout-set-inputs {
+  max-width: 125px;
+  margin-left: 3%;
+}
 .log-workout-inputs-exercise {
     max-width: 175px;
 }
@@ -81,7 +85,13 @@ button {
     min-width: 155px;
 }
 .log-workout-sets{
-    text-indent: 40px;
+  border: 1px solid rgba(64,64,64,0.1);
+  margin-left: 10%;
+  margin-top: 5%;
+  padding-top: 1%;
+  padding-bottom: 5%;
+  padding-left: 3%;
+  padding-right: 5%;
 }
 .title-heading {
     font-size: 60px;
