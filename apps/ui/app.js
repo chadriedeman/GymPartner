@@ -93,7 +93,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
         newDiv.innerHTML = `
             <div id="set-${numberOfSets.length + 1}" class="log-workout-sets" style="display: table;">
-                <h3 class="set-heading">Set ${numberOfSets.length + 1} <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+                <h3 class="set-heading">Set ${numberOfSets.length + 1} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteSet()" class="delete-button"> X </button></h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
                  <div class="form-group" style="display: table-row;">
                     <label style="display: table-cell; text-align: right;">Weight:</label>
                     <input id="weightinput${numberOfSets.length + 1}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
@@ -128,7 +128,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
           exerciseHeadings.forEach(heading => {
             
-            heading.innerHTML = `Exercise ${numberOfExercises} <button onclick="deleteExercise()" class="delete-button"> X </button>`;
+            heading.innerHTML = `Exercise ${numberOfExercises} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteExercise()" class="delete-button"> X </button>`;
 
             numberOfExercises++;
           });
@@ -154,10 +154,10 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
           setHeadings.forEach(heading => {
 
             if (numberOfSets === 1) {
-              heading.innerHTML = `Set ${numberOfSets}`
+              heading.innerHTML = `Set ${numberOfSets} <button class="log-workout-set-note-button">&#128221</button>`
             }
             else {
-              heading.innerHTML = `Set ${numberOfSets} <button onclick="deleteSet()" class="delete-button"> X </button>`
+              heading.innerHTML = `Set ${numberOfSets} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteSet()" class="delete-button"> X </button>`
 
             }
 
@@ -191,7 +191,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
                 </div>
               </div>
               <div id="set-1" class="log-workout-sets" style="display: table;">
-                  <h3 class="set-heading">Set 1 </h3>  
+                  <h3 class="set-heading">Set 1<button class="log-workout-set-note-button">&#128221</button></h3>  
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Weight:</label>
                       <input id="weightinput1" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">
