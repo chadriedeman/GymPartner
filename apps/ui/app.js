@@ -450,16 +450,15 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
     logworkoutexercises.innerHTML = '';
 
-    // const newDiv = document.createElement('div');
+    const newDiv = document.createElement('div');
 
-    // newDiv.classList.add('log-workout-exercise');
+    newDiv.classList.add('log-workout-exercise');
 
-    // newDiv.id = 'exercise1';
+    newDiv.id = 'exercise1';
 
-    // newDiv.innerHTML = getExerciseHtml(1); 
+    newDiv.innerHTML = getExerciseHtml(1); 
 
-    // logworkoutexercises.innerHTML = newDiv.getHTML();
-    // TODO
+    logworkoutexercises.innerHTML = newDiv.outerHTML;
   }
 
   function handleResetButtonClick() {
