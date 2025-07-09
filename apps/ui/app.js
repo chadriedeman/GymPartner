@@ -435,6 +435,16 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
   }
 
   function resetLogWorkout() {
+    
+    document.getElementById('logworkoutnameinput').value = '';
+
+    document.getElementById('logworkoutdateinput').value = '';
+
+    document.getElementById('logworkoutstarttimeinput').value = '';
+
+    document.getElementById('logworkoutendtimeinput').value = '';
+
+    document.getElementById('logworkoutnotesinput').value = '';
     // TODO
   }
 
