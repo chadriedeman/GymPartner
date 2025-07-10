@@ -346,9 +346,7 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
     function getExercises(targetMuscleGroup) {
 
-      // TODO: Get target muscle group input
-
-      // TODO: Send to server
+      // TODO: Send target muscle group to server
 
       // TODO: Return results
 
@@ -387,8 +385,23 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
       return [];
     }
 
-    function getUserSettings() {
-      // TODO
+    function getUserSettings(userId) {
+
+      // TODO: Make request with userId
+
+      return {
+        userSettingsId: '',
+        userId: '',
+        preferredUnitsOfMeasure: {
+          id: '',
+          name: 'lbs'
+        },
+        emailNotificationsOn: true,
+        emailTone: {
+          id: '',
+          tone: 'Motivational'
+        }
+      }; // TODO: Mocked for now
     }
 
     function getUserBodyWeightLogs() {
