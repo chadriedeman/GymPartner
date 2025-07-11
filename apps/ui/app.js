@@ -352,9 +352,9 @@ function getExercises(targetMuscleGroup) {
 
   if (targetMuscleGroup === 'Chest'){
     return [
-        'Barbell Bench Press',
-        'Dumbbell Bench Press', 
-        'Machine Chest Press'
+        {id: '', name: 'Barbell Bench Press'},
+        {id: '', name: 'Dumbbell Bench Press'},
+        {id: '', name: 'Machine Chest Press'},
     ]
     .sort(); // TODO: Mocked for now
   }
