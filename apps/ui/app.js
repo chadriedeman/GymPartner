@@ -304,7 +304,7 @@ function populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect) {
 
     [{id: '', name: ''}, ...targetMuscleGroups].forEach(targetMuscleGroup => {
       const option = document.createElement("option");
-      option.value = targetMuscleGroup;
+      option.value = JSON.stringify(targetMuscleGroup);
       option.textContent = targetMuscleGroup.name;
       targetMuscleGroupsSelect.appendChild(option); 
     });
@@ -324,7 +324,7 @@ function handleTargetMuscleGroupSelectionChange() {
 
   exerciseSelect.innerHTML = '';
 
-  if (clickedSelect.value.name === '' || !targetMuscleGroups.map(targetMuscleGroup => targetMuscleGroup.name).includes(clickedSelect.value.name)) {
+  if (clickedSelect.value.name === '' || !targetMuscleGroups.map(targetMuscleGroup => targetMuscleGroup.name).includes(JSON.parse(clickedSelect.value).name)) {
 
     exerciseSelect.disabled = true;
 
