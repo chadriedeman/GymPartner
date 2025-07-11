@@ -58,12 +58,14 @@ button {
   border-radius: 5px;
   font-size: x-large;
   display: flex;
-  gap: 4%;
+  gap: 3%;
 }
 .workout-history-exercise-name-group {
     display: flex;
     gap: 1%;
     width: "-webkit-fill-available";
+    border-left: 1px solid black;
+    padding-left: 2%;
 }
 .gallery img, .gallery video {
   max-width: 100px;

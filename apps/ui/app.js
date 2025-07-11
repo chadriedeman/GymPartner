@@ -433,6 +433,8 @@ function loadWorkoutHistory() {
         </div>
         <div class="workout-history-exercise-name-group">
           ${workout.name} 
+        </div>
+        <div>
           <button class="individual-workout-details-button" onclick="loadWorkoutHistory()">Details</button>
           <button class="workout-history-delete-button"> X </button>
         </div>`;
