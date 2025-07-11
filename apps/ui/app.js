@@ -427,7 +427,7 @@ function loadWorkoutHistory() {
 
     newDiv.classList.add('workout-history-exercise');
 
-    newDiv.innerHTML = 
+    newDiv.innerHTML = // TODO: Add date
         `${workout.name} <button onclick="alert('Squat Details')">Details</button>
         <button class="workout-history-delete-button"> X </button>`;
 
