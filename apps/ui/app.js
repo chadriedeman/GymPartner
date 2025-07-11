@@ -331,12 +331,12 @@ function handleTargetMuscleGroupSelectionChange() {
     return;
   }
 
-  const exercises = getExercises(clickedSelect.value);
+  const exercises = getExercises(JSON.parse(clickedSelect.value).name); // TODO: Change this to id
 
   // TODO: Populate the exercise select with values
     ['', ...exercises].forEach(exercise => {
       const option = document.createElement("option");
-      option.value = exercise;
+      option.value = JSON.stringify(exercise);
       option.textContent = exercise.name;
       exerciseSelect.appendChild(option); 
     });
