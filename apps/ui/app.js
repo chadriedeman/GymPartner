@@ -427,9 +427,15 @@ function loadWorkoutHistory() {
 
     newDiv.classList.add('workout-history-exercise');
 
-    newDiv.innerHTML = // TODO: Add date
-        `${workout.name} <button onclick="alert('Squat Details')">Details</button>
-        <button class="workout-history-delete-button"> X </button>`;
+    newDiv.innerHTML =
+        `<div>
+          ${workout.date.toISOString().split('T')[0]} 
+        </div>
+        <div class="workout-history-exercise-name-group">
+          ${workout.name} 
+          <button onclick="alert('Squat Details')">Details</button>
+          <button class="workout-history-delete-button"> X </button>
+        </div>`;
 
       workoutHistoryDiv.appendChild(newDiv);
   });

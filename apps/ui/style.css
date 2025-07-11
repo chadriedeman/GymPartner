@@ -57,6 +57,10 @@ button {
   margin-bottom: 1rem;
   border-radius: 5px;
   font-size: x-large;
+  display: flex;
+}
+.workout-history-exercise-name-group {
+    display: flex;
 }
 .gallery img, .gallery video {
   max-width: 100px;
