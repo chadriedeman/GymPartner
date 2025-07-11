@@ -433,12 +433,20 @@ function loadWorkoutHistory() {
         </div>
         <div class="workout-history-exercise-name-group">
           ${workout.name} 
-          <button onclick="alert('Squat Details')">Details</button>
+          <button onclick="loadWorkoutHistory()">Details</button>
           <button class="workout-history-delete-button"> X </button>
         </div>`;
 
       workoutHistoryDiv.appendChild(newDiv);
   });
+}
+
+function loadIndividualWorkoutHistory() {
+
+}
+
+function geIndividualtWorkout(workoutId) {
+
 }
 
 function getWorkouts(userId) {
