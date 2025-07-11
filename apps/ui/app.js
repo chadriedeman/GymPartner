@@ -249,7 +249,6 @@ function getLogWorkoutUserInput() {
           sets: []
         };
 
-
       const sets = exercise.querySelectorAll('[id*="set-"]'); 
 
       [...sets].forEach(set => {
@@ -410,6 +409,39 @@ function getUserBodyWeightLogs() {
     {id: 'test body weight id 2', date: new Date('2025-07-01'), weight: 186.8}
   ]
   .sort((a, b) => b.date - a.date); // TODO: Mocked for now
+}
+
+function getWorkouts(userId) {
+
+  // TODO: Send request to server
+
+  return [
+    {
+      id: 'test workout id 1',
+      name: 'test workout name 1',
+      date: new Date('2025-07-01')
+    },
+    {
+      id: 'test workout id 2',
+      name: 'test workout name 2',
+      date: new Date('2025-06-30')
+    },
+    {
+      id: 'test workout id 3',
+      name: 'test workout name 3',
+      date: new Date('2025-06-27')
+    },
+    {
+      id: 'test workout id 4',
+      name: 'test workout name 4',
+      date: new Date('2025-06-26')
+    },
+    {
+      id: 'test workout id 5',
+      name: 'test workout name 5',
+      date: new Date('2025-06-25')
+    }
+  ];
 }
 
 // Chart.js example
