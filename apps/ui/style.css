@@ -81,8 +81,8 @@ button {
     max-width: 175px;
 }
 .log-workout-select {
-    max-width: 200px;
-    min-width: 155px;
+    max-width: 160px;
+    min-width: 160px;
 }
 .log-workout-sets{
   border: 1px solid rgba(64,64,64,0.1);
