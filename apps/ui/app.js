@@ -302,7 +302,7 @@ function populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect) {
 
     const targetMuscleGroups = getTargetMuscleGroups();
 
-    ['', ...targetMuscleGroups].forEach(targetMuscleGroup => {
+    [{id: '', name: ''}, ...targetMuscleGroups].forEach(targetMuscleGroup => {
       const option = document.createElement("option");
       option.value = targetMuscleGroup;
       option.textContent = targetMuscleGroup.name;
@@ -318,13 +318,13 @@ function handleTargetMuscleGroupSelectionChange() {
 
   const grandParentElement = parentElement.parentElement;
 
-  const exerciseSelect = grandParentElement.querySelector('[id*="exerciseselect"]'); // TODO: This needs to be dynamic
+  const exerciseSelect = grandParentElement.querySelector('[id*="exerciseselect"]');
 
   const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
   exerciseSelect.innerHTML = '';
 
-  if (clickedSelect.value === '' || !targetMuscleGroups.includes(clickedSelect.value)) {
+  if (clickedSelect.value.name === '' || !targetMuscleGroups.map(targetMuscleGroup => targetMuscleGroup.name).includes(clickedSelect.value.name)) {
 
     exerciseSelect.disabled = true;
 
@@ -337,7 +337,7 @@ function handleTargetMuscleGroupSelectionChange() {
     ['', ...exercises].forEach(exercise => {
       const option = document.createElement("option");
       option.value = exercise;
-      option.textContent = exercise;
+      option.textContent = exercise.name;
       exerciseSelect.appendChild(option); 
     });
 
