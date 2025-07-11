@@ -188,6 +188,9 @@ button {
 .log-workout-buttons:hover {
   background-color: lightgray;
 }
+.individual-workout-details-button:hover {
+  background-color: lightgray;
+}
 .error-toast {
   visibility: hidden;
   min-width: 350px;
