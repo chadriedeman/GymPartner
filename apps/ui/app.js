@@ -281,10 +281,10 @@ function validateLogWorkoutUserInput(userInputs) {
 
 function getTargetMuscleGroups() {
   return [
-            'Chest',
-            'Back', 
-            'Quads',
-            'Hamstrings'
+            { id: '', name: 'Chest' },
+            { id: '', name: 'Back' },
+            { id: '', name: 'Quads' },
+            { id: '', name: 'Hamstrings' }
           ]
           .sort(); // TODO: Mocked for now
 }
