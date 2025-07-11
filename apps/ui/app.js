@@ -471,6 +471,10 @@ function resetLogWorkout() {
 
   newDiv.innerHTML = getExerciseHtml(1); 
 
+  const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect1"]`)
+
+  populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
+
   logworkoutexercises.innerHTML = newDiv.outerHTML;
 }
 
