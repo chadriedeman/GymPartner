@@ -427,10 +427,8 @@ function loadWorkoutHistory() {
 
     newDiv.classList.add('workout-history-exercise');
 
-    newDiv.innerText = workout.name;
-
     newDiv.innerHTML = 
-        `<button onclick="alert('Squat Details')">Details</button>
+        `${workout.name} <button onclick="alert('Squat Details')">Details</button>
         <button class="workout-history-delete-button"> X </button>`;
 
       workoutHistoryDiv.appendChild(newDiv);
