@@ -286,7 +286,7 @@ function getTargetMuscleGroups() {
             { id: '', name: 'Quads' },
             { id: '', name: 'Hamstrings' }
           ]
-          .sort(); // TODO: Mocked for now
+          .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
 }
 
 function initializeTargetMuscleGroupsSelect() {
@@ -356,7 +356,7 @@ function getExercises(targetMuscleGroup) {
         {id: '', name: 'Dumbbell Bench Press'},
         {id: '', name: 'Machine Chest Press'}
     ]
-    .sort(); // TODO: Mocked for now
+    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Back'){
@@ -364,14 +364,14 @@ function getExercises(targetMuscleGroup) {
         {id: '', name: 'Lat Pulldown'},
         {id: '', name: 'Cable Rows'}
     ]
-    .sort(); // TODO: Mocked for now
+    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Quads'){
     return [
         {id: '', name: 'Leg Extensions'}
     ]
-    .sort(); // TODO: Mocked for now
+    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Hamstrings'){
@@ -379,7 +379,7 @@ function getExercises(targetMuscleGroup) {
         {id: '', name: 'Leg Curls'},
         {id: '', name: 'RDLs'}
     ]
-    .sort(); // TODO: Mocked for now
+    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   return [];
