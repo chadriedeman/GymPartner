@@ -63,6 +63,10 @@ function showSection(id) {
     .add('active');
 
   event.target.classList.add('nav-button-active');
+
+  if (id === "history") {
+    loadWorkoutHistory();
+  }
 }
 
 // AI Advice placeholder
@@ -409,6 +413,28 @@ function getUserBodyWeightLogs() {
     {id: 'test body weight id 2', date: new Date('2025-07-01'), weight: 186.8}
   ]
   .sort((a, b) => b.date - a.date); // TODO: Mocked for now
+}
+
+function loadWorkoutHistory() {
+
+  const workouts = getWorkouts('');
+
+  const workoutHistoryDiv = document.getElementById('workout-history-div');
+
+  [...workouts].forEach(workout => {
+
+    const newDiv = document.createElement('div');
+
+    newDiv.classList.add('workout-history-exercise');
+
+    newDiv.innerText = workout.name;
+
+    newDiv.innerHTML = 
+        `<button onclick="alert('Squat Details')">Details</button>
+        <button class="workout-history-delete-button"> X </button>`;
+
+      workoutHistoryDiv.appendChild(newDiv);
+  });
 }
 
 function getWorkouts(userId) {
