@@ -390,14 +390,14 @@ function getUserSettings(userId) {
   // TODO: Make request with userId
 
   return {
-    userSettingsId: '',
+    id: '',
     userId: '',
     preferredUnitsOfMeasure: {
       id: '',
       name: 'lbs'
     },
     emailNotificationsOn: true,
-    emailTone: {
+    preferredEmailTone: {
       id: '',
       tone: 'Motivational'
     }
@@ -406,8 +406,8 @@ function getUserSettings(userId) {
 
 function getUserBodyWeightLogs() {
   return [
-    {date: new Date('2025-07-02'), weight: 187.6}, 
-    {date: new Date('2025-07-01'), weight: 186.8}
+    {id: '', date: new Date('2025-07-02'), weight: 187.6}, 
+    {id: '', date: new Date('2025-07-01'), weight: 186.8}
   ]
   .sort((a, b) => b.date - a.date); // TODO: Mocked for now
 }
@@ -487,7 +487,7 @@ function handleResetNoButtonClick() {
 }
 
 function handleResetYesButtonClick() {
-  
+
   resetLogWorkout();
 
   document.getElementById("confirmDialog").style.removeProperty("display");
