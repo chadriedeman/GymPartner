@@ -51,7 +51,7 @@ button {
   cursor: pointer;
   margin-top: 0.5rem;
 }
-.history-item, .workout-entry {
+.workout-history-exercise, .workout-entry {
   background: #fff;
   padding: 1rem;
   margin-bottom: 1rem;
