@@ -354,30 +354,30 @@ function getExercises(targetMuscleGroup) {
     return [
         {id: '', name: 'Barbell Bench Press'},
         {id: '', name: 'Dumbbell Bench Press'},
-        {id: '', name: 'Machine Chest Press'},
+        {id: '', name: 'Machine Chest Press'}
     ]
     .sort(); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Back'){
     return [
-        'Lat Pulldown',
-        'Cable Rows'
+        {id: '', name: 'Lat Pulldown'},
+        {id: '', name: 'Cable Rows'}
     ]
     .sort(); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Quads'){
     return [
-        'Leg Extensions',
+        {id: '', name: 'Leg Extensions'}
     ]
     .sort(); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Hamstrings'){
     return [
-        'Leg Curls',
-        'RDLs'
+        {id: '', name: 'Leg Curls'},
+        {id: '', name: 'RDLs'}
     ]
     .sort(); // TODO: Mocked for now
   }
