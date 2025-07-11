@@ -244,8 +244,8 @@ function getLogWorkoutUserInput() {
       }
 
       const exerciseToAdd = {
-          targetMuscleGroup: exercise.querySelector('[id*="targetmusclegroupselect"]').value,
-          exercise: exercise.querySelector('[id*="exerciseselect"]').value,
+          targetMuscleGroupId: JSON.parse(exercise.querySelector('[id*="targetmusclegroupselect"]').value).id,
+          exerciseId: JSON.parse(exercise.querySelector('[id*="exerciseselect"]').value).id,
           sets: []
         };
 
@@ -281,10 +281,10 @@ function validateLogWorkoutUserInput(userInputs) {
 
 function getTargetMuscleGroups() {
   return [
-            { id: '', name: 'Chest' },
-            { id: '', name: 'Back' },
-            { id: '', name: 'Quads' },
-            { id: '', name: 'Hamstrings' }
+            { id: 'test target muscle group id 1', name: 'Chest' },
+            { id: 'test target muscle group id 2', name: 'Back' },
+            { id: 'test target muscle group id 3', name: 'Quads' },
+            { id: 'test target muscle group id 4', name: 'Hamstrings' }
           ]
           .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
 }
@@ -352,32 +352,32 @@ function getExercises(targetMuscleGroup) {
 
   if (targetMuscleGroup === 'Chest'){
     return [
-        {id: '', name: 'Barbell Bench Press'},
-        {id: '', name: 'Dumbbell Bench Press'},
-        {id: '', name: 'Machine Chest Press'}
+        {id: 'test chest id 1', name: 'Barbell Bench Press'},
+        {id: 'test chest id 2', name: 'Dumbbell Bench Press'},
+        {id: 'test chest id 3', name: 'Machine Chest Press'}
     ]
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Back'){
     return [
-        {id: '', name: 'Lat Pulldown'},
-        {id: '', name: 'Cable Rows'}
+        {id: 'test back id 1', name: 'Lat Pulldown'},
+        {id: 'test back id 2', name: 'Cable Rows'}
     ]
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Quads'){
     return [
-        {id: '', name: 'Leg Extensions'}
+        {id: 'test quads id 1', name: 'Leg Extensions'}
     ]
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
   if (targetMuscleGroup === 'Hamstrings'){
     return [
-        {id: '', name: 'Leg Curls'},
-        {id: '', name: 'RDLs'}
+        {id: 'test hamstrings id 1', name: 'Leg Curls'},
+        {id: 'test hamstrings id 2', name: 'RDLs'}
     ]
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
@@ -390,15 +390,15 @@ function getUserSettings(userId) {
   // TODO: Make request with userId
 
   return {
-    id: '',
-    userId: '',
+    id: 'test user settings id 1',
+    userId: 'test user id 1',
     preferredUnitsOfMeasure: {
-      id: '',
+      id: 'test preferred uom id 1',
       name: 'lbs'
     },
     emailNotificationsOn: true,
     preferredEmailTone: {
-      id: '',
+      id: 'test preferred email tone id 1',
       tone: 'Motivational'
     }
   }; // TODO: Mocked for now
@@ -406,8 +406,8 @@ function getUserSettings(userId) {
 
 function getUserBodyWeightLogs() {
   return [
-    {id: '', date: new Date('2025-07-02'), weight: 187.6}, 
-    {id: '', date: new Date('2025-07-01'), weight: 186.8}
+    {id: 'test body weight id 1', date: new Date('2025-07-02'), weight: 187.6}, 
+    {id: 'test body weight id 2', date: new Date('2025-07-01'), weight: 186.8}
   ]
   .sort((a, b) => b.date - a.date); // TODO: Mocked for now
 }
