@@ -305,7 +305,7 @@ function populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect) {
     ['', ...targetMuscleGroups].forEach(targetMuscleGroup => {
       const option = document.createElement("option");
       option.value = targetMuscleGroup;
-      option.textContent = targetMuscleGroup;
+      option.textContent = targetMuscleGroup.name;
       targetMuscleGroupsSelect.appendChild(option); 
     });
 }
