@@ -452,12 +452,32 @@ function handleGetIndividualWorkoutHistoryClick() {
   loadIndividualWorkoutHistoryPage(workoutDetails);
 }
 
-
 function getIndividualWorkout(workoutId) {
   
   // TODO: Send workoutId to server with request
 
-  return {}; // TODO: Mock
+  const mockedWorkoutDetails = 
+  {
+    "name": "Test workout name 1",
+    "date": new Date("2025-07-09"),
+    "startTime": "09:52", // TODO: Time object
+    "endTime": "11:18", // TODO: Time object
+    "notes": "  These are test notes",
+    "exercises": [
+        {
+            "targetMuscleGroupId": "test target muscle group id 1",
+            "exerciseId": "test chest id 1",
+            "sets": [
+                {
+                    "reps": 5,
+                    "weight": 225
+                }
+            ]
+        }
+    ]
+  };
+
+  return mockedWorkoutDetails; // TODO: Mocked
 }
 
 function loadIndividualWorkoutHistoryPage(workoutDetails) {
@@ -480,8 +500,6 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
   // TODO: Add date, name, etc.
 
   div.innerHTML = getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
-
-  div.appendChild();
 
   [...workoutDetails.exercises].forEach(exercise => {
     // TODO: Add html
