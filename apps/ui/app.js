@@ -571,7 +571,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
   const heading = document.createElement('h2');
 
-  heading.id = `exercise-heading-${exerciseNumber}`;
+  heading.id = `view-exercise-heading-${exerciseNumber}`;
 
   heading.classList.add('exercise-heading');
 
@@ -581,7 +581,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
   const formGroup = document.createElement('div');
 
-  formGroup.id = `logworkoutexercise${exerciseNumber}`;
+  formGroup.id = `viewworkoutexercise${exerciseNumber}`;
 
   formGroup.classList.add('form-group');
 
@@ -594,23 +594,22 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
   targetMuscleGroupRow.style.display = 'table-row';
 
   targetMuscleGroupRow.innerHTML = `
-    <label for="targetmusclegroupselect${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+    <label for="viewtargetmusclegroupselect${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
     <select 
-      id="targetmusclegroupselect${exerciseNumber}" 
+      id="viewtargetmusclegroupselect${exerciseNumber}" 
       class="log-workout-select" 
       style="display: table-cell;" 
       onchange="handleTargetMuscleGroupSelectionChange()">
       <option value="${exercise.muscleGroup}">${exercise.muscleGroup}</option>
-    </select>
-  `;
+    </select>`;
 
   const exerciseRow = document.createElement('div');
 
   exerciseRow.style.display = 'table-row';
 
   exerciseRow.innerHTML = `
-    <label for="exerciseselect${exerciseNumber}" style="display: table-cell;">Exercise:</label>
-    <select disabled id="exerciseselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;">
+    <label for="viewexerciseselect${exerciseNumber}" style="display: table-cell;">Exercise:</label>
+    <select disabled id="viewexerciseselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;">
       <option value="${exercise.name}">${exercise.name}</option>
     </select>`;
 
@@ -626,7 +625,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
     const setDiv = document.createElement('div');
 
-    setDiv.id = `set-${setNumber}`;
+    setDiv.id = `view-set-${setNumber}`;
 
     setDiv.className = 'log-workout-sets';
 
@@ -636,11 +635,11 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
       <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Weight:</label>
-        <input id="weightinput${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
+        <input id="viewweightinput${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
       </div>    
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-        <input id="repsinput${exerciseNumber}_${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
+        <input id="viewrepsinput${exerciseNumber}_${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
       </div> 
     `;
 
