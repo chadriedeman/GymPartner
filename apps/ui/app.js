@@ -529,7 +529,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Date:</label>
-                <input type="date" class="log-workout-inputs" value="${date}" style="display: table-cell;">                                     
+                <input type="date" class="log-workout-inputs" value="${date.toISOString().split('T')[0]}" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">Start Time:</label>
