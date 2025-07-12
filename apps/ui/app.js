@@ -445,11 +445,19 @@ function loadWorkoutHistory() {
 
 function handleGetIndividualWorkoutHistoryClick() {
 
+  var workoutId = event.target.value;
+
+  var workoutDetails = getIndividualWorkout(workoutId);
+
+  loadIndividualWorkoutHistoryPage(workoutDetails);
 }
 
 
-function getIndividualtWorkout(workoutId) {
+function getIndividualWorkout(workoutId) {
+  
+  // TODO: Send workoutId to server with request
 
+  return {};
 }
 
 function loadIndividualWorkoutHistoryPage(workoutDetails) {
