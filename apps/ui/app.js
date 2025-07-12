@@ -1,5 +1,7 @@
 window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
 
+let currentWorkoutHistoryDivHtml = "";
+
 // MSAL Config
 const msalConfig = {
   auth: {
@@ -495,6 +497,8 @@ function loadIndividualWorkoutHistoryPage(workoutDetails) {
 
   var workoutHistoryDiv = document.getElementById('workout-history-div');
 
+  currentWorkoutHistoryDivHtml = workoutHistoryDiv.innerHTML;
+
   workoutHistoryDiv.innerHTML = ""; // TODO: Could change to display: hidden
 
   const individualWorkoutHistoryHtml = getIndividualWorkoutHistoryHtml(workoutDetails);
@@ -553,6 +557,9 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
 
 function handleBackToWorkoutHistoryListButtonClick() {
 
+  const workoutHistoryDiv = document.getElementById('workout-history-div');
+
+  workoutHistoryDiv.innerHTML = currentWorkoutHistoryDivHtml;
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
