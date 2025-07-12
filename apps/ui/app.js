@@ -435,15 +435,15 @@ function loadWorkoutHistory() {
           ${workout.name} 
         </div>
         <div>
-          <button class="individual-workout-details-button" onclick="loadIndividualWorkoutHistory()">Details</button>
-          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()"> X </button>
+          <button class="individual-workout-details-button" onclick="handleGetIndividualWorkoutHistoryClick()" value="${workout.id}">Details</button>
+          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}"> X </button>
         </div>`;
 
       workoutHistoryDiv.appendChild(newDiv);
   });
 }
 
-function loadIndividualWorkoutHistory() {
+function handleGetIndividualWorkoutHistoryClick() {
 
 }
 
