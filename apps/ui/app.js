@@ -4,6 +4,12 @@ let currentWorkoutHistoryDivHtml = "";
 
 let currentlySelectedSection = "";
 
+const stateManager = {
+  currentWorkoutHistoryDivHtml: "",
+  currentlySelectedSection: "",
+  targetMuscleGroups: null
+}
+
 // MSAL Config
 const msalConfig = {
   auth: {
@@ -238,7 +244,7 @@ function saveWorkout() {
       return;
     }
     
-    fetch('https://your-server.com/api/workouts', { // TODO: Update url
+    fetch('https://your-server.com/api/workouts', { // TODO: Update url. Needs to be pulled from appsettings
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -345,6 +351,17 @@ function validateLogWorkoutUserInput(userInputs) {
 }
 
 function getTargetMuscleGroups() {
+
+  if (!stateManager.targetMuscleGroups) { 
+    // TODO: Get target muscle group list from the server
+
+    // TODO: Store it in stateManager.targetMuscleGroups
+
+    // TODO: Return it. This may mean users don't have the latest list if one is added but it will save many trips to the server and as soon as they refresh, they will have the new list
+  }
+
+  // return stateManager.targetMuscleGroups;
+
   return [
             { id: 'test target muscle group id 1', name: 'Chest' },
             { id: 'test target muscle group id 2', name: 'Back' },
@@ -356,7 +373,7 @@ function getTargetMuscleGroups() {
 
 function initializeTargetMuscleGroupsSelect() {
 
-    const targetMuscleGroupsSelect = document.getElementById("target-muscle-group-select-1");
+    const targetMuscleGroupsSelect = document.getElementById("target-muscle-group-select-1"); // TODO: Refactor this so it doesn't query the whole document
 
     populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 }
