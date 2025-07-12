@@ -675,7 +675,7 @@ function handleResetButtonClick() {
   showConfirmDialog();
 }
 
-function showConfirmDialog(callback) {
+function showConfirmDialog() {
   document.getElementById("confirmDialog").style.display = "flex";
 }
 
