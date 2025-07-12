@@ -457,11 +457,13 @@ function getIndividualWorkout(workoutId) {
   
   // TODO: Send workoutId to server with request
 
-  return {};
+  return {}; // TODO: Mock
 }
 
 function loadIndividualWorkoutHistoryPage(workoutDetails) {
+  var workoutHistoryDiv = document.getElementById('workout-history-div');
 
+  workoutHistoryDiv.innerHTML = ""; // TODO: Could change to display: hidden
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
