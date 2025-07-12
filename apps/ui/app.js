@@ -497,24 +497,24 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
       <div class="log-new-workout-date-group">
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Name:</label>
-                <input type="text" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input type="text" class="log-workout-inputs" value="${name}" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Date:</label>
-                <input type="date" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input type="date" class="log-workout-inputs" value="${date}" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">Start Time:</label>
-                <input type="time" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input type="time" class="log-workout-inputs" value="${startTime}" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">End Time:</label>
-                <input" type="time" class="log-workout-inputs" style="display: table-cell;"> 
+                <input" type="time" class="log-workout-inputs" value="${endTime}" style="display: table-cell;"> 
             </div>
         </div>
         <div class="log-workout-notes-div">
           <label>Workout Notes:</label>
-          <textarea type="text" class="log-workout-notes-textarea">  </textarea>                                   
+          <textarea type="text" value="${notes}" class="log-workout-notes-textarea"></textarea>                                   
         </div>
     </div>`;
 }
