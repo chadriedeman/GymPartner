@@ -508,9 +508,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   // div.classList.add('log-workout-exercises');
 
-  // TODO: Add date, name, etc.
-
-  div.innerHTML = `<button class="back-to-workout-history-list-button" onclick="handleBackToWorkoutHistoryListButtonClick()">← Back</button>`;
+  div.innerHTML = getIndividualWorkoutBackButtonHtml();
 
   div.innerHTML += getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
 
@@ -519,6 +517,10 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
   });
 
   return div.outerHTML;
+}
+
+function getIndividualWorkoutBackButtonHtml() {
+  return `<button class="back-to-workout-history-list-button" onclick="handleBackToWorkoutHistoryListButtonClick()">← Back</button>`;
 }
 
 function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime, notes) {
