@@ -467,7 +467,9 @@ function loadIndividualWorkoutHistoryPage(workoutDetails) {
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
+  var workoutId = event.target.value;
 
+  // TODO: Show confirmation dialog. Reuse one that was built for reset.
 }
 
 function deleteIndividualtWorkout(workoutId) {
