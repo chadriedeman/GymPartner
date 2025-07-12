@@ -340,7 +340,7 @@ button {
     margin: 4px 0;
   } 
 }
-button:focus,
+button:not(.nav-buttons):focus,
 input:focus,
 select:focus,
 textarea:focus {
