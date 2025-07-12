@@ -600,7 +600,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
       class="log-workout-select" 
       style="display: table-cell;" 
       onchange="handleTargetMuscleGroupSelectionChange()">
-      <option value="${targetMuscleGroup.id}">${targetMuscleGroup.name}</option>
+      <option value="${exercise.targetMuscleGroup.id}">${exercise.targetMuscleGroup.name}</option>
     </select>`;
 
   const exerciseRow = document.createElement('div');
@@ -610,7 +610,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
   exerciseRow.innerHTML = `
     <label for="history-exercise-select-${exerciseNumber}" style="display: table-cell;">Exercise:</label>
     <select disabled id="history-exercise-select-${exerciseNumber}" class="log-workout-select" style="display: table-cell;">
-      <option value="${exercise.id}">${exercise.name}</option>
+      <option value="${exercise.exercise.id}">${exercise.exercise.name}</option>
     </select>`;
 
   table.appendChild(targetMuscleGroupRow);
