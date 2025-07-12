@@ -510,7 +510,6 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
 function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime, notes) {
   return `
-  <h1 style="text-align: center; font-size: 40px; margin: 0; padding-bottom: 20px;">Log New Workout</h1>
     <div class="log-workout-header-group">
       <div class="log-new-workout-date-group">
             <div class="form-group" style="display: table-row;">
