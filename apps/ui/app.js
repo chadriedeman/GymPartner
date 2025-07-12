@@ -157,7 +157,7 @@ function deleteExercise() {
 
       exerciseHeadings.forEach(heading => {
         
-        heading.innerHTML = `Exercise ${numberOfExercises} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteExercise()" class="delete-button"> X </button>`;
+        heading.innerHTML = `Exercise ${numberOfExercises} <button class="log-workout-set-note-button">&#128221</button> ${numberOfExercises === 1 ? '' : '<button onclick="deleteExercise()" class="delete-button"> X </button>'}`;
 
         numberOfExercises++;
       });
