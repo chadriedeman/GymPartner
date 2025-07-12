@@ -510,15 +510,22 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   const div = document.createElement('div');
 
-  // div.classList.add('log-workout-exercises');
-
   div.innerHTML = getIndividualWorkoutBackButtonHtml();
 
   div.innerHTML += getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
 
-  [...workoutDetails.exercises].forEach(exercise => {
-    // TODO: Add html
+  const exercisesDiv = document.createElement('div');
+
+  exercisesDiv.classList.add('log-workout-exercises');
+
+  [...workoutDetails.exercises].forEach((exercise, index) => {
+
+    var exerciseHtml = getIndividualWorkoutHistoryExerciseHtml(exercise, index + 1);
+
+    exercisesDiv.appendChild(exerciseHtml);
   });
+
+  div.innerHTML += exercisesDiv.outerHTML;
 
   div.innerHTML += `
   <div style="display: flex; gap: 1%;">
@@ -527,6 +534,109 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
   </div>`;
 
   return div.outerHTML;
+}
+
+function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
+
+  const exerciseContainer = document.createElement('div');
+
+  exerciseContainer.id = `exercise${exerciseNumber}`;
+
+  exerciseContainer.classList.add('log-workout-exercise');
+
+  const heading = document.createElement('h2');
+
+  heading.id = `exercise-heading-${exerciseNumber}`;
+
+  heading.classList.add('exercise-heading');
+
+  heading.innerHTML = `Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button>`; // TODO: Delete button
+
+  exerciseContainer.appendChild(heading);
+
+  const formGroup = document.createElement('div');
+
+  formGroup.id = `logworkoutexercise${exerciseNumber}`;
+
+  formGroup.classList.add('form-group');
+
+  const table = document.createElement('div');
+
+  table.style.display = 'table';
+
+  const targetMuscleGroupRow = document.createElement('div');
+
+  targetMuscleGroupRow.style.display = 'table-row';
+
+  targetMuscleGroupRow.innerHTML = `
+    <label for="targetmusclegroupselect${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+    <select 
+      id="targetmusclegroupselect${exerciseNumber}" 
+      class="log-workout-select" 
+      style="display: table-cell;" 
+      onchange="handleTargetMuscleGroupSelectionChange()">
+      <option value="${exercise.muscleGroup}">${exercise.muscleGroup}</option>
+    </select>
+  `;
+
+  const exerciseRow = document.createElement('div');
+
+  exerciseRow.style.display = 'table-row';
+
+  exerciseRow.innerHTML = `
+    <label for="exerciseselect${exerciseNumber}" style="display: table-cell;">Exercise:</label>
+    <select disabled id="exerciseselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;">
+      <option value="${exercise.name}">${exercise.name}</option>
+    </select>`;
+
+  table.appendChild(targetMuscleGroupRow);
+
+  table.appendChild(exerciseRow);
+
+  formGroup.appendChild(table);
+
+  exercise.sets.forEach((set, setIndex) => {
+
+    const setNumber = setIndex + 1;
+
+    const setDiv = document.createElement('div');
+
+    setDiv.id = `set-${setNumber}`;
+
+    setDiv.className = 'log-workout-sets';
+
+    setDiv.style.display = 'table';
+
+    setDiv.innerHTML = `
+      <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button></h3>
+      <div class="form-group" style="display: table-row;">
+        <label style="display: table-cell; text-align: right;">Weight:</label>
+        <input id="weightinput${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
+      </div>    
+      <div class="form-group" style="display: table-row;">
+        <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+        <input id="repsinput${exerciseNumber}_${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
+      </div> 
+    `;
+
+    formGroup.appendChild(setDiv);
+  });
+
+  const addSetButton = document.createElement('button');
+
+  addSetButton.className = 'log-workout-buttons';
+
+  addSetButton.textContent = 'Add Set';
+
+  addSetButton.onclick = () => addSet(); // You may want to pass `exerciseNumber` here if needed
+
+  formGroup.appendChild(addSetButton);
+
+  exerciseContainer.appendChild(formGroup);
+
+  // exercisesDiv.appendChild(exerciseContainer);
+
+  return exerciseContainer;
 }
 
 function getIndividualWorkoutBackButtonHtml() {
@@ -575,7 +685,9 @@ function handleDeleteIndividualWorkoutHistoryClick() {
 }
 
 function deleteIndividualWorkout(workoutId) {
+  // TODO: Send workoutId to server
 
+  // TODO: Return true if successful or false if unsuccessful
 }
 
 function getWorkouts(userId) {
