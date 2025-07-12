@@ -556,7 +556,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   exercisesDiv.id = 'history-workout-exercises'
 
-  exercisesDiv.classList.add('log-workout-exercises');
+  exercisesDiv.classList.add('workout-exercises');
 
   [...workoutDetails.exercises].forEach((exercise, index) => {
 

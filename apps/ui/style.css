@@ -246,7 +246,7 @@ button {
 .log-workout-notes-textarea {
   height: 85%;
 }
-.log-workout-exercises {
+.workout-exercises {
   display: flex;
   flex-wrap: wrap;
   gap: 2%;
@@ -324,7 +324,7 @@ button {
   .log-new-workout-date-group {
     width: 100%;
   }
-  .log-workout-exercises {
+  .workout-exercises {
     flex-direction: column;
   }
   .log-workout-exercise {
