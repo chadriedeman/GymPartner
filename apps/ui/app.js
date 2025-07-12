@@ -458,16 +458,23 @@ function getIndividualWorkout(workoutId) {
 
   const mockedWorkoutDetails = 
   {
-    "name": "Test workout name 1",
-    "date": new Date("2025-07-09"),
-    "startTime": "09:52", // TODO: Time object
-    "endTime": "11:18", // TODO: Time object
-    "notes": "  These are test notes",
-    "exercises": [
+    name: "Test workout name 1",
+    date: new Date("2025-07-09"),
+    startTime: "09:52", // TODO: Time object
+    endTime: "11:18", // TODO: Time object
+    notes: "  These are test notes",
+    exercises: [
         {
-            "targetMuscleGroupId": "test target muscle group id 1",
-            "exerciseId": "test chest id 1",
-            "sets": [
+            targetMuscleGroup: {
+              id: "test target muscle group id 1",
+              name: "test muscle group name"
+            }, 
+            exercise: {
+              id: "test chest id 1",
+              name: "test exercise name 1",
+              testMuscleGroupId: 'test target muscle group id 1'
+            },
+            sets: [
                 {
                     "reps": 5,
                     "weight": 225
