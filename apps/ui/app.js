@@ -473,10 +473,10 @@ function getIndividualWorkout(workoutId) {
         {
             targetMuscleGroup: {
               id: "test target muscle group id 1",
-              name: "test muscle group name"
+              name: "test muscle group name 1"
             }, 
             exercise: {
-              id: "test chest id 1",
+              id: "test exercise id 1",
               name: "test exercise name 1",
               testMuscleGroupId: 'test target muscle group id 1'
             },
@@ -484,6 +484,31 @@ function getIndividualWorkout(workoutId) {
                 {
                     "reps": 5,
                     "weight": 225
+                }
+            ]
+        },
+         {
+            targetMuscleGroup: {
+              id: "test target muscle group id 1",
+              name: "test muscle group name 2"
+            }, 
+            exercise: {
+              id: "test exercise id 2",
+              name: "test exercise name 2",
+              testMuscleGroupId: 'test target muscle group id 1'
+            },
+            sets: [
+                {
+                    "reps": 3,
+                    "weight": 200
+                },
+                {
+                    "reps": 2,
+                    "weight": 200
+                },
+                {
+                    "reps": 2,
+                    "weight": 200
                 }
             ]
         }
