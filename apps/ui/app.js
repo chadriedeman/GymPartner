@@ -196,7 +196,7 @@ function deleteSet() {
 
 function addExercise() {
 
-    const numberOfExercises = document.querySelectorAll('[id*="exercises-elect"]').length;
+    const numberOfExercises = document.querySelectorAll('[id*="exercise-select"]').length;
 
     const newNumberOfExercises = numberOfExercises + 1;
 
