@@ -669,15 +669,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
     formGroup.appendChild(setDiv);
   });
 
-  const addSetButton = document.createElement('button');
-
-  addSetButton.className = 'log-workout-buttons';
-
-  addSetButton.textContent = 'Add Set';
-
-  addSetButton.onclick = () => addSet(); // You may want to pass `exerciseNumber` here if needed
-
-  formGroup.appendChild(addSetButton);
+  formGroup.innerHTML += `<button class="log-workout-buttons" onclick="addSet()">Add Set </button>`
 
   exerciseContainer.appendChild(formGroup);
 
