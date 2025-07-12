@@ -40,9 +40,14 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+let currentlySelectedSection = "";
+
 // Section switching
 function showSection(id) {
 
+  // if (currentlySelectedSection === "") {
+  //   currentlySelectedSection = id;
+  // }
   // TODO: If selected section === currently selected section, return
 
   document
@@ -151,7 +156,7 @@ function deleteExercise() {
     greatGrandParentElement.removeChild(grandParentElement);
 
     const exerciseHeadings = 
-      [...document.querySelectorAll('[id*="exercise-heading-"]')];
+      [...greatGrandParentElement.querySelectorAll('[id*="exercise-heading-"]')];
 
       let numberOfExercises = 1;
 
@@ -194,9 +199,9 @@ function deleteSet() {
       });
 }
 
-function addExercise() {
+function addLogWorkoutExercise() {
 
-    const numberOfExercises = document.querySelectorAll('[id*="exercise-select"]').length;
+    const numberOfExercises = document.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
 
     const newNumberOfExercises = numberOfExercises + 1;
 
@@ -635,11 +640,11 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
       <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Weight:</label>
-        <input id="history-weight-input-${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
+        <input id="history-weight-input-${exerciseNumber}-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
       </div>    
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-        <input id="history-reps-input-${exerciseNumber}_${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
+        <input id="history-reps-input-${exerciseNumber}-${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
       </div> 
     `;
 
