@@ -301,7 +301,7 @@ button {
 .dialog-buttons button:hover {
   background-color: #444;
 }
-.log-workout-set-note-button {
+.workout-set-note-button {
   border: none;
   padding: 0;
   color: white;

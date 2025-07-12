@@ -109,7 +109,7 @@ function addSet() {
 function getSetHtml(setNumber) {
   return `
     <div id="set-${setNumber}" class="workout-sets" style="display: table;">
-        <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+        <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
           <div class="form-group" style="display: table-row;">
             <label style="display: table-cell; text-align: right;">Weight:</label>
             <input id="weight-input-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
@@ -122,7 +122,7 @@ function getSetHtml(setNumber) {
 }
 
 function getExerciseHtml(exerciseNumber) {
-  return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`} </h2>
+  return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`} </h2>
           <div id="log-workout-exercise-${exerciseNumber}" class="form-group"> 
             <div style="display: table;">
               <div style="display: table-row;">
@@ -157,7 +157,7 @@ function deleteExercise() {
 
       exerciseHeadings.forEach(heading => {
         
-        heading.innerHTML = `Exercise ${numberOfExercises} <button class="log-workout-set-note-button">&#128221</button> ${numberOfExercises === 1 ? '' : '<button onclick="deleteExercise()" class="delete-button"> X </button>'}`;
+        heading.innerHTML = `Exercise ${numberOfExercises} <button class="workout-set-note-button">&#128221</button> ${numberOfExercises === 1 ? '' : '<button onclick="deleteExercise()" class="delete-button"> X </button>'}`;
 
         numberOfExercises++;
       });
@@ -183,10 +183,10 @@ function deleteSet() {
       setHeadings.forEach(heading => {
 
         if (numberOfSets === 1) {
-          heading.innerHTML = `Set ${numberOfSets} <button class="log-workout-set-note-button">&#128221</button>`
+          heading.innerHTML = `Set ${numberOfSets} <button class="workout-set-note-button">&#128221</button>`
         }
         else {
-          heading.innerHTML = `Set ${numberOfSets} <button class="log-workout-set-note-button">&#128221</button> <button onclick="deleteSet()" class="delete-button"> X </button>`
+          heading.innerHTML = `Set ${numberOfSets} <button class="workout-set-note-button">&#128221</button> <button onclick="deleteSet()" class="delete-button"> X </button>`
 
         }
 
@@ -575,7 +575,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
   heading.classList.add('exercise-heading');
 
-  heading.innerHTML = `Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`}`;
+  heading.innerHTML = `Exercise ${exerciseNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`}`;
 
   exerciseContainer.appendChild(heading);
 
@@ -632,7 +632,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
     setDiv.style.display = 'table';
 
     setDiv.innerHTML = `
-      <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
+      <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Weight:</label>
         <input id="history-weight-input-${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
