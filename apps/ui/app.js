@@ -473,6 +473,50 @@ function loadIndividualWorkoutHistoryPage(workoutDetails) {
 
 function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
+  const div = document.createElement('div');
+
+  div.classList.add('log-workout-exercises');
+
+  // TODO: Add date, name, etc.
+
+  div.innerHTML = getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
+
+  div.appendChild();
+
+  [...workoutDetails.exercises].forEach(exercise => {
+    // TODO: Add html
+  });
+
+  return div.outerHTML;
+}
+
+function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime, notes) {
+  return `
+  <h1 style="text-align: center; font-size: 40px; margin: 0; padding-bottom: 20px;">Log New Workout</h1>
+    <div class="log-workout-header-group">
+      <div class="log-new-workout-date-group">
+            <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell; padding-right: 55px;">Name:</label>
+                <input type="text" class="log-workout-inputs" style="display: table-cell;">                                     
+            </div>
+            <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell; padding-right: 55px;">Date:</label>
+                <input type="date" class="log-workout-inputs" style="display: table-cell;">                                     
+            </div>
+            <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell;">Start Time:</label>
+                <input type="time" class="log-workout-inputs" style="display: table-cell;">                                     
+            </div>
+            <div class="form-group" style="display: table-row;">
+                <label style="display: table-cell;">End Time:</label>
+                <input" type="time" class="log-workout-inputs" style="display: table-cell;"> 
+            </div>
+        </div>
+        <div class="log-workout-notes-div">
+          <label>Workout Notes:</label>
+          <textarea type="text" class="log-workout-notes-textarea">  </textarea>                                   
+        </div>
+    </div>`;
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
