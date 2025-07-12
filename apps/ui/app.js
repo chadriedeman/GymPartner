@@ -1,4 +1,4 @@
-window.addEventListener("load", initializeTargetMuscleGroupsSelect(), false);
+window.addEventListener("load", initializeTargetMuscleGroupsSelect, false);
 
 let currentWorkoutHistoryDivHtml = "";
 
@@ -545,7 +545,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">End Time:</label>
-                <input" type="time" class="log-workout-inputs" value="${endTime}" style="display: table-cell;"> 
+                <input type="time" class="log-workout-inputs" value="${endTime}" style="display: table-cell;"> 
             </div>
         </div>
         <div class="log-workout-notes-div">
