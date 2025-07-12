@@ -468,7 +468,7 @@ function getIndividualWorkout(workoutId) {
     date: new Date("2025-07-09"),
     startTime: "09:52", // TODO: Time object
     endTime: "11:18", // TODO: Time object
-    notes: "  These are test notes",
+    notes: "These are test notes",
     exercises: [
         {
             targetMuscleGroup: {
@@ -782,17 +782,17 @@ function showErrorToast(message = "Save unsuccessful") {
 
 function resetLogWorkout() {
 
-  document.getElementById('logworkoutnameinput').value = '';
+  document.getElementById('log-workout-name-input').value = '';
 
-  document.getElementById('logworkoutdateinput').value = '';
+  document.getElementById('log-workout-date-input').value = '';
 
-  document.getElementById('logworkoutstarttimeinput').value = '';
+  document.getElementById('log-workout-start-time-input').value = '';
 
-  document.getElementById('logworkoutendtimeinput').value = '';
+  document.getElementById('log-workout-end-time-input').value = '';
 
-  document.getElementById('logworkoutnotesinput').value = '';
+  document.getElementById('log-workout-notes-input').value = '';
 
-  var logworkoutexercises = document.getElementById('logworkoutexercises');
+  var logworkoutexercises = document.getElementById('log-workout-exercises');
 
   logworkoutexercises.innerHTML = '';
 
@@ -800,11 +800,11 @@ function resetLogWorkout() {
 
   newDiv.classList.add('log-workout-exercise');
 
-  newDiv.id = 'exercise1';
+  newDiv.id = 'exercise-1';
 
   newDiv.innerHTML = getExerciseHtml(1); 
 
-  const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect1"]`)
+  const targetMuscleGroupsSelect = newDiv.querySelector(`[id="target-muscle-group-select-1"]`)
 
   populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
@@ -816,16 +816,16 @@ function handleResetButtonClick() {
 }
 
 function showConfirmDialog() {
-  document.getElementById("confirmDialog").style.display = "flex";
+  document.getElementById("confirm-dialog").style.display = "flex";
 }
 
 function handleResetNoButtonClick() {
-  document.getElementById("confirmDialog").style.removeProperty("display");
+  document.getElementById("confirm-dialog").style.removeProperty("display");
 }
 
 function handleResetYesButtonClick() {
 
   resetLogWorkout();
 
-  document.getElementById("confirmDialog").style.removeProperty("display");
+  document.getElementById("confirm-dialog").style.removeProperty("display");
 }
