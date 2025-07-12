@@ -461,9 +461,18 @@ function getIndividualWorkout(workoutId) {
 }
 
 function loadIndividualWorkoutHistoryPage(workoutDetails) {
+
   var workoutHistoryDiv = document.getElementById('workout-history-div');
 
   workoutHistoryDiv.innerHTML = ""; // TODO: Could change to display: hidden
+
+  const individualWorkoutHistoryHtml = getIndividualWorkoutHistoryHtml(workoutDetails);
+
+  workoutHistoryDiv.innerHTML = individualWorkoutHistoryHtml;
+}
+
+function getIndividualWorkoutHistoryHtml(workoutDetails) {
+
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
@@ -472,7 +481,7 @@ function handleDeleteIndividualWorkoutHistoryClick() {
   // TODO: Show confirmation dialog. Reuse one that was built for reset.
 }
 
-function deleteIndividualtWorkout(workoutId) {
+function deleteIndividualWorkout(workoutId) {
 
 }
 
