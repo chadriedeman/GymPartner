@@ -229,7 +229,14 @@ function saveWorkout() {
 
     const userInputs = getLogWorkoutUserInput();
 
-    validateLogWorkoutUserInput(userInputs);
+    var validateLogWorkoutUserInputResult = validateLogWorkoutUserInput(userInputs);
+
+    if (!validateLogWorkoutUserInputResult.isValidLogWorkoutUserInput) {
+
+      // TODO: Indicate to the user what is wrong with the input
+
+      return;
+    }
     
     fetch('https://your-server.com/api/workouts', { // TODO: Update url
       method: 'POST',
@@ -297,11 +304,44 @@ function getLogWorkoutUserInput() {
 
 function validateLogWorkoutUserInput(userInputs) {
 
-  // TODO: Null checks
+  const validateLogWorkoutUserInputResult = {
+    isValidLogWorkoutUserInput: true,
+    errors: []
+  };
 
-  // TODO: If name is null, assign it a default
+  if (isNullOrWhitespace(userInputs.name)) {
 
-  // TODO: Start time should not exceed end time
+    validateLogWorkoutUserInputResult.isValidLogWorkoutUserInput = false;
+
+    validateLogWorkoutUserInputResult.errors.push('Invalid name');
+  }
+
+  // TODO: Date cannot be null or in the future
+
+  // TODO: Start time should not be null or exceed end time
+
+  // TODO: End time should not be null
+
+  // TODO: Exercises should not be empty
+
+  [...userInputs.exercises].forEach(exercise => {
+
+      // TODO: targetMuscleGroupId should not be null
+ 
+      // TODO: exerciseId should not be null
+
+      // TODO: sets should not be empty
+
+      [...exercise.sets].forEach(set => {
+
+        // TODO: Weight should not be null
+
+        // TODO: Reps should not be null
+
+      });
+  });
+
+  return validateLogWorkoutUserInputResult;
 }
 
 function getTargetMuscleGroups() {
@@ -853,4 +893,8 @@ function showAIAdvice() {
       <li>Bench: 285 lbs</li>
       <li>Deadlift: 505 lbs</li>
     </ul>`;
+}
+
+function isNullOrWhitespace(input) {
+  return !input || input.trim().length === 0;
 }
