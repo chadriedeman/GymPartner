@@ -542,7 +542,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
         </div>
         <div class="log-workout-notes-div">
           <label>Workout Notes:</label>
-          <textarea type="text" value="${notes}" class="log-workout-notes-textarea"></textarea>                                   
+          <textarea class="log-workout-notes-textarea">${notes}</textarea>                                   
         </div>
     </div>`;
 }
