@@ -575,7 +575,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
   heading.classList.add('exercise-heading');
 
-  heading.innerHTML = `Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button>`; // TODO: Delete button
+  heading.innerHTML = `Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`}`;
 
   exerciseContainer.appendChild(heading);
 
@@ -633,7 +633,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
     setDiv.style.display = 'table';
 
     setDiv.innerHTML = `
-      <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button></h3>
+      <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right;">Weight:</label>
         <input id="weightinput${exerciseNumber}_${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
