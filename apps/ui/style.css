@@ -308,3 +308,29 @@ button {
   display: block;
   height: 5%;
 }
+
+@media (max-width: 768px) {
+  .log-workout-header-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .log-workout-notes-div,
+  .log-new-workout-date-group {
+    width: 100%;
+  }
+  .log-workout-exercises {
+    flex-direction: column;
+  }
+  .log-workout-exercise {
+    width: 100%;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .nav-button {
+    /* Fix issue where add exercise button gets clicked and then it stays highlighted */
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  } 
+}
