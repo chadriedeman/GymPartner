@@ -213,7 +213,7 @@ function addExercise() {
 
     const newNumberOfExercises = numberOfExercises + 1;
 
-    const logworkoutexercisesDiv = document.getElementById("log-workout-exercises");
+    const workoutexercisesDiv = greatGrandParentElement.querySelector('[id*="workout-exercises"]');
 
     const newDiv = document.createElement('div');
 
@@ -225,7 +225,7 @@ function addExercise() {
 
     populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
-    logworkoutexercisesDiv.appendChild(newDiv);
+    workoutexercisesDiv.appendChild(newDiv);
 }
 
 function saveWorkout() {
@@ -554,6 +554,8 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   const exercisesDiv = document.createElement('div');
 
+  exercisesDiv.id = 'history-workout-exercises'
+
   exercisesDiv.classList.add('log-workout-exercises');
 
   [...workoutDetails.exercises].forEach((exercise, index) => {
@@ -806,7 +808,7 @@ function resetLogWorkout() {
 
   document.getElementById('log-workout-notes-input').value = '';
 
-  var logworkoutexercises = document.getElementById('log-workout-exercises');
+  var logworkoutexercises = document.getElementById('workout-exercises');
 
   logworkoutexercises.innerHTML = '';
 
