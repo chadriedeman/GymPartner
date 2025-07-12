@@ -104,7 +104,7 @@ function addSet() {
 function getSetHtml(setNumber) {
   return `
     <div id="set-${setNumber}" class="workout-sets" style="display: table;">
-        <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
+        <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>
           <div class="form-group" style="display: table-row;">
             <label style="display: table-cell; text-align: right;">Weight:</label>
             <input id="weight-input-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
@@ -206,7 +206,7 @@ function addExercise(section) {
         .parentElement;
     }
 
-    const numberOfExercises = element.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
+    const numberOfExercises = element.querySelectorAll('[id*="exercise-select"]').length;
 
     const newNumberOfExercises = numberOfExercises + 1;
 
@@ -231,15 +231,23 @@ function saveWorkout() {
 
     validateLogWorkoutUserInput(userInputs);
     
-    // TODO: Send to server
+    fetch('https://your-server.com/api/workouts', { // TODO: Update url
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userInputs)
+    })
+    .then(response => {
+      if (response.ok) {
+        showToast("Workout saved!");
 
-    // TODO: If successful response, display message and reset page 
-    showToast("Workout saved!");
-
-    resetLogWorkout();
-    
-    // TODO: Else, display error message
-    showErrorToast("Save unsuccessful");
+        resetLogWorkout();
+      }
+      else {
+        showErrorToast("Save unsuccessful");
+      }
+    });
 }
 
 function getLogWorkoutUserInput() {
