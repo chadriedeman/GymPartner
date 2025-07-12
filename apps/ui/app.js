@@ -199,21 +199,34 @@ function deleteSet() {
       });
 }
 
-function addExercise() {
+function addExercise(section) {
 
-    const clickedButton = event.target;
+    let element = "";
 
-    const parentElement = clickedButton.parentElement;
+    if (section === "logworkout") {
 
-    const grandParentElement = parentElement.parentElement;
+      element = event.target
+        .parentElement;
+    }
 
-    const greatGrandParentElement = grandParentElement.parentElement;
+    if (section === "history") {
 
-    const numberOfExercises = greatGrandParentElement.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
+      element = event.target
+        .parentElement
+        .parentElement;
+    }
+
+ 
+
+    // const grandParentElement = parentElement.parentElement;
+
+    // const greatGrandParentElement = grandParentElement.parentElement;
+
+    const numberOfExercises = element.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
 
     const newNumberOfExercises = numberOfExercises + 1;
 
-    const workoutexercisesDiv = greatGrandParentElement.querySelector('[id*="workout-exercises"]');
+    const workoutexercisesDiv = element.querySelector('[id*="workout-exercises"]');
 
     const newDiv = document.createElement('div');
 
@@ -569,7 +582,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   div.innerHTML += `
   <div style="display: flex; gap: 1%;">
-    <button class="log-workout-buttons" onclick="addExercise()">Add Exercise </button>
+    <button class="log-workout-buttons" onclick="addExercise('history')">Add Exercise </button>
     <button class="log-workout-buttons" onclick="updateWorkout()">Update Workout</button>
     <button class="delete-individual-workout-button" onclick="deleteWorkout()">Delete Workout</button>
   </div>`;
