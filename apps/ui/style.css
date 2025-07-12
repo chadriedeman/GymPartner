@@ -195,6 +195,12 @@ button {
 .log-workout-buttons:hover {
   background-color: lightgray;
 }
+.delete-individual-workout-button {
+  background-color: darkred;
+}
+.delete-individual-workout-button:hover {
+  background-color: lightcoral;
+}
 .individual-workout-details-button:hover {
   background-color: lightgray;
 }

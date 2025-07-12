@@ -520,6 +520,12 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
     // TODO: Add html
   });
 
+  div.innerHTML += `
+  <div style="display: flex; gap: 1%;">
+    <button class="log-workout-buttons" onclick="updateWorkout()">Update Workout</button>
+    <button class="delete-individual-workout-button" onclick="deleteWorkout()">Delete Workout</button>
+  </div>`;
+
   return div.outerHTML;
 }
 
