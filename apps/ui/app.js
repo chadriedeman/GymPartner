@@ -452,6 +452,10 @@ function getIndividualtWorkout(workoutId) {
 
 }
 
+function loadIndividualWorkoutHistoryPage(workoutDetails) {
+
+}
+
 function handleDeleteIndividualWorkoutHistoryClick() {
 
 }
