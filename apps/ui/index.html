@@ -42,55 +42,55 @@
 
   <!-- Log Workout -->
   <section id="logworkout">
-    <h1 style="text-align: center; font-size: 40px; margin: 0; padding-bottom: 20px;">Log New Workout</h1>
+    <h1 class="log-workout-heading">Log New Workout</h1>
     <div class="log-workout-header-group">
       <div class="log-new-workout-date-group">
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Name:</label>
-                <input id="logworkoutnameinput" type="text" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input id="log-workout-name-input" type="text" class="log-workout-inputs" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Date:</label>
-                <input id="logworkoutdateinput" type="date" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input id="log-workout-date-input" type="date" class="log-workout-inputs" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">Start Time:</label>
-                <input id="logworkoutstarttimeinput" type="time" class="log-workout-inputs" style="display: table-cell;">                                     
+                <input id="log-workout-start-time-input" type="time" class="log-workout-inputs" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell;">End Time:</label>
-                <input id="logworkoutendtimeinput" type="time" class="log-workout-inputs" style="display: table-cell;"> 
+                <input id="log-workout-end-time-input" type="time" class="log-workout-inputs" style="display: table-cell;"> 
             </div>
         </div>
         <div class="log-workout-notes-div">
           <label>Workout Notes:</label>
-          <textarea id="logworkoutnotesinput" class="log-workout-notes-textarea">  </textarea>                                   
+          <textarea id="log-workout-notes-input" class="log-workout-notes-textarea">  </textarea>                                   
         </div>
     </div>
 
-    <div id="logworkoutexercises" class="log-workout-exercises">
-        <div id="exercise1" class="log-workout-exercise">
-            <h2 id="exercise-heading-1" class="exercise-heading">Exercise 1<button class="log-workout-set-note-button">&#128221</button></h2>                                                   
-            <div id="logworkoutexercise1" class="form-group"> 
+    <div id="log-workout-exercises" class="log-workout-exercises">
+        <div id="exercise-1" class="log-workout-exercise">
+            <h2 id="log-exercise-heading-1" class="exercise-heading">Exercise 1<button class="log-workout-set-note-button">&#128221</button></h2>                                                   
+            <div id="log-workout-exercise-1" class="form-group"> 
               <div style="display: table;">
                 <div style="display: table-row;">
-                  <label for="targetmusclegroupselect1" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                  <select id="targetmusclegroupselect1" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"></select>
+                  <label for="target-muscle-group-select-1" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                  <select id="target-muscle-group-select-1" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"></select>
                 </div>
                 <div style="display: table-row;">
-                  <label for="exerciseselect1" style="display: table-cell;">Exercise:</label>
-                  <select disabled id="exerciseselect1" class="log-workout-select" style="display: table-cell;"></select>
+                  <label for="exercise-select-1" style="display: table-cell;">Exercise:</label>
+                  <select disabled id="exercise-select-1" class="log-workout-select" style="display: table-cell;"></select>
                 </div>
               </div>
               <div id="set-1" class="log-workout-sets" style="display: table;">
                   <h3 class="set-heading">Set 1 <button class="log-workout-set-note-button">&#128221</button></h3> 
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Weight:</label>
-                      <input id="weightinput1" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">
+                      <input id="weight-input-1" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">
                   </div>    
                   <div class="form-group" style="display: table-row;">
                       <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-                      <input id="repsinput1" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
+                      <input id="reps-input-1" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is an integer -->
                   </div> 
               </div>
               <button class="log-workout-buttons" onclick="addSet()">Add Set </button>                                     
@@ -164,9 +164,9 @@
   <!-- JavaScript -->
   <script src="app.js"></script>
 </body>
-  <div id="confirmDialog" class="dialog-overlay">
+  <div id="confirm-dialog" class="dialog-overlay">
     <div class="dialog-box">
-      <p id="confirmMessage">
+      <p id="confirm-message">
         Are you sure you want to reset the page?
       </p>
       <div class="dialog-buttons">
