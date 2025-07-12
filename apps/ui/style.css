@@ -298,3 +298,7 @@ button {
   font-size: 18px;
   vertical-align: baseline;
 }
+.back-to-workout-history-list-button {
+  display: block;
+  height: 5%;
+}

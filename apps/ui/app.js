@@ -506,11 +506,13 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   const div = document.createElement('div');
 
-  div.classList.add('log-workout-exercises');
+  // div.classList.add('log-workout-exercises');
 
   // TODO: Add date, name, etc.
 
-  div.innerHTML = getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
+  div.innerHTML = `<button class="back-to-workout-history-list-button" onclick="handleBackToWorkoutHistoryListButtonClick()">← Back</button>`;
+
+  div.innerHTML += getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
 
   [...workoutDetails.exercises].forEach(exercise => {
     // TODO: Add html
@@ -545,6 +547,10 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
           <textarea class="log-workout-notes-textarea">${notes}</textarea>                                   
         </div>
     </div>`;
+}
+
+function handleBackToWorkoutHistoryListButtonClick() {
+
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
