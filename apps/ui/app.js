@@ -112,26 +112,26 @@ function getSetHtml(setNumber) {
         <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
           <div class="form-group" style="display: table-row;">
             <label style="display: table-cell; text-align: right;">Weight:</label>
-            <input id="weightinput${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+            <input id="weight-input-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
         </div> 
         <div class="form-group" style="display: table-row;">
             <label style="display: table-cell; text-align: right;">Reps:</label>                                   
-            <input id="repsinput${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
+            <input id="reps-input-${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
         </div>   
     </div>`;
 }
 
 function getExerciseHtml(exerciseNumber) {
   return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} <button class="log-workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`} </h2>
-          <div id="logworkoutexercise${exerciseNumber}" class="form-group"> 
+          <div id="log-workout-exercise-${exerciseNumber}" class="form-group"> 
             <div style="display: table;">
               <div style="display: table-row;">
-                <label for="targetmusclegroupselect${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
-                <select id="targetmusclegroupselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>  
+                <label for="target-muscle-group-select-${exerciseNumber}" style="display: table-cell; padding-right: 10px;">Target Muscle Group:</label>
+                <select id="target-muscle-group-select-${exerciseNumber}" class="log-workout-select" style="display: table-cell;" onchange="handleTargetMuscleGroupSelectionChange()"> </select>  
               </div>
               <div style="display: table-row;">
-                <label for="exerciseselect${exerciseNumber}" style="display: table-cell;">Exercise:</label>
-                <select disabled id="exerciseselect${exerciseNumber}" class="log-workout-select" style="display: table-cell;"></select>      
+                <label for="exercise-select-${exerciseNumber}" style="display: table-cell;">Exercise:</label>
+                <select disabled id="exercise-select-${exerciseNumber}" class="log-workout-select" style="display: table-cell;"></select>      
               </div>
             </div>
             ${getSetHtml(1)}
@@ -196,11 +196,11 @@ function deleteSet() {
 
 function addExercise() {
 
-    const numberOfExercises = document.querySelectorAll('[id*="exerciseselect"]').length;
+    const numberOfExercises = document.querySelectorAll('[id*="exercises-elect"]').length;
 
     const newNumberOfExercises = numberOfExercises + 1;
 
-    const logworkoutexercisesDiv = document.getElementById("logworkoutexercises");
+    const logworkoutexercisesDiv = document.getElementById("log-workout-exercises");
 
     const newDiv = document.createElement('div');
 
@@ -208,7 +208,7 @@ function addExercise() {
 
     newDiv.innerHTML = getExerciseHtml(newNumberOfExercises);
 
-    const targetMuscleGroupsSelect = newDiv.querySelector(`[id="targetmusclegroupselect${newNumberOfExercises}"]`)
+    const targetMuscleGroupsSelect = newDiv.querySelector(`[id="target-muscle-group-select-${newNumberOfExercises}"]`)
 
     populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 
@@ -235,15 +235,15 @@ function saveWorkout() {
 function getLogWorkoutUserInput() {
 
   const userInputs = {
-      name: document.getElementById('logworkoutnameinput').value,
-      date: document.getElementById('logworkoutdateinput').value,
-      startTime: document.getElementById('logworkoutstarttimeinput').value,
-      endTime: document.getElementById('logworkoutendtimeinput').value,
+      name: document.getElementById('log-workout-name-input').value,
+      date: document.getElementById('log-workout-date-input').value,
+      startTime: document.getElementById('log-workout-start-time-input').value,
+      endTime: document.getElementById('log-workout-end-time-input').value,
       notes: document.getElementById('logworkoutnotesinput').value,
       exercises: []
     }
 
-    const exercises = document.querySelectorAll('[id*="logworkoutexercise"]'); 
+    const exercises = document.querySelectorAll('[id*="log-workout-exercise"]'); 
 
       [...exercises].forEach((exercise, index) => {
 
@@ -252,8 +252,8 @@ function getLogWorkoutUserInput() {
       }
 
       const exerciseToAdd = {
-          targetMuscleGroupId: JSON.parse(exercise.querySelector('[id*="targetmusclegroupselect"]').value).id,
-          exerciseId: JSON.parse(exercise.querySelector('[id*="exerciseselect"]').value).id,
+          targetMuscleGroupId: JSON.parse(exercise.querySelector('[id*="target-muscle-group-select"]').value).id,
+          exerciseId: JSON.parse(exercise.querySelector('[id*="exercise-select"]').value).id,
           sets: []
         };
 
@@ -261,9 +261,9 @@ function getLogWorkoutUserInput() {
 
       [...sets].forEach(set => {
 
-        const reps = set.querySelector('[id*="repsinput"]').value;
+        const reps = set.querySelector('[id*="reps-input"]').value;
 
-        const weight = set.querySelector('[id*="weightinput"]').value;
+        const weight = set.querySelector('[id*="weight-input"]').value;
 
         exerciseToAdd.sets.push({
           reps,
@@ -325,7 +325,7 @@ function handleTargetMuscleGroupSelectionChange() {
 
   const grandParentElement = parentElement.parentElement;
 
-  const exerciseSelect = grandParentElement.querySelector('[id*="exerciseselect"]');
+  const exerciseSelect = grandParentElement.querySelector('[id*="exercise-select"]');
 
   const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
 
