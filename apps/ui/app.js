@@ -199,9 +199,17 @@ function deleteSet() {
       });
 }
 
-function addLogWorkoutExercise() {
+function addExercise() {
 
-    const numberOfExercises = document.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
+    const clickedButton = event.target;
+
+    const parentElement = clickedButton.parentElement;
+
+    const grandParentElement = parentElement.parentElement;
+
+    const greatGrandParentElement = grandParentElement.parentElement;
+
+    const numberOfExercises = greatGrandParentElement.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
 
     const newNumberOfExercises = numberOfExercises + 1;
 
@@ -559,6 +567,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   div.innerHTML += `
   <div style="display: flex; gap: 1%;">
+    <button class="log-workout-buttons" onclick="addExercise()">Add Exercise </button>
     <button class="log-workout-buttons" onclick="updateWorkout()">Update Workout</button>
     <button class="delete-individual-workout-button" onclick="deleteWorkout()">Delete Workout</button>
   </div>`;
