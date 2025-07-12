@@ -97,7 +97,7 @@ function addSet() {
       .children
       .length;
 
-    const numberOfSets = parentDiv.querySelectorAll(".log-workout-sets");
+    const numberOfSets = parentDiv.querySelectorAll(".workout-sets");
 
     newDiv.innerHTML = getSetHtml(numberOfSets.length + 1);
 
@@ -108,7 +108,7 @@ function addSet() {
 
 function getSetHtml(setNumber) {
   return `
-    <div id="set-${setNumber}" class="log-workout-sets" style="display: table;">
+    <div id="set-${setNumber}" class="workout-sets" style="display: table;">
         <h3 class="set-heading">Set ${setNumber} <button class="log-workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>                                                <!-- TODO: Need to dynamically set the number so that it updates when adding more sets -->
           <div class="form-group" style="display: table-row;">
             <label style="display: table-cell; text-align: right;">Weight:</label>
@@ -627,7 +627,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
     setDiv.id = `history-set-${setNumber}`;
 
-    setDiv.className = 'log-workout-sets';
+    setDiv.className = 'workout-sets';
 
     setDiv.style.display = 'table';
 
