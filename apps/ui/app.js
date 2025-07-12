@@ -216,12 +216,6 @@ function addExercise(section) {
         .parentElement;
     }
 
- 
-
-    // const grandParentElement = parentElement.parentElement;
-
-    // const greatGrandParentElement = grandParentElement.parentElement;
-
     const numberOfExercises = element.querySelectorAll('[id*="exercise-select"]').length; // TODO: Don't search document, search section
 
     const newNumberOfExercises = numberOfExercises + 1;
