@@ -428,15 +428,15 @@ function loadWorkoutHistory() {
     newDiv.classList.add('workout-history-exercise');
 
     newDiv.innerHTML =
-        `<div>
+        `<div class="workout-history-exercise-date">
           ${workout.date.toISOString().split('T')[0]} 
         </div>
-        <div class="workout-history-exercise-name-group">
+        <div class="workout-history-exercise-name">
           ${workout.name} 
         </div>
         <div>
-          <button class="individual-workout-details-button" onclick="loadWorkoutHistory()">Details</button>
-          <button class="workout-history-delete-button"> X </button>
+          <button class="individual-workout-details-button" onclick="loadIndividualWorkoutHistory()">Details</button>
+          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()"> X </button>
         </div>`;
 
       workoutHistoryDiv.appendChild(newDiv);
@@ -447,7 +447,16 @@ function loadIndividualWorkoutHistory() {
 
 }
 
-function geIndividualtWorkout(workoutId) {
+
+function getIndividualtWorkout(workoutId) {
+
+}
+
+function handleDeleteIndividualWorkoutHistoryClick() {
+
+}
+
+function deleteIndividualtWorkout(workoutId) {
 
 }
 
