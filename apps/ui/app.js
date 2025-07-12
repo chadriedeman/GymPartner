@@ -41,6 +41,8 @@ window.addEventListener("DOMContentLoaded", () => {
 // Section switching
 function showSection(id) {
 
+  // TODO: If selected section === currently selected section, return
+
   document
     .querySelectorAll('section')
     .forEach(s => {
@@ -420,6 +422,8 @@ function loadWorkoutHistory() {
   const workouts = getWorkouts('');
 
   const workoutHistoryDiv = document.getElementById('workout-history-div');
+
+  workoutHistoryDiv.innerHTML = "";
 
   [...workouts].forEach(workout => {
 
