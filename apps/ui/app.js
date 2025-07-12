@@ -2,6 +2,8 @@ window.addEventListener("load", initializeTargetMuscleGroupsSelect, false);
 
 let currentWorkoutHistoryDivHtml = "";
 
+let currentlySelectedSection = "";
+
 // MSAL Config
 const msalConfig = {
   auth: {
@@ -40,15 +42,14 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-let currentlySelectedSection = "";
-
 // Section switching
 function showSection(id) {
 
-  // if (currentlySelectedSection === "") {
-  //   currentlySelectedSection = id;
-  // }
-  // TODO: If selected section === currently selected section, return
+  if (currentlySelectedSection === id) {
+    return;
+  }
+
+  currentlySelectedSection = id;
 
   document
     .querySelectorAll('section')
