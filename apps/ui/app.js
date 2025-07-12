@@ -49,8 +49,6 @@ function showSection(id) {
     return;
   }
 
-  currentlySelectedSection = id;
-
   document
     .querySelectorAll('section')
     .forEach(s => {
@@ -77,18 +75,9 @@ function showSection(id) {
   if (id === "history") {
     loadWorkoutHistory();
   }
-}
 
-// AI Advice placeholder
-function showAIAdvice() {
-  document.getElementById('aiResponse').innerHTML = `
-    <p>Based on your recent lifts, you should increase your training volume slightly. Deload week is coming soon.</p>
-    <p>Predicted 1RM:</p>
-    <ul>
-      <li>Squat: 425 lbs</li>
-      <li>Bench: 285 lbs</li>
-      <li>Deadlift: 505 lbs</li>
-    </ul>`;
+  currentlySelectedSection = id;
+
 }
 
 function addSet() {
@@ -844,4 +833,16 @@ function handleResetYesButtonClick() {
   resetLogWorkout();
 
   document.getElementById("confirm-dialog").style.removeProperty("display");
+}
+
+// AI Advice placeholder
+function showAIAdvice() {
+  document.getElementById('aiResponse').innerHTML = `
+    <p>Based on your recent lifts, you should increase your training volume slightly. Deload week is coming soon.</p>
+    <p>Predicted 1RM:</p>
+    <ul>
+      <li>Squat: 425 lbs</li>
+      <li>Bench: 285 lbs</li>
+      <li>Deadlift: 505 lbs</li>
+    </ul>`;
 }
