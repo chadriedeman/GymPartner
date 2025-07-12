@@ -239,7 +239,7 @@ function getLogWorkoutUserInput() {
       date: document.getElementById('log-workout-date-input').value,
       startTime: document.getElementById('log-workout-start-time-input').value,
       endTime: document.getElementById('log-workout-end-time-input').value,
-      notes: document.getElementById('logworkoutnotesinput').value,
+      notes: document.getElementById('log-workout-notes-input').value,
       exercises: []
     }
 
@@ -298,7 +298,7 @@ function getTargetMuscleGroups() {
 
 function initializeTargetMuscleGroupsSelect() {
 
-    const targetMuscleGroupsSelect = document.getElementById("targetmusclegroupselect1");
+    const targetMuscleGroupsSelect = document.getElementById("target-muscle-group-select-1");
 
     populateTargetMuscleGroupsSelect(targetMuscleGroupsSelect);
 }
