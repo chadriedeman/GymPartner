@@ -486,7 +486,10 @@ function getUserSettings(userId) {
   }; // TODO: Mocked for now
 }
 
-function getUserBodyWeightLogs() {
+function getUserBodyWeightLogs(userId) {
+
+  // TODO: Make request with userId
+
   return [
     {id: 'test body weight id 1', date: new Date('2025-07-02'), weight: 187.6}, 
     {id: 'test body weight id 2', date: new Date('2025-07-01'), weight: 186.8}
