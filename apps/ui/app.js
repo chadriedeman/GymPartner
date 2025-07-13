@@ -5,6 +5,7 @@ let currentWorkoutHistoryDivHtml = "";
 let currentlySelectedSection = "";
 
 const stateManager = {
+  userId: null,
   currentWorkoutHistoryDivHtml: "",
   currentlySelectedSection: "",
   targetMuscleGroups: null
@@ -343,7 +344,6 @@ function validateLogWorkoutUserInput(userInputs) {
         // TODO: Weight should not be null and must be greater than or equal to 0
 
         // TODO: Reps should not be null and must be greater than or equal to 0
-
       });
   });
 
@@ -428,7 +428,19 @@ function handleTargetMuscleGroupSelectionChange() {
 
 function getExercises(targetMuscleGroupId) {
 
-  // TODO: Send target muscle group to server
+  fetch('https://your-api-url.com/exercises') // TODO: Get base url from appsettings
+  .then(response => {
+    if (!response.ok) {
+      // TODO
+    }
+    return response.json();
+  })
+  .then(data => {
+    // TODO
+  })
+  .catch(error => {
+    // TODO
+  });
 
   // TODO: Return results
 
@@ -499,7 +511,7 @@ function getUserBodyWeightLogs(userId) {
 
 function loadWorkoutHistory() {
 
-  const workouts = getWorkouts('');
+  const workouts = getWorkouts(stateManager.userId);
 
   const workoutHistoryDiv = document.getElementById('workout-history-div');
 
@@ -602,7 +614,7 @@ function loadIndividualWorkoutHistoryPage(workoutDetails) {
 
   currentWorkoutHistoryDivHtml = workoutHistoryDiv.innerHTML;
 
-  workoutHistoryDiv.innerHTML = ""; // TODO: Could change to display: hidden
+  workoutHistoryDiv.innerHTML = "";
 
   const individualWorkoutHistoryHtml = getIndividualWorkoutHistoryHtml(workoutDetails);
 
@@ -776,7 +788,7 @@ function handleBackToWorkoutHistoryListButtonClick() {
 function handleDeleteIndividualWorkoutHistoryClick() {
   var workoutId = event.target.value;
 
-  // TODO: Show confirmation dialog. Reuse one that was built for reset.
+  // TODO: Show confirmation dialog.
 }
 
 function deleteIndividualWorkout(workoutId) {
