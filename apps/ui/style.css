@@ -54,6 +54,9 @@ button {
   border: none;
   cursor: pointer;
   margin-top: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 .workout-history-exercise, .workout-entry {
   background: #fff;
