@@ -22,15 +22,6 @@ resource "azurerm_static_site" "gympartner_swa" {
   resource_group_name = azurerm_resource_group.rg.name
   sku_tier            = "Free"
 
-  repository_url = "https://github.com/chadriedeman/GymPartner"
-  branch         = "main"
-
-  # You can set the app_location, api_location, output_location if you want:
-  # app_location    = "/"
-  # api_location    = "api"
-  # output_location = "build"
-}
-
 resource "random_id" "suffix" {
   byte_length = 3
 }
