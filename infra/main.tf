@@ -11,17 +11,13 @@ provider "azurerm" {
   features {}
 }
 
-resource "random_id" "suffix" {
-  byte_length = 3
-}
-
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-gympartner-swa"
+  name     = "rg-gym-partner-app"
   location = "eastus"
 }
 
-resource "azurerm_static_site" "gympartner_swa" {
-  name                = "gympartner-static-webapp-${random_id.suffix.hex}"
+resource "azurerm_static_site" "gym-partner-swa" {
+  name                = "gym-partner-app"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku_tier            = "Free"
