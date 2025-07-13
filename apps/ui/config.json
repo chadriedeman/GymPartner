@@ -1,0 +1,6 @@
+{
+    "ipFilteringOn": true,
+    "whitelistedIpAddresses": [
+        "152.117.104.242"
+    ]
+}

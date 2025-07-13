@@ -1,3 +1,39 @@
+window.onload = async function() {
+    try {
+        
+      const res = await fetch('/config.json'); // TODO: Can the client override these?
+
+      const config = await res.json();
+        
+      if (config.ipFilteringOn) {
+
+        const requestersIpAddress = getClientIp();
+
+        if (!config.whitelistedIpAddresses.includes(requestersIpAddress)) {
+          // TODO: Return 403
+        }
+      } 
+    } catch (err) {
+        // TODO: Return 500
+    }
+};
+
+async function getClientIp() {
+
+    try {
+
+        const response = await fetch('https://api64.ipify.org?format=json');
+
+        const data = await response.json();
+
+        return data.ip;
+    } 
+    catch (error) {
+
+      return null;
+    }
+}
+
 window.addEventListener("load", initializeTargetMuscleGroupsSelect, false);
 
 let currentWorkoutHistoryDivHtml = "";
