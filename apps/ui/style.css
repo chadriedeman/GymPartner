@@ -119,6 +119,7 @@ button {
     background-color: black;
     color: white;
     margin-bottom: 2%;
+    border-radius: 10px;
 }
 .nav-buttons:hover {
   background-color: #f9f9f9;
@@ -426,8 +427,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   min-height: 120px;
   resize: vertical; /* Allow resizing vertically only */
 }
-
-
 
 .workout-sets {
   background-color: #f9f9f9; /* Softer background to separate from card */
