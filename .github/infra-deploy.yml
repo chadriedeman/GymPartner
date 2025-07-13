@@ -1,0 +1,26 @@
+name: Gym Partner Azure Cloud Infrastructure Deploy
+
+on:
+  push:
+    paths:
+      - 'infra/**'    # Only runs if files in infra/ are changed
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform Init & Apply
+      run: | # modify to run script instead of having all commands hardcoded here
+        cd infra
+        terraform init
+        terraform plan -out=tfplan
+        terraform apply -auto-approve
