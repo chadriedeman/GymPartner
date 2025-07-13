@@ -23,4 +23,4 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: "upload"
         app_location: "apps/ui"
-        output_location: ""   # Leave blank if no frontend build step (like no React build output)
+        output_location: ""
