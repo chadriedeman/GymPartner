@@ -353,6 +353,7 @@ function validateLogWorkoutUserInput(userInputs) {
 function getTargetMuscleGroups() {
 
   if (!stateManager.targetMuscleGroups) { 
+
     // TODO: Get target muscle group list from the server
 
     // TODO: Store it in stateManager.targetMuscleGroups
@@ -363,10 +364,10 @@ function getTargetMuscleGroups() {
   // return stateManager.targetMuscleGroups;
 
   return [
-            { id: 'test target muscle group id 1', name: 'Chest' },
-            { id: 'test target muscle group id 2', name: 'Back' },
-            { id: 'test target muscle group id 3', name: 'Quads' },
-            { id: 'test target muscle group id 4', name: 'Hamstrings' }
+            { id: 'Chest', name: 'Chest' },
+            { id: 'Back', name: 'Back' },
+            { id: 'Quads', name: 'Quads' },
+            { id: 'Hamstrings', name: 'Hamstrings' }
           ]
           .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
 }
@@ -402,7 +403,7 @@ function handleTargetMuscleGroupSelectionChange() {
 
   const exerciseSelect = grandParentElement.querySelector('[id*="exercise-select"]');
 
-  const targetMuscleGroups = getTargetMuscleGroups(); // TODO: Need to store these somewhere
+  const targetMuscleGroups = getTargetMuscleGroups();
 
   exerciseSelect.innerHTML = '';
 
@@ -413,9 +414,8 @@ function handleTargetMuscleGroupSelectionChange() {
     return;
   }
 
-  const exercises = getExercises(JSON.parse(clickedSelect.value).name); // TODO: Change this to id
+  const exercises = getExercises(JSON.parse(clickedSelect.value).id);
 
-  // TODO: Populate the exercise select with values
     ['', ...exercises].forEach(exercise => {
       const option = document.createElement("option");
       option.value = JSON.stringify(exercise);
@@ -426,13 +426,13 @@ function handleTargetMuscleGroupSelectionChange() {
   exerciseSelect.disabled = false;
 }
 
-function getExercises(targetMuscleGroup) {
+function getExercises(targetMuscleGroupId) {
 
   // TODO: Send target muscle group to server
 
   // TODO: Return results
 
-  if (targetMuscleGroup === 'Chest'){
+  if (targetMuscleGroupId === 'Chest'){
     return [
         {id: 'test chest id 1', name: 'Barbell Bench Press'},
         {id: 'test chest id 2', name: 'Dumbbell Bench Press'},
@@ -441,7 +441,7 @@ function getExercises(targetMuscleGroup) {
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
-  if (targetMuscleGroup === 'Back'){
+  if (targetMuscleGroupId === 'Back'){
     return [
         {id: 'test back id 1', name: 'Lat Pulldown'},
         {id: 'test back id 2', name: 'Cable Rows'}
@@ -449,14 +449,14 @@ function getExercises(targetMuscleGroup) {
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
-  if (targetMuscleGroup === 'Quads'){
+  if (targetMuscleGroupId === 'Quads'){
     return [
         {id: 'test quads id 1', name: 'Leg Extensions'}
     ]
     .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
   }
 
-  if (targetMuscleGroup === 'Hamstrings'){
+  if (targetMuscleGroupId === 'Hamstrings'){
     return [
         {id: 'test hamstrings id 1', name: 'Leg Curls'},
         {id: 'test hamstrings id 2', name: 'RDLs'}
