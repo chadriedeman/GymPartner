@@ -340,9 +340,9 @@ function validateLogWorkoutUserInput(userInputs) {
 
       [...exercise.sets].forEach(set => {
 
-        // TODO: Weight should not be null
+        // TODO: Weight should not be null and must be greater than or equal to 0
 
-        // TODO: Reps should not be null
+        // TODO: Reps should not be null and must be greater than or equal to 0
 
       });
   });
