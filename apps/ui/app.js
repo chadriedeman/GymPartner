@@ -670,7 +670,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
 
   heading.classList.add('exercise-heading');
 
-  heading.innerHTML = `Exercise ${exerciseNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`}`;
+  heading.innerHTML = `Exercise ${exerciseNumber}`;
 
   exerciseContainer.appendChild(heading);
 
@@ -744,6 +744,8 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
   formGroup.innerHTML += `<button class="log-workout-buttons" onclick="addSet()">Add Set </button>`
 
   exerciseContainer.appendChild(formGroup);
+
+  exerciseContainer.innerHTML +=  `<button class="log-workout-buttons">Add Note &#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> [X] Delete </button>`}`;
 
   return exerciseContainer;
 }
