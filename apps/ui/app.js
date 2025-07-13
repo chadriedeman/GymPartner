@@ -137,7 +137,9 @@ function getExerciseHtml(exerciseNumber) {
               </div>
             </div>
             ${getSetHtml(1)}
-            <button class="log-workout-buttons" onclick="addSet()">Add Set </button> <button class="workout-set-note-button">Add Note &#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> [X] Delete </button>`}`;
+            <button class="log-workout-buttons" onclick="addSet()">Add Set </button> 
+          </div>
+          <button class="log-workout-buttons">Add Exercise Note &#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> [X] Delete </button>`}`;
 }
 
 function deleteExercise() {
