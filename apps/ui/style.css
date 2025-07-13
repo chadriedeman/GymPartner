@@ -120,6 +120,7 @@ button {
     color: white;
     margin-bottom: 2%;
     border-radius: 10px;
+    text-align: center;
 }
 .nav-buttons:hover {
   background-color: #f9f9f9;
@@ -302,7 +303,7 @@ button {
   border: none;
   padding: 0;
   color: white;
-  background: lightgray;
+  background: white;
   border-radius: 6px;
   font-size: 18px;
   vertical-align: baseline;
