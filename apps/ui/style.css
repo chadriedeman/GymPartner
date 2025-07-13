@@ -385,3 +385,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(35%) sepia(80%) saturate(600%) hue-rotate(190deg);
   /* You can adjust the color here */
 }
+
+input[type="time"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #888;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #222;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 160px;
+  cursor: pointer;
+}
+
+input[type="time"]:focus {
+  outline: none;
+  border-color: #005fcc;
+  box-shadow: 0 0 5px rgba(0, 95, 204, 0.5);
+  background-color: #f0f8ff;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(35%) sepia(80%) saturate(600%) hue-rotate(190deg);
+}
