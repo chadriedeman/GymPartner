@@ -95,27 +95,12 @@ button {
 .log-workout-inputs {
     max-width: 85%;
 }
-.log-workout-set-inputs {
-  max-width: 125px;
-  margin-left: 3%;
-}
 .log-workout-inputs-exercise {
     max-width: 175px;
 }
 .log-workout-select {
     max-width: 160px;
     min-width: 160px;
-}
-.workout-sets{
-  border: 1px solid rgba(64,64,64,0.1);
-  background-color: ghostwhite;
-  margin-left: 10%;
-  margin-top: 4%;
-  margin-bottom: 4%;
-  padding-top: 1%;
-  padding-bottom: 5%;
-  padding-left: 3%;
-  padding-right: 5%;
 }
 .title-heading {
     font-size: 60px;
@@ -134,11 +119,6 @@ button {
     background-color: black;
     color: white;
     margin-bottom: 2%;
-}
-.set-heading {
-    margin: 0;
-    padding-top: 4px;
-    padding-bottom: 5px;
 }
 .nav-buttons:hover {
   background-color: #f9f9f9;
@@ -445,4 +425,56 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .textarea-modern {
   min-height: 120px;
   resize: vertical; /* Allow resizing vertically only */
+}
+
+
+
+.workout-sets {
+  background-color: #f9f9f9; /* Softer background to separate from card */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 1rem 0;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.set-heading {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #222;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+/* Set input fields */
+.log-workout-set-inputs {
+  max-width: 100px;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.log-workout-set-inputs:focus {
+  border-color: #005fcc;
+  box-shadow: 0 0 5px rgba(0, 95, 204, 0.2);
+}
+
+/* Optional: Make Add/Delete buttons match your current dark theme */
+.set-action-button {
+  background-color: #222;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.set-action-button:hover {
+  background-color: #444;
 }
