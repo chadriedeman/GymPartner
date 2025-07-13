@@ -756,7 +756,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
       <div class="log-new-workout-date-group">
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Name:</label>
-                <input type="text" class="log-workout-inputs" value="${name}" style="display: table-cell;">                                     
+                <input type="text" class="input-modern" placeholder="Enter workout name" value="${name}" style="display: table-cell;">                                     
             </div>
             <div class="form-group" style="display: table-row;">
                 <label style="display: table-cell; padding-right: 55px;">Date:</label>
@@ -773,7 +773,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
         </div>
         <div class="log-workout-notes-div">
           <label>Workout Notes:</label>
-          <textarea class="log-workout-notes-textarea">${notes}</textarea>                                   
+          <textarea class="textarea-modern" placeholder="Enter notes about your workout...">${notes}</textarea>                                   
         </div>
     </div>`;
 }
