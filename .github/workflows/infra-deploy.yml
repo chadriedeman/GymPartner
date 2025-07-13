@@ -21,7 +21,6 @@ jobs:
 
     - name: Terraform Init & Apply
       run: | # modify to run script instead of having all commands hardcoded here
-        cd infra
         terraform init
         terraform plan -out=tfplan
         terraform apply -auto-approve
