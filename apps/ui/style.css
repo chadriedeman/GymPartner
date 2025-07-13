@@ -155,6 +155,12 @@ button {
     opacity: .85;
     vertical-align: text-bottom;
 }
+.delete-exercise-button {
+    padding: 6px;
+    background-color: darkred;
+    opacity: .85;
+    padding: 0.5rem 1rem;
+}
 .workout-history-delete-button {
   font-size: small;
     background-color: darkred;
