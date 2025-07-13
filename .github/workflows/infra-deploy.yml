@@ -3,9 +3,10 @@ name: Gym Partner Azure Cloud Infrastructure Deploy
 on:
   push:
     paths:
-      - 'infra/**'    # Only runs if files in infra/ are changed
+      - 'infra/**'
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   terraform:
