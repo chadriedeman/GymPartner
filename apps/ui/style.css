@@ -253,11 +253,14 @@ button {
   padding-bottom: 1%;
 }
 .log-workout-exercise {
-  max-width: fit-content;
-  padding-right: 1%;
-  padding-left: 1%;
+  border-radius: 12px;
   background-color: lightgray;
-  margin-top: 2%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+.log-workout-exercise:hover {
+  transform: translateY(-3px);
 }
 .log-workout-notes-div {
   width: 55%;
