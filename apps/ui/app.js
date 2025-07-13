@@ -113,11 +113,11 @@ function getSetHtml(setNumber) {
     <div id="set-${setNumber}" class="workout-sets" style="display: table;">
         <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`} </h3>
           <div class="form-group" style="display: table-row;">
-            <label style="display: table-cell; text-align: right;">Weight:</label>
+            <label style="display: table-cell; text-align: right; padding-right: 4%;">Weight:</label>
             <input id="weight-input-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
         </div> 
         <div class="form-group" style="display: table-row;">
-            <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+            <label style="display: table-cell; text-align: right; padding-right: 4%;">Reps:</label>                                   
             <input id="reps-input-${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;">            <!-- TODO: Validation that to ensure user input is a number -->
         </div>   
     </div>`;
@@ -727,11 +727,11 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
     setDiv.innerHTML = `
       <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
-        <label style="display: table-cell; text-align: right;">Weight:</label>
+        <label style="display: table-cell; text-align: right; padding-right: 4%;">Weight:</label>
         <input id="history-weight-input-${exerciseNumber}-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
       </div>    
       <div class="form-group" style="display: table-row;">
-        <label style="display: table-cell; text-align: right;">Reps:</label>                                   
+        <label style="display: table-cell; text-align: right; padding-right: 4%;">Reps:</label>                                   
         <input id="history-reps-input-${exerciseNumber}-${setNumber}" type="number" step="1" class="log-workout-set-inputs" style="display: table-cell;" value="${set.reps}">
       </div> 
     `;
