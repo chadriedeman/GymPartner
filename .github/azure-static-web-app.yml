@@ -17,8 +17,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (do not change)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/apps/ui"         # Root of your app code
-          api_location: ""          # Set to 'api' if you have an API folder
-          output_location: "build"  # Folder where your built files are located (e.g. build, dist)
+          app_location: "apps/ui"
+          output_location: ""
