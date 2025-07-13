@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Gym Partner Frontend UI App CI/CD
 
 on:
   push:
