@@ -150,9 +150,7 @@ function deleteExercise() {
 
     const grandParentElement = parentElement.parentElement;
 
-    const greatGrandParentElement = grandParentElement.parentElement;
-
-    greatGrandParentElement.removeChild(grandParentElement);
+    grandParentElement.removeChild(parentElement);
 
     const exerciseHeadings = 
       [...greatGrandParentElement.querySelectorAll('[id*="exercise-heading-"]')];
