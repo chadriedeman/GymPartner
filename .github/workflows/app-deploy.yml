@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'apps/ui/**'
-      - 'apps/api/**'
     branches:
       - main
   workflow_dispatch:
@@ -24,5 +23,4 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: "upload"
         app_location: "apps/ui"
-        api_location: "apps/api"
         output_location: ""   # Leave blank if no frontend build step (like no React build output)
