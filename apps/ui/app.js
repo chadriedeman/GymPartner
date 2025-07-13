@@ -124,7 +124,7 @@ function getSetHtml(setNumber) {
 }
 
 function getExerciseHtml(exerciseNumber) {
-  return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} <button class="workout-set-note-button">&#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> X </button>`} </h2>
+  return `<h2 id="exercise-heading-${exerciseNumber}" class="exercise-heading">Exercise ${exerciseNumber} </h2>
           <div id="log-workout-exercise-${exerciseNumber}" class="form-group"> 
             <div style="display: table;">
               <div style="display: table-row;">
@@ -137,7 +137,7 @@ function getExerciseHtml(exerciseNumber) {
               </div>
             </div>
             ${getSetHtml(1)}
-            <button class="log-workout-buttons" onclick="addSet()">Add Set </button>`;
+            <button class="log-workout-buttons" onclick="addSet()">Add Set </button> <button class="workout-set-note-button">Add Note &#128221</button> ${exerciseNumber === 1 ? `` : `<button onclick="deleteExercise()" class="delete-button"> [X] Delete </button>`}`;
 }
 
 function deleteExercise() {
