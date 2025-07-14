@@ -414,8 +414,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-color: #fff;
   color: #222;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  width: 85%;
+  width: 100%;
   /* max-width: 400px; */
+  height: 83%;
+  width: 85%;
 }
 
 .input-modern:focus, .textarea-modern:focus {
