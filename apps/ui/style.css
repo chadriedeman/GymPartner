@@ -161,6 +161,14 @@ button {
 }
 .log-new-workout-date-group {
   display: table;
+  width: 100%;
+}
+.log-new-workout-date-group-label {
+  width: 22%;
+  padding-right: 25px;
+}
+.log-new-workout-date-group-input {
+  width: 40%;
 }
 .toast {
   visibility: hidden;
@@ -235,7 +243,6 @@ button {
 }
 .log-workout-header-group {
   display: flex;
-  gap: 5%;
 }
 .log-workout-notes-textarea {
   height: 85%;
