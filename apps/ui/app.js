@@ -153,13 +153,13 @@ function deleteExercise() {
     grandParentElement.removeChild(parentElement);
 
     const exerciseHeadings = 
-      [...greatGrandParentElement.querySelectorAll('[id*="exercise-heading-"]')];
+      [...grandParentElement.querySelectorAll('[id*="exercise-heading-"]')];
 
       let numberOfExercises = 1;
 
       exerciseHeadings.forEach(heading => {
         
-        heading.innerHTML = `Exercise ${numberOfExercises} <button class="workout-set-note-button">&#128221</button> ${numberOfExercises === 1 ? '' : '<button onclick="deleteExercise()" class="delete-button"> X </button>'}`;
+        heading.innerHTML = `Exercise ${numberOfExercises}`;
 
         numberOfExercises++;
       });

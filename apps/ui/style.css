@@ -259,6 +259,7 @@ button {
   transform: translateY(-3px);
 }
 .log-workout-notes-div {
+  display: -webkit-box;
   width: 55%;
 }
 .dialog-overlay {
