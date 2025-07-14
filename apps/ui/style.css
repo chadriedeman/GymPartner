@@ -484,3 +484,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .today-group {
   display: inline;
 }
+.date-time-button {
+  padding: 3%;
+}
