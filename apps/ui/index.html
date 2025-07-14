@@ -44,33 +44,39 @@
   <!-- Log Workout -->
   <section id="logworkout">
     <h1 class="log-workout-heading">Log New Workout</h1>
-    <div class="log-workout-header-group">
-      <div class="log-new-workout-date-group">
-            <div class="form-group" style="display: table-row;">
-                <label class="log-new-workout-date-group-label" style="display: table-cell;">Name:</label>
-                <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name" style="width: 48%; margin-right: 2%; display: table-cell;">                                     
-            </div>
-            <div class="form-group" style="display: table-row;">
-                  <label class="log-new-workout-date-group-label" style="display: table-cell;">Date:</label>
-                  <input id="log-workout-date-input" type="date" style="width: 48%; margin-right: 2%; display: table-cell;">                                     
-                  <button class="date-time-button" onclick="handleTodayButtonClick()" style="display: table-cell;">Today &#x1F4C5</button>
-            </div>
-            <div class="form-group" style="display: table-row;">
-                <label class="log-new-workout-date-group-label" style="display: table-cell;">Start Time:</label>
-                <input id="log-workout-start-time-input" type="time" style="width: 48%; margin-right: 2%; display: table-cell;">
-                <button class="date-time-button" onclick="handleStartTimeButtonClick()"style="display: table-cell;">Now &#x1F552</button>
-            </div>
-            <div class="form-group" style="display: table-row;">
-                <label class ="log-new-workout-date-group-label" style="display: table-cell;">End Time:</label>
-                <input id="log-workout-end-time-input" type="time" style="width: 48%; margin-right: 2%; display: table-cell;"> 
-                <button class="date-time-button" onclick="handleStartTimeButtonClick()" style="display: table-cell;">Now &#x1F552</button>
-            </div>
-        </div>
-        <div class="log-workout-notes-div">
-          <label>Workout Notes:</label>
-          <textarea id="log-workout-notes-input" class="textarea-modern" placeholder="Enter notes about your workout...">  </textarea>                                   
-        </div>
+   <div class="log-workout-header-group">
+  
+  <div class="log-workout-header-left">
+    <div class="log-workout-header-row">
+      <label for="log-workout-name-input">Name:</label>
+      <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name">
     </div>
+
+    <div class="log-workout-header-row">
+      <label for="log-workout-date-input">Date:</label>
+      <input id="log-workout-date-input" type="date">
+      <button class="date-time-button" onclick="handleTodayButtonClick()">Today &#x1F4C5;</button>
+    </div>
+
+    <div class="log-workout-header-row">
+      <label for="log-workout-start-time-input">Start:</label>
+      <input id="log-workout-start-time-input" type="time">
+      <button class="date-time-button" onclick="handleStartTimeButtonClick()">Now &#x1F552;</button>
+    </div>
+
+    <div class="log-workout-header-row">
+      <label for="log-workout-end-time-input">End:</label>
+      <input id="log-workout-end-time-input" type="time">
+      <button class="date-time-button" onclick="handleEndTimeButtonClick()">Now &#x1F552;</button>
+    </div>
+  </div>
+
+  <div class="log-workout-notes-div">
+    <label for="log-workout-notes-input">Workout Notes:</label>
+    <textarea id="log-workout-notes-input" class="textarea-modern" placeholder="Enter notes about your workout..."></textarea>
+  </div>
+
+  </div>
 
     <div id="log-workout-exercises" class="workout-exercises">
         <div id="exercise-1" class="log-workout-exercise">
