@@ -261,6 +261,9 @@ function saveWorkout() {
       else {
         showErrorToast("Save unsuccessful");
       }
+    })
+    .catch(error =>{
+      showErrorToast("Save unsuccessful");
     });
 }
 
