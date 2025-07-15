@@ -759,7 +759,6 @@ function getIndividualWorkoutBackButtonHtml() {
 function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime, notes) {
   return `
     <div class="log-workout-header-group">
-      <div class="log-new-workout-date-group">
         <div class="log-workout-header-left">
           <div class="log-workout-header-row">
             <label for="log-workout-name-input">Name:</label>
@@ -789,7 +788,6 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
           <label for="log-workout-notes-input">Workout Notes:</label>
           <textarea id="log-workout-notes-input" class="textarea-modern" placeholder="Enter notes about your workout..." value="${notes}"></textarea>
         </div>
-      </div>
     </div>`;
 }
 
