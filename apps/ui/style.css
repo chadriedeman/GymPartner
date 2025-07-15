@@ -456,6 +456,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: #222;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding-bottom: 0.5rem;
+  margin-top: 1.5%;
 }
 
 /* Set input fields */
@@ -554,6 +555,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   gap: 3%;
   display: flex;
   align-items: center;
+}
+.log-workout-name-input {
+  width: 18%;
 }
 
 
