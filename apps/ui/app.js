@@ -999,7 +999,11 @@ function handleDeleteWorkoutButtonClick() {
 
   // TODO: Send workout id to server
 
-  // TODO: If deletion successful on server, then clear current individual workout history html and load workout history list
+  // TODO: If deletion successful on server, then clear current individual workout history html, get updated workout history list from server, load workout history list page
 
   // TODO: Else, display error message
+}
+
+function deleteWorkout(workoutId) {
+  
 }
