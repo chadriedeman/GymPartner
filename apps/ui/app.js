@@ -936,3 +936,16 @@ function showAIAdvice() {
 function isNullOrWhitespace(input) {
   return !input || input.trim().length === 0;
 }
+
+function handleTodayButtonClick() {
+
+  const clickedSelect = event.target;
+
+  const parentElement = clickedSelect.parentElement;
+
+  dateInput = parentElement.querySelector('#log-workout-date-input');
+
+  todaysDateAsString = new Date().toISOString().split('T')[0];
+
+  dateInput.value = todaysDateAsString;
+}
