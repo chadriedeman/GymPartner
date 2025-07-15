@@ -760,27 +760,36 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
   return `
     <div class="log-workout-header-group">
       <div class="log-new-workout-date-group">
-            <div class="form-group" style="display: table-row;">
-                <label style="display: table-cell; padding-right: 55px;">Name:</label>
-                <input type="text" class="input-modern" placeholder="Enter workout name" value="${name}" style="display: table-cell;">                                     
-            </div>
-            <div class="form-group" style="display: table-row;">
-                <label style="display: table-cell; padding-right: 55px;">Date:</label>
-                <input type="date" class="log-workout-inputs" value="${date.toISOString().split('T')[0]}" style="display: table-cell;">                                     
-            </div>
-            <div class="form-group" style="display: table-row;">
-                <label style="display: table-cell;">Start Time:</label>
-                <input type="time" class="log-workout-inputs" value="${startTime}" style="display: table-cell;">                                     
-            </div>
-            <div class="form-group" style="display: table-row;">
-                <label style="display: table-cell;">End Time:</label>
-                <input type="time" class="log-workout-inputs" value="${endTime}" style="display: table-cell;"> 
-            </div>
+        <div class="log-workout-header-left">
+          <div class="log-workout-header-row">
+            <label for="log-workout-name-input">Name:</label>
+            <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name" value="${name}">
+          </div>
+
+          <div class="log-workout-header-row">
+            <label for="log-workout-date-input">Date:</label>
+            <input id="log-workout-date-input" type="date" value="${date.toISOString().split('T')[0]}">
+            <button class="date-time-button" onclick="handleTodayButtonClick()">Today &#x1F4C5;</button>
+          </div>
+
+          <div class="log-workout-header-row">
+            <label for="log-workout-start-time-input">Start:</label>
+            <input id="log-workout-start-time-input" type="time" value="${startTime}">
+            <button class="date-time-button" onclick="handleStartTimeButtonClick()">Now &#x1F552;</button>
+          </div>
+
+          <div class="log-workout-header-row">
+            <label for="log-workout-end-time-input">End:</label>
+            <input id="log-workout-end-time-input" type="time">
+            <button class="date-time-button" onclick="handleEndTimeButtonClick()" value="${endTime}">Now &#x1F552;</button>
+          </div>
         </div>
+
         <div class="log-workout-notes-div">
-          <label>Workout Notes:</label>
-          <textarea class="textarea-modern" placeholder="Enter notes about your workout...">${notes}</textarea>                                   
+          <label for="log-workout-notes-input">Workout Notes:</label>
+          <textarea id="log-workout-notes-input" class="textarea-modern" placeholder="Enter notes about your workout..." value="${notes}"></textarea>
         </div>
+      </div>
     </div>`;
 }
 
