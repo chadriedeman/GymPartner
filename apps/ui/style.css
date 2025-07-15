@@ -319,6 +319,7 @@ button {
 .back-to-workout-history-list-button {
   display: block;
   height: 5%;
+  margin-bottom: 3%;
 }
 
 @media (max-width: 768px) {
