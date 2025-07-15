@@ -436,6 +436,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .textarea-modern {
+  width: 100%;
+  max-width: 830px;
   min-height: 120px;
   resize: vertical; /* Allow resizing vertically only */
 }
