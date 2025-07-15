@@ -117,7 +117,13 @@
   <section id="history">            
     <div style="display: flex; gap: 1%; align-items: center;">
       <h2>Workout History</h2>
-      <select id="workout-history-timeframe-select-1" class="log-workout-select" style="height: fit-content" onchange="handleWorkoutHistoryTimeframeSelectionChange()"></select>
+      <select id="workout-history-timeframe-select-1" class="log-workout-select" style="height: fit-content" onchange="handleWorkoutHistoryTimeframeSelectionChange()">
+        <option value="7d">Last 7 Days</option>
+        <option value="30d">Last 30 Days</option>
+        <option value="3m">Last 3 Months</option>
+        <option value="6m">Last 6 Months</option>
+        <option value="1y">Last 1 Year</option>
+      </select>
     </div>                                              
 
     <div id="workout-history-div">
