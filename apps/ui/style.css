@@ -550,7 +550,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   width: 100%;
   min-height: 140px;
 }
-
+.log-workout-header-row {
+  gap: 3%;
+  display: flex;
+  align-items: center;
+}
 
 
 /* <div class="log-workout-header-group">
