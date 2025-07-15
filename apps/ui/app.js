@@ -1013,3 +1013,7 @@ function handleDeleteWorkoutButtonClick() {
 function deleteWorkout(workoutId) {
 
 }
+
+function handleWorkoutHistoryTimeframeSelectionChange() {
+  // TODO
+}
