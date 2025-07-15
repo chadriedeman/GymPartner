@@ -993,6 +993,12 @@ function handleEndTimeButtonClick() {
 
 function handleDeleteWorkoutButtonClick() {
 
+  // TODO: Display confirmation dialog
+
+  // TODO: If "no", return
+
+  // TOOD: Else:
+
   // TOOD: Get button element
 
   // TODO: Get workout Id
@@ -1005,5 +1011,5 @@ function handleDeleteWorkoutButtonClick() {
 }
 
 function deleteWorkout(workoutId) {
-  
+
 }
