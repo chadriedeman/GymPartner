@@ -536,7 +536,7 @@ function loadWorkoutHistory() {
         </div>
         <div>
           <button class="individual-workout-details-button" onclick="handleGetIndividualWorkoutHistoryClick()" value="${workout.id}">Details</button>
-          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}"> X </button>
+          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}"> [X] Delete </button>
         </div>`;
 
       workoutHistoryDiv.appendChild(newDiv);
