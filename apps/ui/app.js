@@ -949,3 +949,37 @@ function handleTodayButtonClick() {
 
   dateInput.value = todaysDateAsString;
 }
+
+function handleStartTimeButtonClick() {
+
+  const clickedSelect = event.target;
+
+  const parentElement = clickedSelect.parentElement;
+
+  timeInput = parentElement.querySelector('#log-workout-start-time-input');
+
+  now = new Date();
+
+  hoursString = now.getHours().toString().padStart(2, '0');
+
+  minutesString = now.getMinutes().toString().padStart(2, '0');
+
+  timeInput.value = `${hoursString}:${minutesString}`;
+}
+
+function handleEndTimeButtonClick() {
+
+  const clickedSelect = event.target;
+
+  const parentElement = clickedSelect.parentElement;
+
+  timeInput = parentElement.querySelector('#log-workout-end-time-input');
+
+  now = new Date();
+
+  hoursString = now.getHours().toString().padStart(2, '0');
+
+  minutesString = now.getMinutes().toString().padStart(2, '0');
+
+  timeInput.value = `${hoursString}:${minutesString}`;
+}
