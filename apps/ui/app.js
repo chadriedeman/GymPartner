@@ -652,7 +652,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
   <div style="display: flex; gap: 1%;">
     <button class="log-workout-buttons" onclick="addExercise('history')">Add Exercise </button>
     <button class="log-workout-buttons" onclick="updateWorkout()">Update Workout</button>
-    <button class="delete-individual-workout-button" onclick="deleteWorkout()"> [X] Delete Workout</button>
+    <button class="delete-individual-workout-button" onclick="handleDeleteWorkoutButtonClick()"> [X] Delete Workout</button>
   </div>`;
 
   return div.outerHTML;
@@ -991,4 +991,17 @@ function handleEndTimeButtonClick() {
   minutesString = now.getMinutes().toString().padStart(2, '0');
 
   timeInput.value = `${hoursString}:${minutesString}`;
+}
+
+function handleDeleteWorkoutButtonClick() {
+
+  // TOOD: Get button element
+
+  // TODO: Get workout Id
+
+  // TODO: Send workout id to server
+
+  // TODO: If deletion successful on server, then clear current individual workout history html and load workout history list
+
+  // TODO: Else, display error message
 }
