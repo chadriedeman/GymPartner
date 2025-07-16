@@ -67,6 +67,11 @@ button {
   display: flex;
   align-items: center;
 }
+.workout-history-header-group {
+  display: flex; 
+  gap: 1%; 
+  align-items: center;
+}
 .workout-history-exercise-name {
     display: flex;
     gap: 1%;
