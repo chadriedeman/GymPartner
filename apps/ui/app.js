@@ -233,7 +233,7 @@ function addExercise(section) {
     workoutexercisesDiv.appendChild(newDiv);
 }
 
-function saveWorkout() {
+function handleSaveWorkoutButtonClick() {
 
     const userInputs = getLogWorkoutUserInput();
 
