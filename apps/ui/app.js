@@ -249,9 +249,9 @@ function handleSaveWorkoutButtonClick() {
     var successful = saveWorkout();
 
     if (successful === true) {
-       showToast("Workout saved!");
+      showToast("Workout saved!");
 
-        resetLogWorkout();
+      resetLogWorkout();
     }
     else {
       showErrorToast("Save unsuccessful");

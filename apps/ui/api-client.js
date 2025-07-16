@@ -185,7 +185,7 @@ function saveWorkout(userId, workoutDetails) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(userInputs)
+      body: JSON.stringify(workoutDetails)
     })
     .then(response => {
       if (response.ok) {
