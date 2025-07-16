@@ -549,6 +549,10 @@ function handleGetIndividualWorkoutHistoryClick() {
 
   var workoutDetails = getIndividualWorkout(workoutId);
 
+  var workoutHistoryTimeframeSelect = document.getElementById('workout-history-timeframe-select-1');
+
+  workoutHistoryTimeframeSelect.style.visibility = 'hidden';
+
   loadIndividualWorkoutHistoryPage(workoutDetails);
 }
 
@@ -794,6 +798,10 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
 function handleBackToWorkoutHistoryListButtonClick() {
 
   const workoutHistoryDiv = document.getElementById('workout-history-div');
+
+  var workoutHistoryTimeframeSelect = document.getElementById('workout-history-timeframe-select-1');
+
+  workoutHistoryTimeframeSelect.style.visibility = 'visible';
 
   workoutHistoryDiv.innerHTML = currentWorkoutHistoryDivHtml;
 }
