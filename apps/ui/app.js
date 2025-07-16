@@ -9,7 +9,6 @@ const stateManager = {
   currentWorkoutHistoryDivHtml: "",
   currentlySelectedSection: "",
   targetMuscleGroups: null,
-  apiBaseUrl: "" // TODO: Set through config file
 }
 
 // MSAL Config

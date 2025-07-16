@@ -1,6 +1,8 @@
+let apiBaseUrl = ""; // TODO: Set in a function that pulls this from config file
+
 function getExercises(targetMuscleGroupId) {
 
-  fetch('https://your-api-url.com/exercises') // TODO: Get base url from appsettings
+  fetch(`${apiBaseUrl}/exercises`) // TODO: Get base url from appsettings
   .then(response => {
     if (!response.ok) {
       // TODO
@@ -180,7 +182,7 @@ function deleteWorkout(workoutId) {
 
 function saveWorkout(userId, workoutDetails) {
 
- fetch('https://your-server.com/api/workouts', { // TODO: Update url. Needs to be pulled from appsettings
+ fetch(`${apiBaseUrl}/workouts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
