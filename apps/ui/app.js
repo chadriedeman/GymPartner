@@ -430,89 +430,6 @@ function handleTargetMuscleGroupSelectionChange() {
   exerciseSelect.disabled = false;
 }
 
-function getExercises(targetMuscleGroupId) {
-
-  fetch('https://your-api-url.com/exercises') // TODO: Get base url from appsettings
-  .then(response => {
-    if (!response.ok) {
-      // TODO
-    }
-    return response.json();
-  })
-  .then(data => {
-    // TODO
-  })
-  .catch(error => {
-    // TODO
-  });
-
-  // TODO: Return results
-
-  if (targetMuscleGroupId === 'Chest'){
-    return [
-        {id: 'test chest id 1', name: 'Barbell Bench Press'},
-        {id: 'test chest id 2', name: 'Dumbbell Bench Press'},
-        {id: 'test chest id 3', name: 'Machine Chest Press'}
-    ]
-    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
-  }
-
-  if (targetMuscleGroupId === 'Back'){
-    return [
-        {id: 'test back id 1', name: 'Lat Pulldown'},
-        {id: 'test back id 2', name: 'Cable Rows'}
-    ]
-    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
-  }
-
-  if (targetMuscleGroupId === 'Quads'){
-    return [
-        {id: 'test quads id 1', name: 'Leg Extensions'}
-    ]
-    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
-  }
-
-  if (targetMuscleGroupId === 'Hamstrings'){
-    return [
-        {id: 'test hamstrings id 1', name: 'Leg Curls'},
-        {id: 'test hamstrings id 2', name: 'RDLs'}
-    ]
-    .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
-  }
-
-  return [];
-}
-
-function getUserSettings(userId) {
-
-  // TODO: Make request with userId
-
-  return {
-    id: 'test user settings id 1',
-    userId: 'test user id 1',
-    preferredUnitsOfMeasure: {
-      id: 'test preferred uom id 1',
-      name: 'lbs'
-    },
-    emailNotificationsOn: true,
-    preferredEmailTone: {
-      id: 'test preferred email tone id 1',
-      tone: 'Motivational'
-    }
-  }; // TODO: Mocked for now
-}
-
-function getUserBodyWeightLogs(userId) {
-
-  // TODO: Make request with userId
-
-  return [
-    {id: 'test body weight id 1', date: new Date('2025-07-02'), weight: 187.6}, 
-    {id: 'test body weight id 2', date: new Date('2025-07-01'), weight: 186.8}
-  ]
-  .sort((a, b) => b.date - a.date); // TODO: Mocked for now
-}
-
 function loadWorkoutHistory() {
 
   const workouts = getWorkouts(stateManager.userId);
@@ -554,66 +471,6 @@ function handleGetIndividualWorkoutHistoryClick() {
   workoutHistoryTimeframeSelect.style.visibility = 'hidden';
 
   loadIndividualWorkoutHistoryPage(workoutDetails);
-}
-
-function getIndividualWorkout(workoutId) {
-  
-  // TODO: Send workoutId to server with request
-
-  const mockedWorkoutDetails = 
-  {
-    name: "Test workout name 1",
-    date: new Date("2025-07-09"),
-    startTime: "09:52", // TODO: Time object
-    endTime: "11:18", // TODO: Time object
-    notes: "These are test notes",
-    exercises: [
-        {
-            targetMuscleGroup: {
-              id: "test target muscle group id 1",
-              name: "test muscle group name 1"
-            }, 
-            exercise: {
-              id: "test exercise id 1",
-              name: "test exercise name 1",
-              testMuscleGroupId: 'test target muscle group id 1'
-            },
-            sets: [
-                {
-                    "reps": 5,
-                    "weight": 225
-                }
-            ]
-        },
-         {
-            targetMuscleGroup: {
-              id: "test target muscle group id 1",
-              name: "test muscle group name 2"
-            }, 
-            exercise: {
-              id: "test exercise id 2",
-              name: "test exercise name 2",
-              testMuscleGroupId: 'test target muscle group id 1'
-            },
-            sets: [
-                {
-                    "reps": 3,
-                    "weight": 200
-                },
-                {
-                    "reps": 2,
-                    "weight": 200
-                },
-                {
-                    "reps": 2,
-                    "weight": 200
-                }
-            ]
-        }
-    ]
-  };
-
-  return mockedWorkoutDetails; // TODO: Mocked
 }
 
 function loadIndividualWorkoutHistoryPage(workoutDetails) {
@@ -818,38 +675,6 @@ function deleteIndividualWorkout(workoutId) {
   // TODO: Return true if successful or false if unsuccessful
 }
 
-function getWorkouts(userId) {
-
-  // TODO: Send request to server
-
-  return [
-    {
-      id: 'test workout id 1',
-      name: 'test workout name 1',
-      date: new Date('2025-07-01')
-    },
-    {
-      id: 'test workout id 2',
-      name: 'test workout name 2',
-      date: new Date('2025-06-30')
-    },
-    {
-      id: 'test workout id 3',
-      name: 'test workout name 3',
-      date: new Date('2025-06-27')
-    },
-    {
-      id: 'test workout id 4',
-      name: 'test workout name 4',
-      date: new Date('2025-06-26')
-    },
-    {
-      id: 'test workout id 5',
-      name: 'test workout name 5',
-      date: new Date('2025-06-25')
-    }
-  ];
-}
 
 // Chart.js example
 const ctx = document.getElementById('performanceChart').getContext('2d');
@@ -1018,9 +843,7 @@ function handleDeleteWorkoutButtonClick() {
   // TODO: Else, display error message
 }
 
-function deleteWorkout(workoutId) {
 
-}
 
 function handleWorkoutHistoryTimeframeSelectionChange() {
   // TODO
