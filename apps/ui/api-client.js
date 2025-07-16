@@ -2,7 +2,7 @@ let apiBaseUrl = ""; // TODO: Set in a function that pulls this from config file
 
 function getExercises(targetMuscleGroupId) {
 
-  fetch(`${apiBaseUrl}/exercises`) // TODO: Get base url from appsettings
+  fetch(`${apiBaseUrl}/exercises`)
   .then(response => {
     if (!response.ok) {
       // TODO
@@ -177,7 +177,9 @@ function getWorkouts(userId) {
 }
 
 function deleteWorkout(workoutId) {
+  // TODO: Send workoutId to server
 
+  // TODO: Return true if successful or false if unsuccessful
 }
 
 function saveWorkout(userId, workoutDetails) {

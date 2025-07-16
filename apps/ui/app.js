@@ -658,13 +658,6 @@ function handleDeleteIndividualWorkoutHistoryClick() {
   // TODO: Show confirmation dialog.
 }
 
-function deleteIndividualWorkout(workoutId) {
-  // TODO: Send workoutId to server
-
-  // TODO: Return true if successful or false if unsuccessful
-}
-
-
 // Chart.js example
 const ctx = document.getElementById('performanceChart').getContext('2d');
 new Chart(ctx, {
@@ -831,8 +824,6 @@ function handleDeleteWorkoutButtonClick() {
 
   // TODO: Else, display error message
 }
-
-
 
 function handleWorkoutHistoryTimeframeSelectionChange() {
   // TODO
