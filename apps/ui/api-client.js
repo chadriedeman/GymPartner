@@ -177,3 +177,25 @@ function getWorkouts(userId) {
 function deleteWorkout(workoutId) {
 
 }
+
+function saveWorkout(userId, workoutDetails) {
+
+ fetch('https://your-server.com/api/workouts', { // TODO: Update url. Needs to be pulled from appsettings
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userInputs)
+    })
+    .then(response => {
+      if (response.ok) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    })
+    .catch(error =>{
+      return false;
+    });
+}

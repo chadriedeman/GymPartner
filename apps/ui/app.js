@@ -246,26 +246,16 @@ function handleSaveWorkoutButtonClick() {
       return;
     }
     
-    fetch('https://your-server.com/api/workouts', { // TODO: Update url. Needs to be pulled from appsettings
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userInputs)
-    })
-    .then(response => {
-      if (response.ok) {
-        showToast("Workout saved!");
+    var successful = saveWorkout();
+
+    if (successful === true) {
+       showToast("Workout saved!");
 
         resetLogWorkout();
-      }
-      else {
-        showErrorToast("Save unsuccessful");
-      }
-    })
-    .catch(error =>{
+    }
+    else {
       showErrorToast("Save unsuccessful");
-    });
+    }
 }
 
 function getLogWorkoutUserInput() {
