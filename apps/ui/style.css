@@ -65,7 +65,7 @@ button {
   border-radius: 5px;
   font-size: x-large;
   display: flex;
-  /* gap: 3%; */
+  align-items: center;
 }
 .workout-history-exercise-name {
     display: flex;

@@ -534,7 +534,7 @@ function loadWorkoutHistory() {
         <div class="workout-history-exercise-name">
           ${workout.name} 
         </div>
-        <div>
+        <div style="padding-bottom: 0.5%">
           <button class="individual-workout-details-button" onclick="handleGetIndividualWorkoutHistoryClick()" value="${workout.id}">Details</button>
           <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}"> [X] Delete </button>
         </div>`;
