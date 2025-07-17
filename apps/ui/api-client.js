@@ -267,3 +267,20 @@ function saveWorkout(userId, workoutDetails) {
       return false;
     });
 }
+
+function getTargetMuscleGroups() {
+
+    // TODO: Get target muscle group list from the server
+
+    // TODO: Store it in stateManager.targetMuscleGroups
+
+    // TODO: Return it. This may mean users don't have the latest list if one is added but it will save many trips to the server and as soon as they refresh, they will have the new list
+
+  return [
+            { id: 'Chest', name: 'Chest' },
+            { id: 'Back', name: 'Back' },
+            { id: 'Quads', name: 'Quads' },
+            { id: 'Hamstrings', name: 'Hamstrings' }
+          ]
+          .sort((a, b) => a.name.localeCompare(b.name)); // TODO: Mocked for now
+}
