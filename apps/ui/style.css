@@ -624,6 +624,44 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 
 
+.workout-history-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.history-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.history-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.history-filter label {
+  font-weight: 600;
+}
+
+.timeframe-select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #888;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeframe-select:focus {
+  border-color: #005fcc;
+  box-shadow: 0 0 5px rgba(0, 95, 204, 0.5);
+}
 
 
 @media (max-width: 768px) {

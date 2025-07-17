@@ -120,20 +120,21 @@
   </section>
 
   <!-- Workout History -->
-  <section id="history">            
-    <div class="workout-history-header-group">
-      <h2>Workout History</h2>
-      <select id="workout-history-timeframe-select-1" class="log-workout-select" style="height: fit-content" onchange="handleWorkoutHistoryTimeframeSelectionChange()">
-        <option value="7d">Last 7 Days</option>
-        <option value="30d">Last 30 Days</option>
-        <option value="3m">Last 3 Months</option>
-        <option value="6m">Last 6 Months</option>
-        <option value="1y">Last 1 Year</option>
-      </select>
-    </div>                                              
-
-    <div id="workout-history-div">
+  <section id="history">
+    <div class="workout-history-header-bar">
+      <h2 class="history-title">Workout History</h2>
+      <div class="history-filter">
+        <label for="workout-history-timeframe-select-1">Filter:</label>
+        <select id="workout-history-timeframe-select-1" class="timeframe-select" onchange="handleWorkoutHistoryTimeframeSelectionChange()">
+          <option value="7d">Last 7 Days</option>
+          <option value="30d">Last 30 Days</option>
+          <option value="3m">Last 3 Months</option>
+          <option value="6m">Last 6 Months</option>
+          <option value="1y">Last 1 Year</option>
+        </select>
+      </div>
     </div>
+    <div id="workout-history-div"></div>
   </section>
 
   <!-- Media Upload -->
