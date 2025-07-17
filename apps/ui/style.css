@@ -351,12 +351,6 @@ textarea:focus {
   outline: 1px solid #00f;
   outline-offset: 1px;
 }
-.log-workout-heading {
-  text-align: center; 
-  font-size: 40px; 
-  margin: 0; 
-  padding-bottom: 20px;
-}
 input[type="date"] {
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -486,26 +480,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   gap: 1rem;
 }
-
-/* .log-workout-detail-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.log-workout-detail-row label {
-  min-width: 100px;
-  font-weight: 600;
-}
-
-.log-workout-detail-row input {
-  flex: 1;
-}
-
-.log-workout-detail-row button {
-  flex: none;
-} */
-
 .log-workout-notes-div {
   flex: 1 1 35%;
   display: flex;
@@ -623,4 +597,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .input-with-button button:hover {
   background-color: #444;
+}
+
+.log-workout-heading {
+  font-size: 2rem; /* Cleaner, not oversized */
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  color: #222;
+  border-bottom: 2px solid #ddd; /* Subtle underline */
 }
