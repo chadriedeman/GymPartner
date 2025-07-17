@@ -318,7 +318,7 @@ button {
 .back-to-workout-history-list-button {
   display: block;
   height: 5%;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
 }
 button:not(.nav-buttons):focus,
 input:focus,
