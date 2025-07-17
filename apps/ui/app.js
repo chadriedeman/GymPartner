@@ -481,7 +481,7 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
 
   div.innerHTML = getIndividualWorkoutBackButtonHtml();
 
-  div.innerHTML += getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime, workoutDetails.notes);
+  div.innerHTML += getIndividualWorkoutHeaderInformationHtml(workoutDetails.name, workoutDetails.date, workoutDetails.startTime, workoutDetails.endTime);
 
   const exercisesDiv = document.createElement('div');
 
@@ -497,6 +497,12 @@ function getIndividualWorkoutHistoryHtml(workoutDetails) {
   });
 
   div.innerHTML += exercisesDiv.outerHTML;
+
+  div.innerHTML += `
+    <div class="log-workout-notes-container">
+      <label for="log-workout-notes-input" class="notes-label">Workout Notes <span class="optional">(optional)</span></label>
+      <textarea id="log-workout-notes-input" class="notes-textarea" placeholder="Optional: Add notes about how you felt, PRs, injuries, etc.">${workoutDetails.notes}</textarea>
+    </div>`;
 
   div.innerHTML += `
   <div style="display: flex; gap: 1%;">
@@ -609,7 +615,7 @@ function getIndividualWorkoutBackButtonHtml() {
   </div>`;
 }
 
-function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime, notes) {
+function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTime) {
   return `
     <div class="log-workout-details-container">
       <h2 class="section-subheading">Workout Details</h2>
