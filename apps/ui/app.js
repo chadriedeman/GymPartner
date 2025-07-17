@@ -451,7 +451,11 @@ function handleGetIndividualWorkoutHistoryClick() {
 
   var workoutHistoryTimeframeSelect = document.getElementById('workout-history-timeframe-select-1');
 
+  var workoutHistoryTimeframeSelectLabel = document.getElementById('workout-history-timeframe-select-1-label');
+
   workoutHistoryTimeframeSelect.style.visibility = 'hidden';
+
+  workoutHistoryTimeframeSelectLabel.style.visibility = 'hidden';
 
   loadIndividualWorkoutHistoryPage(workoutDetails);
 }
@@ -650,7 +654,11 @@ function handleBackToWorkoutHistoryListButtonClick() {
 
   var workoutHistoryTimeframeSelect = document.getElementById('workout-history-timeframe-select-1');
 
+  var workoutHistoryTimeframeSelectLabel = document.getElementById('workout-history-timeframe-select-1-label');
+
   workoutHistoryTimeframeSelect.style.visibility = 'visible';
+
+  workoutHistoryTimeframeSelectLabel.style.visibility = 'visible';
 
   workoutHistoryDiv.innerHTML = currentWorkoutHistoryDivHtml;
 }
