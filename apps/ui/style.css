@@ -665,6 +665,70 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 
+
+.dialog-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.confirm-dialog-box {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 4px solid #222;
+}
+
+.confirm-dialog-box p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.delete-button {
+  background-color: darkred;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: crimson;
+}
+
+.cancel-button {
+  background-color: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #444;
+}
+
+
+
 @media (max-width: 768px) {
   .log-workout-details-container {
     padding: 0.5% 5% 1% 5%;
