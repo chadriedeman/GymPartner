@@ -621,7 +621,7 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
       <h2 class="section-subheading">Workout Details</h2>
       <div class="log-workout-detail-row">
         <label for="log-workout-name-input">Name</label>
-        <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name" value="${name}>
+        <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name" value="${name}">
       </div>
 
       <div class="log-workout-detail-row">
@@ -643,8 +643,8 @@ function getIndividualWorkoutHeaderInformationHtml(name, date, startTime, endTim
       <div class="log-workout-detail-row">
         <label for="log-workout-end-time-input">End</label>
         <div class="input-with-button">
-          <input id="log-workout-end-time-input" type="time">
-          <button type="button" onclick="handleEndTimeButtonClick()" title="Set to Now" value="${endTime}">&#x1F552;</button>
+          <input id="log-workout-end-time-input" type="time" value="${endTime}">
+          <button type="button" onclick="handleEndTimeButtonClick()" title="Set to Now">&#x1F552;</button>
         </div>
       </div>
     </div>`;
