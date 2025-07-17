@@ -193,7 +193,7 @@ function getIndividualWorkout(workoutId) {
   return mockedWorkoutDetails; // TODO: Mocked
 }
 
-function getWorkouts(userId) {
+function getWorkouts(fromDate) {
 
   // TODO: Send request to server
 

@@ -270,5 +270,30 @@ function handleDeleteWorkoutButtonClick() {
 }
 
 function handleWorkoutHistoryTimeframeSelectionChange() {
-  // TODO
+
+    const workoutHistoryTimeframeSelect = document.getElementById('workout-history-timeframe-select-1');
+
+    var timeframeValue = workoutHistoryTimeframeSelect.value;
+
+    let fromDate = null;
+
+    switch (timeframeValue) {
+
+        case '7d':
+            fromDate = new Date().getDate() - 7;
+            break;
+
+        case '30d':
+            fromDate = new Date().getDate() - 30;
+            break;
+
+        // TODO
+
+        default:
+            fromDate = new Date().getDate() - 7;
+    }
+
+    const workouts = getWorkouts(fromDate);
+
+    // TODO: Loop through each workout and add to select
 }
