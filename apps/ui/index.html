@@ -70,11 +70,11 @@
         </div>
       </div>
 
-      <div class="log-workout-notes-div">
+      <!-- <div class="log-workout-notes-div">
         <label for="log-workout-notes-input">Workout Notes:</label>
         <textarea id="log-workout-notes-input" class="textarea-modern" placeholder="Enter notes about your workout..."></textarea>
-      </div>
-    </div>
+      </div>-->
+    </div> 
 
     <div id="log-workout-exercises" class="workout-exercises">
         <div id="exercise-1" class="log-workout-exercise">
@@ -106,6 +106,16 @@
             <button class="log-workout-buttons">Add Note &#128221</button>
         </div>
     </div>
+
+
+
+    <div class="log-workout-notes-container">
+      <label for="log-workout-notes-input" class="notes-label">Workout Notes <span class="optional">(optional)</span></label>
+      <textarea id="log-workout-notes-input" class="notes-textarea" placeholder="Optional: Add notes about how you felt, PRs, injuries, etc."></textarea>
+    </div>
+
+
+
     <button class="log-workout-buttons" onclick="addExercise('logworkout')">Add Exercise </button>                                        
     <button class="log-workout-buttons" onclick="handleSaveWorkoutButtonClick()">Save Workout</button>
     <button class="log-workout-buttons" onclick="handleResetButtonClick()">Reset</button>

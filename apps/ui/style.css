@@ -529,3 +529,55 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .log-workout-name-input {
   width: 18%;
 }
+
+
+
+
+
+
+
+
+
+
+
+.log-workout-notes-container {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.notes-label {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.optional {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #888;
+    margin-left: 0.25rem;
+}
+
+.notes-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.notes-textarea:focus {
+    border-color: #005fcc;
+    box-shadow: 0 0 8px rgba(0,95,204,0.2);
+    background: #fff;
+}
