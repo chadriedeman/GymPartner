@@ -585,6 +585,47 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-bottom: 2px solid #ddd; /* Subtle underline */
 }
 
+
+.workout-history-card {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.workout-history-card:hover {
+  transform: translateY(-2px);
+}
+
+.workout-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.workout-history-date {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.workout-history-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.workout-history-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.25rem;
+}
+
+
+
+
+
 @media (max-width: 768px) {
   .log-workout-details-container {
     padding: 0.5% 5% 1% 5%;

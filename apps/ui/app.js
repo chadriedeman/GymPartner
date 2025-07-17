@@ -420,32 +420,26 @@ function handleTargetMuscleGroupSelectionChange() {
 }
 
 function loadWorkoutHistory() {
-
   const workouts = getWorkouts(stateManager.userId);
-
   const workoutHistoryDiv = document.getElementById('workout-history-div');
-
   workoutHistoryDiv.innerHTML = "";
 
-  [...workouts].forEach(workout => {
-
+  workouts.forEach(workout => {
     const newDiv = document.createElement('div');
+    newDiv.classList.add('workout-history-card');
 
-    newDiv.classList.add('workout-history-exercise');
-
-    newDiv.innerHTML =
-        `<div class="workout-history-exercise-date">
-          ${workout.date.toISOString().split('T')[0]} 
-        </div>
-        <div class="workout-history-exercise-name">
-          ${workout.name} 
-        </div>
-        <div style="padding-bottom: 0.5%">
+    newDiv.innerHTML = `
+      <div class="workout-history-header">
+        <div class="workout-history-date">${workout.date.toISOString().split('T')[0]}</div>
+        <div class="workout-history-buttons">
           <button class="individual-workout-details-button" onclick="handleGetIndividualWorkoutHistoryClick()" value="${workout.id}">Details</button>
-          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}"> [X] Delete </button>
-        </div>`;
+          <button class="workout-history-delete-button" onclick="handleDeleteIndividualWorkoutHistoryClick()" value="${workout.id}">[X] Delete</button>
+        </div>
+      </div>
+      <div class="workout-history-name">${workout.name}</div>
+    `;
 
-      workoutHistoryDiv.appendChild(newDiv);
+    workoutHistoryDiv.appendChild(newDiv);
   });
 }
 
