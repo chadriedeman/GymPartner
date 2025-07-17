@@ -320,30 +320,6 @@ button {
   height: 5%;
   margin-bottom: 3%;
 }
-@media (max-width: 768px) {
-  .title-heading {
-    font-size: 40px;
-  }
-  .log-workout-notes-div,
-  .log-new-workout-date-group {
-    width: 100%;
-  }
-  .workout-exercises {
-    flex-direction: column;
-    gap: 2%;
-  }
-  .log-workout-exercise {
-    width: 100%;
-  }
-  nav {
-    flex-direction: column;
-  }
-  .nav-button {
-    width: 100%;
-    text-align: center;
-    margin: 4px 0;
-  } 
-}
 button:not(.nav-buttons):focus,
 input:focus,
 select:focus,
@@ -607,4 +583,32 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   padding-bottom: 0.5rem;
   color: #222;
   border-bottom: 2px solid #ddd; /* Subtle underline */
+}
+
+@media (max-width: 768px) {
+  .log-workout-details-container {
+    padding: 0.5% 5% 1% 5%;
+  }
+  .title-heading {
+    font-size: 40px;
+  }
+  .log-workout-notes-div,
+  .log-new-workout-date-group {
+    width: 100%;
+  }
+  .workout-exercises {
+    flex-direction: column;
+    gap: 2%;
+  }
+  .log-workout-exercise {
+    width: 100%;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .nav-button {
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  } 
 }
