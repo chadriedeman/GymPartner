@@ -2,21 +2,23 @@ let apiBaseUrl = ""; // TODO: Set in a function that pulls this from config file
 
 function getExercises(targetMuscleGroupId) {
 
-  fetch(`${apiBaseUrl}/exercises`)
+  fetch(`${apiBaseUrl}/exercises?targetMuscleGroupId=${targetMuscleGroupId}`, {
+      method: 'GET',
+   })
   .then(response => {
+
     if (!response.ok) {
       // TODO
     }
+
     return response.json();
   })
   .then(data => {
-    // TODO
+    // TODO: Return results
   })
   .catch(error => {
     // TODO
   });
-
-  // TODO: Return results
 
   if (targetMuscleGroupId === 'Chest'){
     return [
@@ -55,7 +57,23 @@ function getExercises(targetMuscleGroupId) {
 
 function getUserSettings(userId) {
 
-  // TODO: Make request with userId
+  fetch(`${apiBaseUrl}/settings`, {
+      method: 'GET',
+   })
+  .then(response => {
+    
+    if (!response.ok) {
+      // TODO
+    }
+
+    return response.json();
+  })
+  .then(data => {
+    // TODO: Return results
+  })
+  .catch(error => {
+    // TODO
+  });
 
   return {
     id: 'test user settings id 1',
@@ -74,7 +92,23 @@ function getUserSettings(userId) {
 
 function getUserBodyWeightLogs(userId) {
 
-  // TODO: Make request with userId
+  fetch(`${apiBaseUrl}/body-weight-logs`, {
+      method: 'GET',
+  })
+  .then(response => {
+    
+    if (!response.ok) {
+      // TODO
+    }
+
+    return response.json();
+  })
+  .then(data => {
+    // TODO: Return results
+  })
+  .catch(error => {
+    // TODO
+  });
 
   return [
     {id: 'test body weight id 1', date: new Date('2025-07-02'), weight: 187.6}, 
@@ -85,7 +119,23 @@ function getUserBodyWeightLogs(userId) {
 
 function getIndividualWorkout(workoutId) {
   
-  // TODO: Send workoutId to server with request
+  fetch(`${apiBaseUrl}/workouts/${workoutId}`, {
+      method: 'GET',
+   })
+  .then(response => {
+    
+    if (!response.ok) {
+      // TODO
+    }
+
+    return response.json();
+  })
+  .then(data => {
+    // TODO: Return results
+  })
+  .catch(error => {
+    // TODO
+  });
 
   const mockedWorkoutDetails = 
   {
@@ -177,7 +227,21 @@ function getWorkouts(userId) {
 }
 
 function deleteWorkout(workoutId) {
-  // TODO: Send workoutId to server
+
+   fetch(`${apiBaseUrl}/workouts`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (response.ok) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    })
+    .catch(error =>{
+      return false;
+    });
 
   // TODO: Return true if successful or false if unsuccessful
 }
