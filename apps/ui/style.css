@@ -583,6 +583,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   padding-bottom: 0.5rem;
   color: #222;
   border-bottom: 2px solid #ddd; /* Subtle underline */
+  margin-top: 0;
 }
 
 
