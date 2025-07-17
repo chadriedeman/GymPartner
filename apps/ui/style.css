@@ -487,7 +487,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   gap: 1rem;
 }
 
-.log-workout-detail-row {
+/* .log-workout-detail-row {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -504,7 +504,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .log-workout-detail-row button {
   flex: none;
-}
+} */
 
 .log-workout-notes-div {
   flex: 1 1 35%;
@@ -570,4 +570,57 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border-color: #005fcc;
     box-shadow: 0 0 8px rgba(0,95,204,0.2);
     background: #fff;
+}
+.log-workout-details-container {
+  background: #fff;
+  padding: 0.5% 2% 1% 2%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #ddd;
+  max-width: 650px;
+}
+
+.section-subheading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.log-workout-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+
+.log-workout-detail-row label {
+  flex: 0 0 80px;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-with-button {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.input-with-button input {
+  flex: 1;
+}
+
+.input-with-button button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.input-with-button button:hover {
+  background-color: #444;
 }

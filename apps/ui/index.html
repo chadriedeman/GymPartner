@@ -44,7 +44,7 @@
   <!-- Log Workout -->
   <section id="logworkout">
     <h1 class="log-workout-heading">Log New Workout</h1>
-    <div class="log-workout-header-group">
+    <!-- <div class="log-workout-header-group">
       <div class="log-workout-header-left">
         <div class="log-workout-header-row">
           <label for="log-workout-name-input">Name:</label>
@@ -69,7 +69,39 @@
           <button class="date-time-button" onclick="handleEndTimeButtonClick()">Now &#x1F552;</button>
         </div>
       </div>
-    </div> 
+    </div>  -->
+    <div class="log-workout-details-container">
+      <h2 class="section-subheading">Workout Details</h2>
+      <div class="log-workout-detail-row">
+        <label for="log-workout-name-input">Name</label>
+        <input id="log-workout-name-input" type="text" class="input-modern" placeholder="Enter workout name">
+      </div>
+
+      <div class="log-workout-detail-row">
+        <label for="log-workout-date-input">Date</label>
+        <div class="input-with-button">
+          <input id="log-workout-date-input" type="date">
+          <button type="button" onclick="handleTodayButtonClick()" title="Set to Today">&#x1F4C5;</button>
+        </div>
+      </div>
+
+      <div class="log-workout-detail-row">
+        <label for="log-workout-start-time-input">Start</label>
+        <div class="input-with-button">
+          <input id="log-workout-start-time-input" type="time">
+          <button type="button" onclick="handleStartTimeButtonClick()" title="Set to Now">&#x1F552;</button>
+        </div>
+      </div>
+
+      <div class="log-workout-detail-row">
+        <label for="log-workout-end-time-input">End</label>
+        <div class="input-with-button">
+          <input id="log-workout-end-time-input" type="time">
+          <button type="button" onclick="handleEndTimeButtonClick()" title="Set to Now">&#x1F552;</button>
+        </div>
+      </div>
+    </div>
+
 
     <div id="log-workout-exercises" class="workout-exercises">
         <div id="exercise-1" class="log-workout-exercise">
