@@ -322,7 +322,7 @@ function showErrorToast(message = "Save unsuccessful") {
 }
 
 function showConfirmDialog() {
-  document.getElementById("confirm-dialog").style.display = "flex";
+  document.getElementById("reset-confirm-dialog").style.display = "flex";
 }
 
 function handleResetNoButtonClick() {
@@ -333,7 +333,7 @@ function handleResetYesButtonClick() {
 
   resetLogWorkout();
 
-  document.getElementById("confirm-dialog").style.removeProperty("display");
+  document.getElementById("reset-confirm-dialog").style.removeProperty("display");
 }
 
 // AI Advice placeholder
@@ -350,39 +350,4 @@ function showAIAdvice() {
 
 function isNullOrWhitespace(input) {
   return !input || input.trim().length === 0;
-}
-
-////////////////////////////////////////////////////////////////////////////
-
-function showConfirmDialog(message, onConfirm) {
-  const overlay = document.getElementById('confirm-dialog-overlay');
-  const messageElem = document.getElementById('confirm-dialog-message');
-  const confirmBtn = document.getElementById('confirm-delete-button');
-  const cancelBtn = document.getElementById('cancel-delete-button');
-
-  messageElem.textContent = message;
-  overlay.style.display = 'flex';
-
-  const handleConfirm = () => {
-    overlay.style.display = 'none';
-    confirmBtn.removeEventListener('click', handleConfirm);
-    cancelBtn.removeEventListener('click', handleCancel);
-    onConfirm();
-  };
-
-  const handleCancel = () => {
-    overlay.style.display = 'none';
-    confirmBtn.removeEventListener('click', handleConfirm);
-    cancelBtn.removeEventListener('click', handleCancel);
-  };
-
-  confirmBtn.addEventListener('click', handleConfirm);
-  cancelBtn.addEventListener('click', handleCancel);
-}
-
-function handleDeleteWorkoutButtonClick() {
-  showConfirmDialog('Are you sure you want to delete this workout?', () => {
-    // Perform delete logic here
-    deleteWorkout();
-  });
 }

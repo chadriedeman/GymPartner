@@ -253,12 +253,10 @@ function handleDeleteIndividualWorkoutHistoryClick() {
 function handleDeleteWorkoutButtonClick() {
 
   // TODO: Display confirmation dialog
+  showConfirmDialog('Are you sure you want to delete this workout?');
+}
 
-  // TODO: If "no", return
-
-  // TOOD: Else:
-
-  // TOOD: Get button element
+function handleDeleteWorkoutDeleteButtonClick() {
 
   // TODO: Get workout Id
 
@@ -267,6 +265,24 @@ function handleDeleteWorkoutButtonClick() {
   // TODO: If deletion successful on server, then clear current individual workout history html, get updated workout history list from server, load workout history list page
 
   // TODO: Else, display error message
+} 
+
+function handleDeleteWorkoutCancelButtonClick() {
+
+  const deleteConfirmDialog = document.getElementById('delete-confirm-dialog');
+  
+  deleteConfirmDialog.style.display = 'none';
+}
+
+function showConfirmDialog(message) {
+
+  const deleteConfirmDialog = document.getElementById('delete-confirm-dialog');
+  
+  const messageElem = document.getElementById('confirm-dialog-message');
+  
+  messageElem.textContent = message;
+
+  deleteConfirmDialog.style.display = 'flex';
 }
 
 function handleWorkoutHistoryTimeframeSelectionChange() {
@@ -297,3 +313,4 @@ function handleWorkoutHistoryTimeframeSelectionChange() {
 
     // TODO: Loop through each workout and add to select
 }
+
