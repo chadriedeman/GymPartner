@@ -664,8 +664,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   box-shadow: 0 0 5px rgba(0, 95, 204, 0.5);
 }
 
-
-
 .dialog-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -726,8 +724,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .cancel-button:hover {
   background-color: #444;
 }
-
-
 
 @media (max-width: 768px) {
   .log-workout-details-container {

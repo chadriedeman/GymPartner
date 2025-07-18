@@ -291,25 +291,35 @@ function handleWorkoutHistoryTimeframeSelectionChange() {
 
     var timeframeValue = workoutHistoryTimeframeSelect.value;
 
-    let fromDate = null;
+    let fromDate = new Date();
 
     switch (timeframeValue) {
 
         case '7d':
-            fromDate = new Date().getDate() - 7;
+            fromDate.setDate(fromDate.getDate() - 7);
             break;
 
         case '30d':
-            fromDate = new Date().getDate() - 30;
+            fromDate.setDate(fromDate.getDate() - 30);
             break;
 
-        // TODO
+        case '3m':
+            fromDate.setDate(fromDate.getMonth() - 3);
+            break;
+
+        case '6m':
+            fromDate.setDate(fromDate.getMonth() - 6);
+            break;
+
+         case '1y':
+            fromDate.setDate(fromDate.getFullYear() - 1);
+            break;
 
         default:
-            fromDate = new Date().getDate() - 7;
+            fromDate.setDate(fromDate.getDate() - 7);
     }
 
-    const workouts = getWorkouts(fromDate);
+    const workouts = getWorkouts(fromDate.toISOString());
 
     // TODO: Loop through each workout and add to select
 }
