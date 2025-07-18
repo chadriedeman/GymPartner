@@ -1,8 +1,13 @@
 let currentWorkoutHistoryDivHtml = "";
 
-function loadWorkoutHistory() {
-  const workouts = getWorkouts(stateManager.userId);
+function loadWorkoutHistory(workouts) {
+
+  if (!workouts) {
+    workouts = getWorkouts(stateManager.userId);
+  }
+
   const workoutHistoryDiv = document.getElementById('workout-history-div');
+  
   workoutHistoryDiv.innerHTML = "";
 
   workouts.forEach(workout => {
@@ -321,6 +326,6 @@ function handleWorkoutHistoryTimeframeSelectionChange() {
 
     const workouts = getWorkouts(fromDate.toISOString());
 
-    // TODO: Loop through each workout and add to select
+    loadWorkoutHistory(workouts);
 }
 
