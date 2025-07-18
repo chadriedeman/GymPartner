@@ -250,6 +250,7 @@ function handleBackToWorkoutHistoryListButtonClick() {
 }
 
 function handleDeleteIndividualWorkoutHistoryClick() {
+
   var workoutId = event.target.value;
 
   // TODO: Show confirmation dialog.
@@ -257,7 +258,6 @@ function handleDeleteIndividualWorkoutHistoryClick() {
 
 function handleDeleteWorkoutButtonClick() {
 
-  // TODO: Display confirmation dialog
   showConfirmDialog('Are you sure you want to delete this workout?');
 }
 
