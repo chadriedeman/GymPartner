@@ -139,7 +139,7 @@ button {
     padding: 6px;
     background-color: darkred;
     opacity: .85;
-    vertical-align: text-bottom;
+    margin-top: 0;
 }
 .delete-exercise-button {
     padding: 6px;
@@ -313,7 +313,7 @@ button {
   background: white;
   border-radius: 6px;
   font-size: 18px;
-  vertical-align: baseline;
+  margin-top: 0;
 }
 .back-to-workout-history-list-button {
   display: block;
@@ -412,6 +412,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding-bottom: 0.5rem;
   margin-top: 1.5%;
+  display: inline-flex;
+  align-items: center;
 }
 .log-workout-set-inputs {
   max-width: 100px;
