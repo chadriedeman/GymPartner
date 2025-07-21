@@ -410,7 +410,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin-bottom: 0.75rem;
   color: #222;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.5%;
+  padding-top: 1%;
   margin-top: 1.5%;
   display: inline-flex;
   align-items: center;
