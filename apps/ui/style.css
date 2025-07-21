@@ -134,13 +134,13 @@ button {
     font-weight: bold;
     border: 2px solid darkgoldenrod;
 }
-/* .delete-button {
+.delete-set-button {
     font-size: x-small;
     padding: 6px;
     background-color: darkred;
     opacity: .85;
     vertical-align: text-bottom;
-} */
+}
 .delete-exercise-button {
     padding: 6px;
     background-color: darkred;
@@ -152,9 +152,9 @@ button {
     background-color: darkred;
     opacity: .85;
 }
-/* .delete-button:hover {
+.delete-set-button:hover {
     background-color: lightcoral;
-} */
+}
 .workout-history-delete-button:hover {
     background-color: lightcoral;
 }

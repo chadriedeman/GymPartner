@@ -169,7 +169,7 @@ function getIndividualWorkoutHistoryExerciseHtml(exercise, exerciseNumber) {
     setDiv.style.display = 'table';
 
     setDiv.innerHTML = `
-      <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-button"> X </button>`}</h3>
+      <h3 class="set-heading">Set ${setNumber} <button class="workout-set-note-button">&#128221</button> ${setNumber === 1 ? `` : `<button onclick="deleteSet()" class="delete-set-button"> X </button>`}</h3>
       <div class="form-group" style="display: table-row;">
         <label style="display: table-cell; text-align: right; padding-right: 4%;">Weight:</label>
         <input id="history-weight-input-${exerciseNumber}-${setNumber}" type="number" step="any" class="log-workout-set-inputs" style="display: table-cell;" value="${set.weight}">
