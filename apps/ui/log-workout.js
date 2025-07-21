@@ -121,7 +121,7 @@ function resetLogWorkout() {
 
   document.getElementById('log-workout-notes-input').value = '';
 
-  var logworkoutexercises = document.getElementById('workout-exercises');
+  var logworkoutexercises = document.getElementById('log-workout-exercises');
 
   logworkoutexercises.innerHTML = '';
 
