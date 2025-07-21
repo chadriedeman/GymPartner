@@ -321,21 +321,6 @@ function showErrorToast(message = "Save unsuccessful") {
   }, 2000);
 }
 
-function showConfirmDialog() {
-  document.getElementById("reset-confirm-dialog").style.display = "flex";
-}
-
-function handleResetNoButtonClick() {
-  document.getElementById("confirm-dialog").style.removeProperty("display");
-}
-
-function handleResetYesButtonClick() {
-
-  resetLogWorkout();
-
-  document.getElementById("reset-confirm-dialog").style.removeProperty("display");
-}
-
 // AI Advice placeholder
 function showAIAdvice() {
   document.getElementById('aiResponse').innerHTML = `

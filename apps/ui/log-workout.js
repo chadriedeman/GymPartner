@@ -141,7 +141,7 @@ function resetLogWorkout() {
 }
 
 function handleResetButtonClick() {
-  showConfirmDialog();
+  showResetConfirmDialog();
 }
 
 function handleTodayButtonClick() {
@@ -189,4 +189,19 @@ function handleEndTimeButtonClick() {
   minutesString = now.getMinutes().toString().padStart(2, '0');
 
   timeInput.value = `${hoursString}:${minutesString}`;
+}
+
+function showResetConfirmDialog() {
+  document.getElementById("reset-confirm-dialog").style.display = "flex";
+}
+
+function handleResetNoButtonClick() {
+  document.getElementById("confirm-dialog").style.removeProperty("display");
+}
+
+function handleResetYesButtonClick() {
+
+  resetLogWorkout();
+
+  document.getElementById("reset-confirm-dialog").style.removeProperty("display");
 }
