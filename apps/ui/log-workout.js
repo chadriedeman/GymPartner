@@ -26,7 +26,7 @@ function handleSaveWorkoutButtonClick() {
 function getLogWorkoutUserInput() {
 
   const userInputs = {
-      name: document.getElementById('log-workout-name-input').value,
+      name: document.getElementById('log-workout-name-input').value, // TODO: Vulnerable to XSS. Code can be injected here and then ran on workout history list page
       date: document.getElementById('log-workout-date-input').value,
       startTime: document.getElementById('log-workout-start-time-input').value,
       endTime: document.getElementById('log-workout-end-time-input').value,
